@@ -1,9 +1,9 @@
 "use client";
 import { firebase } from "./database/firebase";
-import { styles } from "./page.module.css";
+import  styles  from "./page.module.css";
 import { handleLoginSubmit } from './login/login';
 import { handleRegSubmit } from './signup/signup';
-import { SearchUsers } from './userlist/searchUsers';
+import { HandleUsers } from './userlist/handleUsers';
 
 
 export default function Home() {
@@ -40,8 +40,7 @@ export default function Home() {
           </div>
         </form>
       </div>
-      <SearchUsers />
-
+      <HandleUsers />
   </div>
   );
 }
