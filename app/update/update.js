@@ -3,6 +3,7 @@ import { db } from '../database/firebase';
 import { getDocs, collection, doc, updateDoc } from 'firebase/firestore';
 
 
+
 export function UpdateUser() {
     const [userList, setUserList] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
@@ -41,9 +42,8 @@ export function UpdateUser() {
           selectedUser.name = updateFields.name;
           selectedUser.username = updateFields.username;
     
-          // ... perform the update in your database or state management
         } else {
-          // Handle case when user is not selected
+          console.log('No user selected');
         }
       }
     
@@ -70,13 +70,14 @@ export function UpdateUser() {
 
   return (
     <div>
+      <h3> Endre en bruker her </h3>
       <select onChange={(e) => handleUserChange(e.target.value)}>
         <option value="">Velg en bruker</option>
         {userList.map(user => (
           <option key={user.id} value={user.id}>{user.name}</option>
         ))}
       </select>
-      <button onClick={handleUpdate}>Oppdater</button>
+     {<button onClick={handleUpdate}>Oppdater</button>}
   
       {selectedUser && (
         <div>
@@ -84,33 +85,36 @@ export function UpdateUser() {
           <p>Name: {selectedUser.name}</p>
           <p>Username: {selectedUser.username}</p>
           <label>Ny e-post</label>
+          <br/>
           <input
             type="text"
             name="email"
             value={updateFields.email}
             onChange={handleInputChange}
-          />
+          /> <br />
           <label>Nytt navn</label>
+          <br/>
           <input
             type="text"
             name="name"
             value={updateFields.name}
             onChange={handleInputChange}
-          />
+          /> <br />
           <label>Nytt brukernavn</label>
+          <br />
           <input
             type="text"
             name="username"
             value={updateFields.username}
             onChange={handleInputChange}
-          />
+          /> <br /> <br />
           <button onClick={() => handleUpdateUser(selectedUser.id)}>Oppdater bruker</button>
         </div>
       )}
   
       {userList.map((user) => (
         <div key={user.id}>
-          {/* Render user list without input fields */}
+          {/**/}
         </div>
       ))}
     </div>
