@@ -1,6 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-
+import { auth } from '../database/firebase'
 /***************Registrering*******************/ 
 // Funksjon for å håndtere skjemainnsending
 export const handleRegSubmit = async (event) => {
@@ -14,12 +14,12 @@ export const handleRegSubmit = async (event) => {
 
   try {
     // Oppretter brukerkonto i Firebase Authentication
-    const auth = getAuth();
+    
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
     // Lagre brukeropplysninger i Firestore
-    const db = getFirestore();
+    db;
     await addDoc(collection(db, 'users'), {
       uid: user.uid,
       email: email,
