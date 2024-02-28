@@ -2,7 +2,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 /***************Innlogging*******************/
 // Funksjon for å håndtere skjemainnsending
-const handleLoginSubmit = async (event) => {
+export const handleLoginSubmit = async (event) => {
     event.preventDefault();
   
     // Henter verdier fra skjemaet
@@ -17,11 +17,10 @@ const handleLoginSubmit = async (event) => {
           const user = userCredential.user;
         })
         alert('Innlogging vellykket');
+        console.log(auth?.currentUser?.email);
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode, errorMessage);
     }
 }
-
-export default handleLoginSubmit;

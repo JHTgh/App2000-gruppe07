@@ -3,7 +3,7 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 /***************Registrering*******************/ 
 // Funksjon for å håndtere skjemainnsending
-const handleRegSubmit = async (event) => {
+export const handleRegSubmit = async (event) => {
   event.preventDefault();
 
   // Henter verdier fra skjemaet
@@ -37,5 +37,3 @@ const handleRegSubmit = async (event) => {
     alert('Noe gikk galt under oppretting av brukeren. Vennligst prøv igjen senere')
   }
 }
-
-export default handleRegSubmit;

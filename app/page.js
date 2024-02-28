@@ -1,19 +1,16 @@
 "use client";
-import Image from "next/image";
-import firebase from "./database/firebase";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import styles from "./page.module.css";
-import handleLoginSubmit from "./login/login.js";
-import handleRegSubmit from "./signup/signup";
-import SearchComponent from "./search/search";
-import Link from "next/link";
+import { firebase } from "./database/firebase";
+import { styles } from "./page.module.css";
+import { handleLoginSubmit } from './login/login';
+import { handleRegSubmit } from './signup/signup';
+import { SearchUsers } from './userlist/searchUsers';
 
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.regContainer}>
-        <form onSubmit={handleRegSubmit} className={styles.signupForm}>
+    <div>
+      <div>
+        <form onSubmit={handleRegSubmit}>
           <h1>Her kan du opprette bruker</h1>
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" />
@@ -24,32 +21,28 @@ export default function Home() {
           <label htmlFor="password" id="password">Password:</label>
           <input type="password" id="password" required />
           <br />
-          <div className={styles.btnContainer}>
-            <button className={styles.submitBtn} type="submit">Create account</button>
+          <div>
+            <button type="submit">Create account</button>
           </div>
         </form>
       </div>
 
-      <div className={styles.container}>
-        <form onSubmit={handleLoginSubmit} className={styles.loginForm}>
+      <div>
+        <form onSubmit={handleLoginSubmit}>
           <h3>Her kan du prøve å logge inn med brukeren du nettopp opprettet</h3>
           <label htmlFor="email" id="email">Email:</label>
           <input type="email" id="email" required />
           <label htmlFor="password" id="password">Password:</label>
           <input type="password" id="password" required />
           <br />  
-          <div className={styles.btnContainer}>
-            <button className={styles.submitBtn} type="submit">Log in</button>
+          <div>
+            <button type="submit">Log in</button>
           </div>
         </form>
-
-        <div className={styles.searchContainer}>
-          <br />
-          <h3>Her kan du søke etter brukernavn og navn</h3>
-          <SearchComponent />
-        </div>
       </div>
-    </main>
+      <SearchUsers />
+
+  </div>
   );
 }
 
