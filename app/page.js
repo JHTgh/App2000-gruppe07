@@ -1,17 +1,20 @@
 "use client";
 import { firebase } from "./database/firebase";
-import  styles  from "./page.module.css";
+import styles from "./page.module.css";
 import { handleLoginSubmit } from './login/login';
 import { handleRegSubmit } from './signup/signup';
 import { HandleUsers } from './userlist/handleUsers';
+/* import { UpdateUser } from "./update/update"; //import { UpdateUser } from "./update/update"; */
 
 
 export default function Home() {
   return (
     <div>
-      <div>
-        <form onSubmit={handleRegSubmit}>
-          <h1>Her kan du opprette bruker</h1>
+      <h1> BigFive CRUD GRUPPE 07</h1>
+      <div className={styles.flexbox}>
+        <form className={styles.form} onSubmit={handleRegSubmit}>
+          <div className={styles.container}>
+          <h3>Her kan du opprette bruker</h3>
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" />
           <label htmlFor="username">Username:</label>
@@ -20,15 +23,17 @@ export default function Home() {
           <input type="email" id="email" />
           <label htmlFor="password" id="password">Password:</label>
           <input type="password" id="password" required />
+         
           <br />
           <div>
-            <button type="submit">Create account</button>
+            <button type="submit">Create account</button> </div>
           </div>
         </form>
       </div>
 
-      <div>
-        <form onSubmit={handleLoginSubmit}>
+      <div className={styles.flexbox}>
+        <form className={styles.form} onSubmit={handleLoginSubmit}>
+          <div className={styles.container}>
           <h3>Her kan du prøve å logge inn med brukeren du nettopp opprettet</h3>
           <label htmlFor="email" id="email">Email:</label>
           <input type="email" id="email" required />
@@ -38,9 +43,16 @@ export default function Home() {
           <div>
             <button type="submit">Log in</button>
           </div>
+          </div>
         </form>
       </div>
+      <div className={styles.flexbox}>
+      <div className={styles.container}>
       <HandleUsers />
+      </div> </div>
+      <div className={styles.flexbox}>
+      <div className={styles.container}>
+      </div> </div>
   </div>
   );
 }
