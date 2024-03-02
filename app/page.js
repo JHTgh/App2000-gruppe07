@@ -48,13 +48,13 @@ export default function Home() {
       </div>
       <div className={styles.flexbox}>
       <div className={styles.container}>
-      </div> </div>
+            <HandleUsers /></div> </div>
       <div className={styles.flexbox}>
       <div className={styles.container}>
       <UpdateUser />
       </div> </div>
 
-      <HandleUsers />
+
   </div>
   );
 }
