@@ -66,6 +66,8 @@ export function UpdateUser() {
       name: updateFields.name,
       username: updateFields.username
     });
+
+    console.log("User updated successfully");
   };
 
   return (
