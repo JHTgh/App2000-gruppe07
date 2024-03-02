@@ -1,7 +1,6 @@
 "use client";
 import { firebase } from "./database/firebase";
 import styles from "./page.module.css";
-import { SearchUsers } from './userlist/searchUsers';
 import { UpdateUser } from "./update/update"; //import { UpdateUser } from "./update/update";
 import { handleLoginSubmit } from './login/login';
 import { handleRegSubmit } from './signup/signup';
@@ -49,13 +48,12 @@ export default function Home() {
       </div>
       <div className={styles.flexbox}>
       <div className={styles.container}>
-      <SearchUsers />
       </div> </div>
       <div className={styles.flexbox}>
       <div className={styles.container}>
       <UpdateUser />
       </div> </div>
-=======
+
       <HandleUsers />
   </div>
   );
