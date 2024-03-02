@@ -19,7 +19,6 @@
    background-color: rgb(172, 148, 148);
    border: 1px solid black;
    box-shadow: 0 0 10px black;
-
 }
 
 .flexbox {
@@ -30,13 +29,4 @@
     display: table-cell;
     justify-content: center;
     gap: 10px;
-
 }
-
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
