@@ -1,0 +1,164 @@
+.main {
+  padding: 2%;
+  height: auto;
+}
+
+.flexEn {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.flexVenstreEn,
+.flexHøyreEn {
+  flex: 1;
+  padding: 0 5%;
+}
+
+.images {
+  width: 100%;
+  height: auto;
+}
+
+.flexHøyreEn h1 {
+  font-size: 1.5vw;
+  padding-top: 7.5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.flexHøyreEn p {
+  font-size: 1.25vw;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 5% 25% 3% 25%;
+}
+
+.flexHøyreEn ul li {
+  list-style: none;
+}
+
+.flexHøyreEn ul li a {
+  list-style: none;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #cb9e58;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.flexTo {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.flexVenstreTo,
+.flexHøyreTo {
+  flex: 1;
+  padding: 0 5%;
+}
+
+.flexHøyreTo h1 {
+  font-size: 1.5vw;
+  padding-top: 7.5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.flexHøyreTo p {
+  font-size: 1.25vw;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 5% 25% 3% 25%;
+}
+
+.flexHøyreTo ul li {
+  list-style: none;
+}
+
+.flexHøyreTo ul li a {
+  list-style: none;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #cb9e58;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.flexTre {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.flexVenstreTre,
+.flexHøyreTre {
+  flex: 1;
+  padding: 0 5%;
+}
+
+.flexHøyreTre h1 {
+  font-size: 1.5vw;
+  padding-top: 7.5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.flexHøyreTre p {
+  font-size: 1.25vw;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 5% 10% 3% 10%;
+}
+
+/*telefon format*/
+@media (max-width: 480px) {
+  .flexEn {
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
+
+  .flexHøyreEn h1 {
+    font-size: 3vw;
+  }
+
+  .flexHøyreEn p {
+    font-size: 3vw;
+    padding: 2% 25% 2.5% 25%;
+  }
+
+  .flexTo {
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
+
+  .flexHøyreTo h1 {
+    font-size: 3vw;
+  }
+
+  .flexHøyreTo p {
+    font-size: 3vw;
+    padding: 2% 25% 2.5% 25%;
+  }
+
+  .flexTre {
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
+
+  .flexHøyreTre h1 {
+    font-size: 3vw;
+  }
+
+  .flexHøyreTre p {
+    font-size: 3vw;
+    padding: 2% 25% 2.5% 25%;
+  }
+}
