@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { db } from '../database/firebase';
+import { db } from '../../database/firebase';
 import { getDocs, collection, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import { auth } from '../database/firebase';
+import { auth } from '../../database/firebase';
 
 export function HandleUsers() {
   const [userList, setUserList] = useState([]);
