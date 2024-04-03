@@ -1,7 +1,7 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { auth } from '../database/firebase';
-import { db } from '../database/firebase';
+import { auth } from '../../database/firebase';
+import { db } from '../../database/firebase';
 /***************Registrering*******************/ 
 // Funksjon for å håndtere skjemainnsending
 export const handleRegSubmit = async (event) => {

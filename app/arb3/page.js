@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 "use client";
-import { firebase } from "./database/firebase";
+import { firebase } from "../database/firebase";
 import styles from "./page.module.css";
-import { UpdateUser } from "./update/update"; //import { UpdateUser } from "./update/update";
-import { handleLoginSubmit } from "./login/login";
-import { handleRegSubmit } from "./signup/signup";
-import { HandleUsers } from "./userlist/handleUsers";
+import { UpdateUser } from "../api/update/update"; //import { UpdateUser } from "./update/update";
+import { handleLoginSubmit } from "../api/login/login";
+import { handleRegSubmit } from "../api/signup/signup";
+import { HandleUsers } from "../api/userlist/handleUsers";
 
-
-
-/*
-export default function Home() {
+export default function Arbeidskrav() {
   return (
     <div>
       <h1> BigFive CRUD GRUPPE 07</h1>
@@ -73,11 +69,3 @@ export default function Home() {
     </div>
   );
 }
-*/
-=======
-export default function Home(){
-    return (
-        <h1>hei</h1>
-    )
-}
->>>>>>> test-main
