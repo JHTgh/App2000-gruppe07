@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <div>
       <h1> BigFive CRUD GRUPPE 07</h1>
+      <h1> Hei </h1>
       <div className={styles.flexbox}>
         <form className={styles.form} onSubmit={handleRegSubmit}>
           <div className={styles.container}>
