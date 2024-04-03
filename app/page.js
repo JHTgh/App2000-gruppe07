@@ -6,11 +6,13 @@ import { handleLoginSubmit } from "./login/login";
 import { handleRegSubmit } from "./signup/signup";
 import { HandleUsers } from "./userlist/handleUsers";
 
+
+
+/*
 export default function Home() {
   return (
     <div>
       <h1> BigFive CRUD GRUPPE 07</h1>
-      <h1> Hei </h1>
       <div className={styles.flexbox}>
         <form className={styles.form} onSubmit={handleRegSubmit}>
           <div className={styles.container}>
@@ -70,3 +72,4 @@ export default function Home() {
     </div>
   );
 }
+*/
