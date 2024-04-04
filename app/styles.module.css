@@ -1,0 +1,204 @@
+/***   Styling for layout   ***/
+/* så for hele nettsiden .navbar og .. for hele siden */
+
+
+
+/***  Flex-box for sentrering ***/
+/* Slik at innhold altid er i midten og "like stort" */
+
+
+
+
+/***  Styling for .navbar  ***/
+/* velger å style uten klasse - hvor .navbar elementet bare blir brukt slik */
+.navElement{
+    list-style: none;
+    }
+    .navbar .links {
+    display: flex;
+    }
+    
+    .navbar .links .navElement{
+    list-style: none;
+    }
+    
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(#D5F5E3, #EAFAF1);
+    border-bottom: 1px solid #7D7D7D;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    }
+    
+    .navbar .logo {
+    margin: 0.5rem;
+    margin-left: 3rem;
+    }
+    
+    .navbar .links li a:not(.active):hover {
+    background-color: #7D3C98;
+    color: white;
+    }
+    
+    .navbar .links li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    }
+    
+    /*Burger meny*/
+    .navbar .menu {
+        display: none;
+        position: absolute;
+        top: 0.75rem;
+        right: 0.5rem;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2.25rem;
+        height: 2rem;
+    }
+    .navbar .menu span {
+        height: 0.4rem;
+        width: 100%;
+        background-color: black;
+        border-radius: 0.2rem;
+    }
+    
+    @media (max-width: 480px) {
+        .navbar .menu {
+            display: flex;
+        }
+    
+        .navbar {
+            flex-direction: column;
+            align-items: start;
+        }
+    
+        .navbar .links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 0.25rem;
+        }
+    
+        .navbar .links.open {
+            display: flex;
+        }
+    
+        .navbar .links .navElement{
+            width: 100%;
+            text-align: center;
+        }
+    
+        .navbar .links .navElement a {
+            margin: 0.2rem 0.5rem;
+        }
+        
+    }
+    /* burgermeny og .navbar ferdig */
+    
+    /* Styling av footer */
+    
+    .footBody {
+        display: flex;
+        padding-top: 1rem;
+        background-color: #EAF2F8;
+    }
+    
+    .images {
+        width: 100%;
+        height: auto;
+      }  
+    
+    .footVenstre,
+    .footHøyre {
+        flex: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .footVenstre h1 {
+        font-size: 3vw; 
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .sosMed ul {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .sosMed ul li {
+        list-style: none;
+        text-decoration: none;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+    }
+    
+    .sosMed ul li a img {
+        width: 2vw; 
+    }
+    
+    
+    .infoFoot p{
+        font-size: 1.25vw;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin-bottom: 10px;
+    }
+    
+    .copyright p {
+        font-size: 1.25vw;
+        color: rgba(0,0,0,0.4);;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .footHøyre h2 {
+        font-size: 1.25vw;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .footHøyre ul li {
+        list-style: none;
+    }
+    
+    .footHøyre ul li a {
+        color: black;
+        font-size: 1vw;
+    }
+    
+    @media (max-width: 480px) {
+        .footBody {
+            flex-direction: column;
+        }
+    
+        .footVenstre h1 {
+            font-size: 7vw;
+        }
+    
+        .sosMed ul li a img {
+            width: 6vw;
+        }
+    
+        .infoFoot p{
+            font-size: 4.5vw;
+        }
+    
+        .copyright p{
+            font-size: 3.5vw;
+        }
+    
+        .footHøyre h2 {
+            font-size: 5vw;
+            margin-top: 2vw;
+        }
+    
+        .footHøyre ul li a {
+            font-size: 4vw;
+        }
+    }
+    
