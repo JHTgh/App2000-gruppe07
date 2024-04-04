@@ -10,7 +10,7 @@ const Footer = () => {
   return (
       <div className={styles.footBody}>
         <div className={styles.footVenstre}>
-          <h1>SAY HALLO</h1>
+          <h1>SAY HALLO!</h1>
           <div className={styles.sosMed}>
             <ul>
               <li><Link href="https://www.facebook.com/rubynorno/" className="facebookLogo">

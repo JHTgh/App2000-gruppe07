@@ -26,7 +26,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(#D5F5E3, #EAFAF1);
+    background-image: linear-gradient(#AED6F1, #D6EAF8);
     border-bottom: 1px solid #7D7D7D;
     position: sticky;
     top: 0;
@@ -39,7 +39,7 @@
     }
     
     .navbar .links li a:not(.active):hover {
-    background-color: #7D3C98;
+    background-color: #4ABFD6;
     color: white;
     }
     
@@ -108,7 +108,7 @@
     .footBody {
         display: flex;
         padding-top: 1rem;
-        background-color: #EAF2F8;
+        background-color: #D4E6F1;
     }
     
     .images {

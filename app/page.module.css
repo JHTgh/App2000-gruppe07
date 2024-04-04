@@ -37,8 +37,9 @@
     text-decoration: none;
     padding: 0.5rem;
     border-radius: 0.25rem; 
-    background-color: #7D3C98; 
+    background-color: #4ABFD6; 
     color: white; 
+    box-shadow: 0 0 2.5px black;
     margin-bottom: 0.5rem;
 }
 
@@ -76,8 +77,9 @@
     text-decoration: none;
     padding: 0.5rem;
     border-radius: 0.25rem; 
-    background-color: #7D3C98; 
+    background-color: #4ABFD6; 
     color: white; 
+    box-shadow: 0 0 2.5px black;
     margin-bottom: 0.5rem;
 }
 
