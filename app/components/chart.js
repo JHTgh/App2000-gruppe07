@@ -1,12 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Chart from "chart.js/auto";
-import { db, queryBrukerNavn, queryBrukerScore } from "../database/firebase";
+import { db } from "../database/firebase";
+import { queryBrukerNavn, queryBrukerScore } from "../database/querys";
 import { Bar } from "react-chartjs-2";
 import { doc, getDoc } from 'firebase/firestore';
 
 
-const BarChart = () => {
+const BarChart = ({uIdTab}) => {
+
 
   const data = {
     labels: [
@@ -16,9 +18,7 @@ const BarChart = () => {
       "Selvinnsikt",
       "Tillit",
     ],
-    datasets: [
-     setEnBruker("dwf0OCy3doWpatHw8QnjpfSs4qS2"),
-    ],
+    datasets: uIdTab.map( (uIdTab) => setEnBruker(uIdTab)),
   };
 
   const options = {
@@ -41,57 +41,35 @@ const BarChart = () => {
   );
 };
 
-/*
-
-export async function hentBrukerData( uID) {
-  // funksjon som henter data om bruker ved hjelp av uID (som er lik i begge databasene i firebase)
-
-
-  // Create a reference to the cities collection
-  const docRef = db.collection('users');
-
-  // Create a query against the collection
-  const queryRef = docRef.where('uid', '==', uID);
-
-  const [brukerNavn, setBrukerNavn] = useState([]);
-  const [brukerScore, setBrukerScore] = useState([]);
-
-  if (queryRef.exists()) {
-    //lagrer navnet til bruker
-    setBrukerNavn(queryRef.data().name);
-  } else {
-    console.log("No such document!");
-  }
-  //henter info om score fra en annen database
-  const docRef2 = db.collection("testRes");
-  const queryRef2 = docRef2.where('uid', '==', uID);
-  if (queryRef2.exists()) {
-    setBrukerScore(queryRef2.data());
-  } else {
-    console.log("No such document!");
-  }
-  // i brukerScore er det en kollonne i tabellen som heter uID den vil vi ha vekk
-  const score = [];
-  // det vil alltid være fem verdier vi vil ha 
-  // kan hende vi må snu denne løkken, sjekk dette !!!                                              ---!!!---
-  for (let i = 0; i < 5; i++) {
-    score.push(brukerScore[i]);
-  }
-  // slik har vi tatt vekk unødvendig data
-  // vi returnerer navn og score
-  return [brukerNavn, score];
-}*/
 
 // vi må også "bygge" hele blokken med kode til å sette opp charts altså alt i datasets
 // vi gjør dette i en funksjon
 
 export async function setEnBruker(uID) {
 
+  const navn = await queryBrukerNavn(uID);
+  const score = await queryBrukerScore(uID);
+  const scoreData = score.map(Number);
+  console.log(navn, scoreData);
+  const formatertNavn = '"' + navn + '"';
+
+  let formatertScore = "";
+  formatertScore = "[";
+  for(let i = 0; i < 5; i++) {
+    formatertScore += scoreData[i];
+    if(i < 4) {
+      formatertScore += ", ";
+    }
+  }
+  formatertScore += "]";
+  console.log(formatertScore);
+  console.log(formatertNavn);
+
   // vi henter info om bruker fra databasen ved hjelp av metoder laget for database
   // legger også inn en random farge for denne brukeren i chartsen
   return {
-    label: queryBrukerNavn(uID),
-    data: queryBrukerScore(uID),
+    label: formatertNavn,
+    data: formatertScore,
     backgroundColor: [
       getRandomColors(),
     ],
@@ -99,7 +77,7 @@ export async function setEnBruker(uID) {
       "rgba(255, 255, 255, 0.5)",
     ],
     borderWidth: 1,
-    barThickness: 30,
+    barThickness: 30
   }
 }
 

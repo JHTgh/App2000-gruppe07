@@ -7,7 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
 
 const ComparePage = () => {
-  
+  const [userID, setUserID] = useState([]);
   const [userList, setUserList] = useState([]);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const ComparePage = () => {
           id: doc.id,
         }));
         setUserList(filteredData);
+        
         console.log(filteredData);
       } catch (err) {
         console.error(err);
@@ -28,22 +29,30 @@ const ComparePage = () => {
   }, []);
 
 
+  const addUId = async (uid) => {
+    try {
+      console.log('uID: ' + uid);
+      setUserID([...userID, uid]);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
 
   return (
     <div>
       <h1>Compare Page</h1>
-      <div> 
+      <div className="flex-side"> 
       {userList.map((user) => (
         <div key={user.id}>
           <p>Name: {user.name}</p>
-          <p>uID: {user.uid}</p>
+          <button onClick={() => addUId(user.uid)}>Add</button>
           <p>------------</p>
         </div>
         ))}
       </div>
-      <div>
-        <BarChart />
+      <div className="flex-side">
+        <BarChart uIdTab={userID} />
       </div>
     </div>
   );
