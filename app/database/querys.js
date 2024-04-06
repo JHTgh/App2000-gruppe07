@@ -4,8 +4,6 @@ import { collection, getDocs,  query, where, getDoc } from "firebase/firestore";
 
 export async function queryBrukerNavn(uID){
     // funksjon som henter data om bruker ved hjelp av uID (som er lik i begge databasene i firebase)
-    console.log('gått inn i metode for å hente bruker navn');
-    console.log(uID);
  
     const queryTilBrukerCollection = query(
         collection(db, 'users'), 
@@ -17,7 +15,6 @@ export async function queryBrukerNavn(uID){
         console.log('bruker ikke funnet');
         return null;
     }
-    console.log('kom hit');
     try{
         const navn = snapshot.docs[0].data().name;
         console.log('navn: ' + navn);
@@ -27,74 +24,39 @@ export async function queryBrukerNavn(uID){
         return null;
     }
 }
-
-
-
-/*
-
-
-export async function queryBrukerNavn(uID){
-    // funksjon som henter data om bruker ved hjelp av uID (som er lik i begge databasene i firebase)
-    console.log('gått inn i metode for å hente bruker navn');
-    console.log(uID);
- 
-   
-    const queryTilBrukerCollection = query(
-        collection(db, 'users'), 
-          where('uid', '==', uID)
-      );
-    const snapshot = await queryTilBrukerCollection.get();
+  
+  export async function queryBrukerScore(uID){
     
-
+    const queryTilScoreCollection = query(
+      collection(db, 'testRes'), 
+        where('uid', '==', uID)
+    );
+    const snapshot = await getDocs(queryTilScoreCollection);
+    
     if(snapshot.empty){
-        console.log('bruker ikke funnet');
+        console.log('score ikke funnet');
         return null;
     }
-    console.log('kom hit');
     try{
-        const navn = snapshot.docs[0].data().name;
-        console.log('navn: ' + navn);
-        return navn;
+        const score = [];
+        const ekstroversjon = snapshot.docs[0].data().Ekstroversjon;
+        score.push(ekstroversjon);
+        const nevrotisisme = snapshot.docs[0].data().Nevrotisisme;
+        score.push(nevrotisisme);
+        const samhandling = snapshot.docs[0].data().Samhandling;
+        score.push(samhandling);
+        const selvinnsikt = snapshot.docs[0].data().Selvinnsikt;
+        score.push(selvinnsikt);
+        const tillit = snapshot.docs[0].data().Tillit;
+        score.push(tillit);
+
+        console.log('score: ' + score);
+        return score;
     } catch(error){
         console.log(error);
         return null;
     }
 
-    
-    
-
-    /*
-  
-    const queryTilBrukerCollection = query(
-      collection(db, 'users'), 
-        where('uid', '==', uID)
-    );
-   
-    // nå har vi alle bruker dokumenter med lik uid som betyr en
-    // vi vil bare ta vare på navnet 
-    const querySnapshot = await getDoc(queryTilBrukerCollection);
-    
-    const allDocs = querySnapshot.forEach((snap) => {
-      console.log(snap.data().name);
-    
-    })
-    const navn = allDocs.data().name;
-    console.log('navn: ' + navn);
-    
-    console.log(querySnapshot.data().name);
-    console.log('her det er fei?');
-    const navn = querySnapshot.data().name;
-    console.log(navn);
-    
-    
-  }
-  
-  */
-  
-  export async function queryBrukerScore(uID){
-  
-    console.log('score: ');
-    return [80, 60, 40, 50, 90];
 
     /*
     const queryTilScoreCollection = query(

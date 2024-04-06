@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import { useState, useEffect } from "react";
 import Chart from "chart.js/auto";
@@ -9,17 +10,56 @@ import { doc, getDoc } from 'firebase/firestore';
 
 const BarChart = ({uIdTab}) => {
 
+  const [data, setData] = useState();
+  const [objTeller, setObjTeller] = useState(0);
 
-  const data = {
-    labels: [
-      "Ekstroversjon",
-      "Nevrotisisme",
-      "Samhandling",
-      "Selvinnsikt",
-      "Tillit",
-    ],
-    datasets: uIdTab.map( (uIdTab) => setEnBruker(uIdTab)),
-  };
+  useEffect(() => {
+    const hentData = async () => {
+      if(uIdTab.length === 0){
+        return
+      }
+
+      // gjør klar dataen til datasets
+      let obj = [];
+      for (let i = 0; i < uIdTab.length; i++) {
+        const nyttObj = {
+          navn: await queryBrukerNavn(uIdTab[i]),
+          score: await queryBrukerScore(uIdTab[i]),
+        }
+        obj = [...obj, nyttObj];
+        setObjTeller(objTeller + 1);
+      }
+
+      const data = {
+        labels: [
+          "Ekstroversjon",
+          "Nevrotisisme",
+          "Samhandling",
+          "Selvinnsikt",
+          "Tillit",
+        ],
+        datasets: obj.map((obj) => {
+          return {
+            label: obj.navn,
+            data: obj.score,
+            backgroundColor: [
+              getRandomColors(),
+            ],
+            borderColor: [
+              "rgba(255, 255, 255, 0.5)",
+            ],
+            borderWidth: 1,
+            barThickness: 30
+          };
+        }),
+      };
+
+      setData(data);
+      
+    };
+
+    hentData();
+  }, [uIdTab]);
 
   const options = {
     scales: {
@@ -32,6 +72,16 @@ const BarChart = ({uIdTab}) => {
     },
   };
 
+  console.log('objTeller lengde: ' + objTeller + ', uIdTab lengde: ' + uIdTab.length);
+
+  if(!data) {
+    return <p>Laster inn...</p>;
+  }
+  
+  if (objTeller !== uIdTab.length) {
+    return <p>Laster inn...</p>;
+  }
+
   return (
     <div>
       <div style={{ width: "800px", height: "500px" }}>
@@ -42,48 +92,9 @@ const BarChart = ({uIdTab}) => {
 };
 
 
-// vi må også "bygge" hele blokken med kode til å sette opp charts altså alt i datasets
-// vi gjør dette i en funksjon
-
-export async function setEnBruker(uID) {
-
-  const navn = await queryBrukerNavn(uID);
-  const score = await queryBrukerScore(uID);
-  const scoreData = score.map(Number);
-  console.log(navn, scoreData);
-  const formatertNavn = '"' + navn + '"';
-
-  let formatertScore = "";
-  formatertScore = "[";
-  for(let i = 0; i < 5; i++) {
-    formatertScore += scoreData[i];
-    if(i < 4) {
-      formatertScore += ", ";
-    }
-  }
-  formatertScore += "]";
-  console.log(formatertScore);
-  console.log(formatertNavn);
-
-  // vi henter info om bruker fra databasen ved hjelp av metoder laget for database
-  // legger også inn en random farge for denne brukeren i chartsen
-  return {
-    label: formatertNavn,
-    data: formatertScore,
-    backgroundColor: [
-      getRandomColors(),
-    ],
-    borderColor: [
-      "rgba(255, 255, 255, 0.5)",
-    ],
-    borderWidth: 1,
-    barThickness: 30
-  }
-}
-
 const getRandomColors = () => {
   // funksjon som returnerer en random farge
-  return (`rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.2)`);
+  return (`rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.8)`);
 };
 
 
