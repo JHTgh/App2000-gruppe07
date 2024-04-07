@@ -1,61 +1,65 @@
+'use client';
 import React from "react";
+import { useState, useEffect } from "react";
 import Chart from "chart.js/auto";
+import { db } from "../database/firebase";
+import { queryBrukerNavn, queryBrukerScore } from "../database/querys";
 import { Bar } from "react-chartjs-2";
+import { doc, getDoc } from 'firebase/firestore';
 
-const BarChart = () => {
-  const data = {
-    labels: [
-      "Ekstroversjon",
-      "Nevrotisisme",
-      "Samhandling",
-      "Selvinnsikt",
-      "Tillit",
-    ],
-    datasets: [
-      {
-        label: "Personlighet",
-        data: [65, 59, 80, 81, 56],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
+
+const BarChart = ({uIdTab}) => {
+
+  const [data, setData] = useState();
+  const [objTeller, setObjTeller] = useState(0);
+
+  useEffect(() => {
+    const hentData = async () => {
+      if(uIdTab.length === 0){
+        return
+      }
+
+      // gjør klar dataen til datasets
+      let obj = [];
+      for (let i = 0; i < uIdTab.length; i++) {
+        const nyttObj = {
+          navn: await queryBrukerNavn(uIdTab[i]),
+          score: await queryBrukerScore(uIdTab[i]),
+        }
+        obj = [...obj, nyttObj];
+        setObjTeller(objTeller + 1);
+      }
+
+      const data = {
+        labels: [
+          "Ekstroversjon",
+          "Nevrotisisme",
+          "Samhandling",
+          "Selvinnsikt",
+          "Tillit",
         ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-        ],
-        borderWidth: 1,
-        barThickness: 30,
-        maxBarThickness: 50,
-      },
-      {
-        label: "Personlighet",
-        data: [55, 25, 70, 62, 45],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-        ],
-        borderWidth: 1,
-        barThickness: 30,
-        maxBarThickness: 50,
-      },
-    ],
-  };
+        datasets: obj.map((obj) => {
+          return {
+            label: obj.navn,
+            data: obj.score,
+            backgroundColor: [
+              getRandomColors(),
+            ],
+            borderColor: [
+              "rgba(255, 255, 255, 0.5)",
+            ],
+            borderWidth: 1,
+            barThickness: 30
+          };
+        }),
+      };
+
+      setData(data);
+      
+    };
+
+    hentData();
+  }, [uIdTab]);
 
   const options = {
     scales: {
@@ -68,11 +72,30 @@ const BarChart = () => {
     },
   };
 
+  console.log('objTeller lengde: ' + objTeller + ', uIdTab lengde: ' + uIdTab.length);
+
+  if(!data) {
+    return <p>Laster inn...</p>;
+  }
+  
+  if (objTeller !== uIdTab.length) {
+    return <p>Laster inn...</p>;
+  }
+
   return (
-    <div style={{ width: "1000px", height: "500px" }}>
-      <Bar data={data} options={options} />
+    <div>
+      <div style={{ width: "800px", height: "500px" }}>
+        <Bar data={data} options={options} />
+      </div>
     </div>
   );
 };
+
+
+const getRandomColors = () => {
+  // funksjon som returnerer en random farge
+  return (`rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.8)`);
+};
+
 
 export default BarChart;
