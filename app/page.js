@@ -1,19 +1,22 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import Dame from "@/public/dame.jpg";
-import Folk from "@/public/folk.jpg";
-import Team from "@/public/team.jpg";
-import Velkommen from "@/public/velkommen.jpg";
+import Gratis from "@/public/gratis.png";
+import Vitenskaplig from "@/public/vitenskaplig.png";
+import Test from "@/public/statistikk.png";
+import Åpen from "@/public/åpen.png";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.flexEn}>
       <div className={styles.flexVenstreEn}>
-          <h1>Velkommen til BigFives Personlighetstest!</h1>
+          <h1>Rekrutter Smartere: Velkommen Til BigFive!</h1>
           <p>
-          Ønsker du å styrke din bedrifts rekrutteringsprosess?
+          BigFive er en plattform som tilbyr personlighetstesting 
+          for bedrifter som ønsker å forbedre sin rekrutteringsprosess. 
+          Ved å bruke vår tjeneste kan bedrifter få dyp innsikt i potensielle 
+          ansattes personlighetsegenskaper
           </p>
           <p>Opprett en bedriftskonto her:</p>
           <ul>
@@ -24,9 +27,9 @@ export default function Home() {
         </div>
         <div className={styles.flexHøyreEn}>
         <Image
-            src={Velkommen}
+            src={Test}
             priority={true}
-            alt="Velkommen"
+            alt="Test"
             className={styles.images}
           ></Image>
         </div> 
@@ -35,52 +38,51 @@ export default function Home() {
       <div className={styles.flexTo}>
         <div className={styles.flexVenstreTo}>
         <Image
-            src={Dame}
+            src={Åpen}
             priority={true}
-            alt="Dame"
+            alt="Åpen"
             className={styles.images}
           ></Image>
+          <h2>BigFive Personlighetstest</h2>
+        <p>Er du klar til å ta din rekrutteringsprosess til neste nivå?</p>
+        <p>
+          Velkommen til BigFives personlighetstest. Den ultimate løsningen 
+          for bedrifter som ønsker å forme en mer effektiv og harmonisk arbeidsstyrke.
+        </p>
         </div>
         <div className={styles.flexMidtTo}>
         <Image
-            src={Folk}
+            src={Gratis}
             priority={true}
-            alt="Folk"
+            alt="Gratis"
             className={styles.images}
           ></Image> 
+          <h2>Sammenlign ansatte eller arbeidssøkere ved rekrutering</h2>
+          <p>
+            Med vår avanserte personlighetstest får du en dyp og detaljert 
+            innsikt i dine potensielle ansattes personlighetsegenskaper. 
+          </p>
+          <p>
+            Fra åpenhet for erfaringer til nevrotisisme, vår test dekker alle 
+            viktige aspekter og hjelper deg med å identifisere de beste kandidatene 
+            for din bedriftskultur.
+          </p>
         </div>
         <div className={styles.flexHøyreTo}>
         <Image
-            src={Team}
+            src={Vitenskaplig}
             priority={true}
-            alt="Team"
+            alt="Vitenskaplig"
             className={styles.images}
           ></Image> 
-        </div>
-      </div>
-
-      <div className={styles.flexTre}>
-        <div className={styles.flexVenstreTre}>
-        <h1>Test deg selv</h1>
-        <p>
-        Vår plattform er skapt for å gi bedrifter 
-        som din en grundig forståelse av kandidatenes 
-        personlighetsegenskaper, noe som gjør det enklere 
-        å ta velinformerte beslutninger i rekrutteringsprosessen.
-        </p>
-        </div>
-        <div className={styles.flexMidtTre}>
-          <p>hei</p>
-        </div>
-        <div className={styles.flexHøyreTre}>
-          <h1>Sammenlign ansatte eller arbeidssøkere ved rekrutering</h1>
+          <h2>Registrer deg nå for å bygge et sterkere team!</h2>
           <p>
-            Sammenlign deg med partneren din, kollegaer, venner eller familie
+            Oppdag hvordan vår plattform kan styrke din rekrutteringsprosess og 
+            hjelpe deg med å bygge et team som trives og lykkes sammen. 
           </p>
           <p>
-            Lær hvordan du skiller deg fra andre mennesker i de fem domenene:
-            Åpenhet for erfaringer, Planmessighet, Ekstroversjon,
-            Medmenneskelighet og Nevrotisisme
+            Registrer deg nå for å få tilgang til vårt kraftfulle verktøy og 
+            ta det første skrittet mot å skape en sterkere og mer produktiv arbeidsstyrke!
           </p>
         </div>
       </div>

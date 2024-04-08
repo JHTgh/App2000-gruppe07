@@ -6,15 +6,19 @@
   display: flex;
   flex-direction: row;
   margin-top: 2%;
-  background-color: #9de5fa;
+  background-color: #82E0AA;
+  box-shadow: 0 0 10px grey;
 }
 
-.flexVenstreEn,
-.flexHøyreEn {
+.flexVenstreEn, .flexHøyreEn {
   flex: 1;
   margin: 1% 1% 1% 1% ;
 }
 
+.flexHøyreEn {
+  box-shadow: 0 0 10px grey;
+
+}
 .images {
   width: 100%;
   height: auto;
@@ -26,13 +30,14 @@
 }
 
 .flexVenstreEn p {
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .flexVenstreEn ul li {
   list-style: none;
-  margin-top: 5vw;
+  margin-top: 3.5vw;
+  text-align: center;
 }
 
 .flexVenstreEn ul li a {
@@ -41,66 +46,37 @@
   font-size: 1.25vw;
   padding: 1.1rem;
   border-radius: 1rem;
-  background-color:#0a4160 ;
-  color: white;
+  background-color:#85C1E9 ;
+  color: black;
   margin-bottom: 0.5rem;
+  box-shadow: 0 0 10px black;
 }
 
 .flexTo {
   display: flex;
-  text-align: center;
   padding-top: 5%;
 }
 
-.flexVenstreTo {
+.flexVenstreTo, .flexMidtTo, .flexHøyreTo {
   flex: 1;
-  flex-basis: 1%;
-  background-color: lightblue;
-}
-.flexMidtTo {
-  flex: 1;
-  flex-basis: 1%;
-  background-color: lightcoral;
-}
-.flexHøyreTo {
-  flex: 1;
-  flex-basis: 1%;
-  background-color: lightgoldenrodyellow;
+  background-color: #b7e3ff;
+  border-radius: 1rem;
+  margin: 1vw 3.5vw 5vw 3.5vw;
+  box-shadow: 0 0 10px grey;
 }
 
+.flexVenstreTo h2, .flexMidtTo h2, .flexHøyreTo h2 {
+  text-align: center;
+  font-size: 1.3vw;
+}
+
+.flexVenstreTo p, .flexMidtTo p, .flexHøyreTo p {
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
 .images {
   width: 100%;
   height: auto;
-}
-
-.flexTre {
-  display: flex;
-  text-align: center;
-}
-
-.flexVenstreTre, .flexMidtTre,
-.flexHøyreTre {
-  flex: 1;
-}
-
-.flexHøyreTre h1 {
-  font-size: 1.5vw;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.flexHøyreTre p {
-  font-size: 1.25vw;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.flexHøyreTre h1 {
-  font-size: 1.5vw;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.flexHøyreTre p {
-  font-size: 1.25vw;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*telefon format*/
