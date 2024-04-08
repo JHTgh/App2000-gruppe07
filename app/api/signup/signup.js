@@ -23,6 +23,7 @@ export const handleRegSubmit = async (event) => {
     db;
     await addDoc(collection(db, 'bedrift'), {
       //uid: user.uid,
+      uid: bedrift.uid,
       email: email,
       bedriftNavn: bedriftNavn,
     
