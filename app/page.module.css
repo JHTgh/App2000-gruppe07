@@ -1,5 +1,4 @@
 .main {
-  padding: 2%;
   height: auto;
 }
 
@@ -7,13 +6,13 @@
   display: flex;
   flex-direction: row;
   margin-top: 2%;
-  text-align: center;
+  background-color: #9de5fa;
 }
 
 .flexVenstreEn,
 .flexHøyreEn {
   flex: 1;
-  padding: 0 5%;
+  margin: 1% 1% 1% 1% ;
 }
 
 .images {
@@ -21,101 +20,87 @@
   height: auto;
 }
 
-.flexHøyreEn h1 {
+.flexVenstreEn h1 {
+  font-size: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flexVenstreEn p {
   font-size: 1.5vw;
-  padding-top: 7.5%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.flexHøyreEn p {
-  font-size: 1.25vw;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding: 5% 25% 3% 25%;
-}
-
-.flexHøyreEn ul li {
+.flexVenstreEn ul li {
   list-style: none;
+  margin-top: 5vw;
 }
 
-.flexHøyreEn ul li a {
+.flexVenstreEn ul li a {
   list-style: none;
   text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  background-color: #cb9e58;
-  color: black;
+  font-size: 1.25vw;
+  padding: 1.1rem;
+  border-radius: 1rem;
+  background-color:#0a4160 ;
+  color: white;
   margin-bottom: 0.5rem;
 }
 
 .flexTo {
   display: flex;
-  flex-direction: row-reverse;
-  margin-top: 2%;
   text-align: center;
+  padding-top: 5%;
 }
 
-.flexVenstreTo,
+.flexVenstreTo {
+  flex: 1;
+  flex-basis: 1%;
+  background-color: lightblue;
+}
+.flexMidtTo {
+  flex: 1;
+  flex-basis: 1%;
+  background-color: lightcoral;
+}
 .flexHøyreTo {
   flex: 1;
-  padding: 0 5%;
+  flex-basis: 1%;
+  background-color: lightgoldenrodyellow;
 }
 
-.flexHøyreTo h1 {
-  font-size: 1.5vw;
-  padding-top: 7.5%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.flexHøyreTo p {
-  font-size: 1.25vw;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding: 5% 25% 3% 25%;
-}
-
-.flexHøyreTo ul li {
-  list-style: none;
-}
-
-.flexHøyreTo ul li a {
-  list-style: none;
-  text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  background-color: #cb9e58;
-  color: black;
-  margin-bottom: 0.5rem;
+.images {
+  width: 100%;
+  height: auto;
 }
 
 .flexTre {
   display: flex;
-  flex-direction: row;
-  margin-top: 2%;
-  margin-bottom: 2%;
   text-align: center;
 }
 
-.flexVenstreTre,
+.flexVenstreTre, .flexMidtTre,
 .flexHøyreTre {
   flex: 1;
-  padding: 0 5%;
 }
 
 .flexHøyreTre h1 {
   font-size: 1.5vw;
-  padding-top: 7.5%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .flexHøyreTre p {
   font-size: 1.25vw;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding: 5% 10% 3% 10%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flexHøyreTre h1 {
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flexHøyreTre p {
+  font-size: 1.25vw;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*telefon format*/

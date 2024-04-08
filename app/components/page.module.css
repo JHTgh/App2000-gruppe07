@@ -64,6 +64,73 @@
   border-radius: 0.2rem;
 }
 
+
+/*Footer*/
+.footBody {
+  display: flex;
+  padding-top: 1rem;
+  background-color: #EAFAF1;
+}
+
+.images {
+  width: 100%;
+  height: auto;
+}
+
+.footVenstre,
+.footHøyre {
+  flex: 50%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.footVenstre h1 {
+  font-size: 3vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.sosMed ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.sosMed ul li {
+  list-style: none;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.sosMed ul li a img {
+  width: 2vw;
+}
+
+.infoFoot p {
+  font-size: 1.25vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+.copyright p {
+  font-size: 1.25vw;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footHøyre h2 {
+  font-size: 1.25vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footHøyre ul li {
+  list-style: none;
+}
+
+.footHøyre ul li a {
+  color: black;
+  font-size: 1vw;
+}
+
 @media (max-width: 480px) {
   .navbar .menu {
     display: flex;
@@ -93,5 +160,36 @@
   .navbar .links .navElement a {
     margin: 0.2rem 0.5rem;
   }
+
+  /*Footer*/
+  .footBody {
+    flex-direction: column;
+  }
+
+  .footVenstre h1 {
+    font-size: 7vw;
+  }
+
+  .sosMed ul li a img {
+    width: 6vw;
+  }
+
+  .infoFoot p {
+    font-size: 4.5vw;
+  }
+
+  .copyright p {
+    font-size: 3.5vw;
+  }
+
+  .footHøyre h2 {
+    font-size: 5vw;
+    margin-top: 2vw;
+  }
+
+  .footHøyre ul li a {
+    font-size: 4vw;
+  }
+
 }
 /* burgermeny og .navbar ferdig */
