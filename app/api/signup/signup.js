@@ -2,39 +2,43 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { auth } from '../../database/firebase';
 import { db } from '../../database/firebase';
+import bcryptjs from 'bcryptjs';
+
 /***************Registrering*******************/ 
 // Funksjon for å håndtere skjemainnsending
-export const handleRegSubmit = async (event) => {
-  event.preventDefault();
+
+export const handleRegSubmit = async (formData) => {
 
   // Henter verdier fra skjemaet
-  const email = event.target.email.value;
-  const password = event.target.password.value;
-  const name = event.target.name.value;
-  const username = event.target.username.value;
+  const email = formData.email;
+  const password = formData.password;
+  const bedriftNavn = formData.bedriftNavn;
+  //const username = event.target.username.value;
+  console.log('Registrering av bruker startet');
+  console.log('email: ' + email + ' password: ' + password + ' bedriftNavn: ' + bedriftNavn);
 
   try {
+
+    const hashedPassword = await bcryptjs.hash(password, 10);
     // Oppretter brukerkonto i Firebase Authentication
     
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const userCredential = await createUserWithEmailAndPassword(auth, email, hashedPassword);
     const user = userCredential.user;
 
     // Lagre brukeropplysninger i Firestore
     db;
-    await addDoc(collection(db, 'users'), {
-      uid: user.uid,
+    await addDoc(collection(db, 'bedrift'), {
+      //uid: user.uid,
+      bedriftId: user.uid,
       email: email,
-      name: name,
-      username: username
+      bedriftNavn: bedriftNavn,
+      dato: new Date(),
+    
     });
-
-    alert('Brukeren ble opprettet!');
-
-    if (password.length < 6)
-      alert('Passordet er for kort! Minst 6 tegn.')
+    return {suksess: true};
 
   } catch (error) {
     console.error('Feil ved oppretting av bruker:', error.message);
-    alert('Noe gikk galt under oppretting av brukeren. Vennligst prøv igjen senere')
+    return {suksess: false, error: error.message};
   }
 }
