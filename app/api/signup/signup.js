@@ -15,16 +15,16 @@ export const handleRegSubmit = async (event) => {
 
   try {
     // Oppretter brukerkonto i Firebase Authentication
-    
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const bedrift = userCredential.bedrift;
+    const user = userCredential.user;
 
     // Lagre brukeropplysninger i Firestore
     db;
-    await addDoc(collection(db, 'bedrift'), {
-      //uid: user.uid,
+      await addDoc(collection(db, 'bedrift'), {
+      bedriftId: user.uid,
       email: email,
       bedriftNavn: bedriftNavn,
+      dato: new Date(),
     
     });
 
