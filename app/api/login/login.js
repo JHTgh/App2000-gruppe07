@@ -1,4 +1,8 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, collection, getDocs, query, where, getDoc } from "firebase/firestore";
+import { db } from '../../database/firebase';
+import bcryptjs from 'bcryptjs';
+import { getUserByEmail } from '@/app/database/querys';
 
 /***************Innlogging*******************/
 // Funksjon for å håndtere skjemainnsending
@@ -18,7 +22,6 @@ export const handleLoginSubmit = async (formData) => {
     } else {
       console.log('Feil passord');
     }
-
 
     // Logger inn med userCredentials
     try {

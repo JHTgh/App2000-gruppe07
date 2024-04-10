@@ -25,14 +25,14 @@ export async function queryBrukerNavn(uID){
     }
 }
   
-  export async function queryBrukerScore(uID){
-    
+export async function queryBrukerScore(uID){
+
     const queryTilScoreCollection = query(
-      collection(db, 'testRes'), 
+        collection(db, 'testRes'), 
         where('uid', '==', uID)
     );
     const snapshot = await getDocs(queryTilScoreCollection);
-    
+
     if(snapshot.empty){
         console.log('score ikke funnet');
         return null;
@@ -56,22 +56,44 @@ export async function queryBrukerNavn(uID){
         console.log(error);
         return null;
     }
+}
+export async function queryBrukerEmail(uID){
+    const queryTilBrukerCollection = query(
+        collection(db, 'users'), 
+            where('uid', '==', uID)
+        );
+    const snapshot = await getDocs(queryTilBrukerCollection);
 
-
-    /*
-    const queryTilScoreCollection = query(
-      collection(db, 'testRes'),
-        where('uid', '==', uID)
-    );
-    // vi har hentet score og matcher med uid
-    const querySnapshot = await getDoc(queryTilScoreCollection);
-    // i hele dette dokumentet ligger det også en uid som vi ikke ønsker å returnere
-    const score = [];
-    
-    for (let i = 0; i < 5; i++) {
-      score.push(brukerScore[i]);
+    if(snapshot.empty){
+        console.log('bruker ikke funnet');
+        return null;
     }
-  
-    return score;
-    */
-  }
+    try{
+        const email = snapshot.docs[0].data().email;
+        console.log('email: ' + email);
+        return email;
+    } catch(error){
+        console.log(error);
+        return null;
+    }
+}
+export async function getUserByEmail(email){
+    const queryTilBedriftCollection = query(
+        collection(db, 'bedrift'), 
+            where('email', '==', email)
+        );
+    const snapshot = await getDocs(queryTilBedriftCollection);
+
+    if(snapshot.empty){
+        console.log('bruker ikke funnet');
+        return null;
+    }
+    try{
+        const user = snapshot.docs[0].data();
+        console.log('user: ' + user);
+        return user;
+    } catch(error){
+        console.log(error);
+        return null;
+    }
+}
