@@ -25,7 +25,7 @@ function validateInput(data) {
   return { isValid: errors.length === 0, errorMessages: errors };
 }
 
-export default function oppretteBruker() {
+export default function Signup() {
   const [suksess, setSuksess] = useState(false);
   const [formData, setFormData] = useState({
     bedriftNavn: "",
@@ -44,8 +44,8 @@ export default function oppretteBruker() {
     setValidation(validationResult);
     if (validationResult.isValid) {
       // Prøver å registrere bruker
-      await handleRegSubmit(formData);
-      setSuksess(true);
+      const svar = await handleRegSubmit(formData);
+      setSuksess(svar.suksess);
     }
   };
 
