@@ -1,10 +1,10 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import Gratis from "@/public/gratis.png";
-import Vitenskaplig from "@/public/vitenskaplig.png";
-import Test from "@/public/statistikk.png";
-import Åpen from "@/public/åpen.png";
+import Mann from "@/public/mann.jpg";
+import Dame from "@/public/dame.jpg";
+import Test from "@/public/testing.jpg";
+import Gruppe from "@/public/gruppe.jpg";
 
 export default function Home() {
   return (
@@ -38,9 +38,9 @@ export default function Home() {
       <div className={styles.flexTo}>
         <div className={styles.flexVenstreTo}>
         <Image
-            src={Åpen}
+            src={Gruppe}
             priority={true}
-            alt="Åpen"
+            alt="Gruppe"
             className={styles.images}
           ></Image>
           <h2>BigFive Personlighetstest</h2>
@@ -52,9 +52,9 @@ export default function Home() {
         </div>
         <div className={styles.flexMidtTo}>
         <Image
-            src={Gratis}
+            src={Mann}
             priority={true}
-            alt="Gratis"
+            alt="Mann"
             className={styles.images}
           ></Image> 
           <h2>Sammenlign ansatte eller arbeidssøkere ved rekrutering</h2>
@@ -69,10 +69,10 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.flexHøyreTo}>
-        <Image
-            src={Vitenskaplig}
+          <Image
+            src={Dame}
             priority={true}
-            alt="Vitenskaplig"
+            alt="Dame"
             className={styles.images}
           ></Image> 
           <h2>Registrer deg nå for å bygge et sterkere team!</h2>
@@ -86,6 +86,22 @@ export default function Home() {
           </p>
         </div>
       </div>
+        <div className={styles.text}>
+          <h2>Velg Smart!</h2>
+          <p>
+            BigFive tilbyr bedrifter en effektiv løsning 
+            for å forbedre rekrutteringsprosessen. 
+            Ved å bruke vår plattform kan bedrifter få innsikt i 
+            kandidatenes personlighetsegenskaper, noe som hjelper 
+            dem med å velge de rette kandidatene som passer godt 
+            inn i deres arbeidsmiljø og bedriftskultur. 
+          </p>
+          <p>
+            Vår personlighetstest gir bedrifter verktøyene de trenger 
+            for å ta velinformerte beslutninger og bygge en sterkere 
+            og mer produktiv arbeidsstyrke.
+          </p>
+        </div>
     </main>
   );
 }
