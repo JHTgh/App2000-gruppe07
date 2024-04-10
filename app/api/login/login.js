@@ -2,40 +2,51 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, getDocs, query, where, getDoc } from "firebase/firestore";
 import { db } from '../../database/firebase';
 import bcryptjs from 'bcryptjs';
-import { getUserByEmail } from '@/app/database/querys';
+import { getUserByEmailPromise } from '@/app/database/querys';
 
 /***************Innlogging*******************/
 // Funksjon for å håndtere skjemainnsending
 export const handleLoginSubmit = async (formData) => {
-    
-    const email = formData.email;
-    const password = formData.password;
 
-    // Hent det krypterte passordet fra databasen
-    const bruker = await getUserByEmail(email);
-    const encryptedPassword = bruker.password;
+  const email = formData.email;
+  const password = formData.password;
 
-    // Sjekker om kryptert passer er likt i databasen
-    const hashedPassword = await bcryptjs.hash(password, 10);
-    if (await bcryptjs.compare(hashedPassword, encryptedPassword)) {
-        console.log('riktig passord');
-    } else {
-      console.log('Feil passord');
-    }
+   // Hent brukeren fra databasen
+  const bruker = await getUserByEmailPromise(email);
+  if (!bruker) {
+    return { suksess: false, error: "Bruker ikke funnet" };
+  }
 
-    // Logger inn med userCredentials
-    try {
-      const auth = getAuth();
-      signInWithEmailAndPassword(auth, email, hashedPassword)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          console.log('user: ' + user);
-        })
-        console.log('Innlogging vellykket');
-        console.log(auth?.currentUser?.email);
-    } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-    }
+  // dette betyr at bruker finnes i bedrift database og vi kan gå videre
+
+  // Logg inn brukeren
+  try {
+    console.log(email, password);
+    const auth = getAuth();
+    console.log(auth);
+
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log("Innlogging vellykket - bruker: ", userCredential.user);
+    return { suksess: true, error: "Innlogging vellykket" };
+  
+  } catch (error) {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  console.log(errorCode, errorMessage);
+
+  let feilmelding = "Feil ved innlogging";
+  switch (errorCode) {
+    case "auth/wrong-password":
+      feilmelding = "Feil passord";
+      break;
+    case "auth/user-not-found":
+      feilmelding = "Bruker ikke funnet";
+      break;
+    default:
+      break;
+  }
+
+  return { suksess: false, error: feilmelding };
+}
+
 }

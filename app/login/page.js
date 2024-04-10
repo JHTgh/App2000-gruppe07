@@ -5,19 +5,20 @@ import { useState } from "react";
 
 
 function validerData(formData) {
-  const errors = {};
+  const errors = [];
   if (!formData.email) {
-    errors.email = "Email is required";
+    errors.push ("Email is required");
   }
   if (!formData.password) {
-    errors.password = "Password is required";
+    errors.push("Password is required");
   }
-  return errors;
+  return {isValid: errors.length === 0, errorMesg: errors};
 }
 
 export default function Login () {
 
   const [suksess, setSuksess] = useState(false);
+  const [inlogMessage, setInlogMessage] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -31,13 +32,19 @@ export default function Login () {
   const [validation, setValidation] = useState({ isValid: true, errorMessages: [] });
 
   const handleSubmit = async (event) => {
+    console.log("logging in...");
     event.preventDefault();
+
     const validationResult = validerData(formData);
+    console.log('inndata valideres')
     setValidation(validationResult);
+    console.log(validationResult)
     if (validationResult.isValid) {
+      console.log('inndata er gyldig - vendter på innlogging fra backend')
       // Prøver å logge inn bruker
       const svar = await handleLoginSubmit(formData);
       setSuksess(svar.suksess);
+      setInlogMessage(svar.error);
     }
   };
 
@@ -52,7 +59,7 @@ export default function Login () {
             </h3>
             {suksess && (
               <div className={styles.successMessage}>
-                Suksess! Profilen din er opprettet.
+                Suksess! Du er logget inn.
               </div>
             )}
 
@@ -77,6 +84,13 @@ export default function Login () {
             <div>
               <button type="submit">Log in</button>
             </div>
+
+            {inlogMessage !== "" || !validation.isValid ? (
+              <div className={styles.errorMessage}>
+                {inlogMessage}
+                {validation.errorMesg}
+              </div>
+            ): null}
           </div>
         </form>
       </div>

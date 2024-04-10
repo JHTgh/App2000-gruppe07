@@ -97,3 +97,29 @@ export async function getUserByEmail(email){
         return null;
     }
 }
+
+export function getUserByEmailPromise(email) {
+    return new Promise((resolve, reject) => {
+      const queryTilBedriftCollection = query(
+        collection(db, "bedrift"),
+        where("email", "==", email)
+      );
+  
+      getDocs(queryTilBedriftCollection)
+        .then((snapshot) => {
+          if (snapshot.empty) {
+            reject("Bruker ikke funnet");
+          }
+  
+          try {
+            const user = snapshot.docs[0].data();
+            resolve(user);
+          } catch (error) {
+            reject(error);
+          }
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  }

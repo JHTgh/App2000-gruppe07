@@ -18,11 +18,9 @@ export const handleRegSubmit = async (formData) => {
   console.log('email: ' + email + ' password: ' + password + ' bedriftNavn: ' + bedriftNavn);
 
   try {
-
-    const hashedPassword = await bcryptjs.hash(password, 10);
     // Oppretter brukerkonto i Firebase Authentication
     
-    const userCredential = await createUserWithEmailAndPassword(auth, email, hashedPassword);
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
     // Lagre brukeropplysninger i Firestore
@@ -35,6 +33,7 @@ export const handleRegSubmit = async (formData) => {
       dato: new Date(),
     
     });
+
     return {suksess: true};
 
   } catch (error) {
