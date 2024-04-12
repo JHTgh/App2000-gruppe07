@@ -123,3 +123,11 @@ export function getUserByEmailPromise(email) {
         });
     });
   }
+
+  export async function finnAnsatteBedrift (bedriftId) {
+    const queryTilBedriftCollection = query(
+      collection(db, 'ansatte'),
+      where('companyId', '==', bedriftId)
+    );
+    return getDocs(queryTilBedriftCollection);
+  }

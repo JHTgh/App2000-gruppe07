@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { db } from "../database/firebase";
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
+import {finnAnsatteBedrift} from "../database/querys";
+
+
 
 
 
@@ -51,7 +54,7 @@ const EmployeeForm = ({ bedriftId }) => {
       await addDoc(testResultCollection, testResultsData);
 
       // Legger til data om ansatt
-      await addDoc(ansatteCollection, employeeWithCompany);
+     // await addDoc(ansatteCollection, employeeWithCompany);
       // Blanker ut form etter en bruker er opprettet. 
       setEmployeeData({
         name: '',
@@ -83,67 +86,12 @@ const EmployeeForm = ({ bedriftId }) => {
   );
 };
 
-/*const ansattListe = ({ bedriftId }) => {
-  const [ansatte, setAnsatte] = useState([]);
-
-  useEffect(() => {
-    const finnAlleAnsatte = async () => {
-      if (!bedriftId) {
-        console.error('BedriftId is null, can not fetch employees');
-        return;
-      }
-
-      try {
-        const ansatteQuery = query(
-          collection(db, 'ansatte'),
-          where('companyId', '==', bedriftId),
-        );
-        const querySnapshot = await getDocs(ansatteQuery);
-
-        const aListe = [];
-        if (querySnapshot === null) {
-          throw new Error('QuerySnapshot is null');
-        }
-        querySnapshot.forEach((doc) => {
-          if (doc === null || !doc.data()) {
-            throw new Error('Encountered null data when fetching employees');
-          }
-
-          aListe.push(doc.data());
-        });
-
-        setAnsatte(aListe);
-      } catch (error) {
-        console.error('Error fetching employees: ', error);
-      }
-    };
-
-    finnAlleAnsatte();
-  }, [bedriftId]);
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '50%', padding: '20px', border: '1px solid #ccc' }}>
-      <h2>Employee List</h2>
-      <ul>
-        {ansatte.map((ansatt, index) => (
-          <li key={index}>
-            <strong>Name:</strong> {ansatt.name} | <strong>Email:</strong> {ansatt.email}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-*/
-/*
- <label htmlFor="testId" style={{ marginBottom: '10px' }}>TestId:</label>
-      <input type="text" id="testId" value={employeeData.testId} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
-*/
 
 
   const DashboardBedrift = () => {
     const [isFormVisible, setFormVisible] = useState(false);
+    const [ansatteListe, setAnsatteListe] = useState([]);
+    const [isListVisible, setIsListVisible] = useState(false);
     const bedriftId = '2UAfkMDJHZR58Uay3pVs1LKPQL22';
     
 
@@ -151,6 +99,24 @@ const EmployeeForm = ({ bedriftId }) => {
   const toggleFormVisibility = () => {
     setFormVisible(!isFormVisible);
   };
+  const toggleListVisibility = () => {
+    setIsListVisible(!isListVisible);
+  };
+
+  finnAnsatteBedrift(bedriftId)
+  .then((querySnapshot) => {
+    const aListe = [];
+    querySnapshot.forEach((doc) => {
+      aListe.push(doc.data());
+    });
+    // Once you have the list of employees, you can display it or use it as needed
+    setAnsatteListe(aListe);
+
+  })
+  .catch((error) => {
+    console.error('Error fetching employees: ', error);
+  });
+
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
@@ -161,14 +127,38 @@ const EmployeeForm = ({ bedriftId }) => {
           <span style={{ fontSize: '3em', color: '#007bff' }}>+</span>
         </div>
         <div>
-            {isFormVisible && (
-                <div>
+          {isFormVisible && (
+            <div>
               <EmployeeForm bedriftId="2UAfkMDJHZR58Uay3pVs1LKPQL22" />
-              </div>
-            )}
+            </div>
+          )}
         </div>
-       </div>
+        <button   style={{
+   padding: '10px 20px',
+    fontSize: '1em',
+    fontWeight: 'bold',
+    color: '#fff',
+    backgroundColor: '#007bff',
+    border: 'none',
+    borderRadius: '5px',
+    marginTop: '20px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+  }} onClick={toggleListVisibility}>
+          {isListVisible ? 'Skjul ansattliste' : 'Vis ansattliste'}
+        </button>
+        {isListVisible && (
+          <ul style={{ listStyleType: 'none', padding: 0, marginTop: '10px' }}>
+            {ansatteListe.map((ansatt, index) => (
+              <li key={index} style={{ marginBottom: '10px', border: '1px solid #ccc', padding: '10px' }}>
+                <strong>Name:</strong> {ansatt.name} | <strong>Email:</strong> {ansatt.email}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
+
 export default DashboardBedrift;
