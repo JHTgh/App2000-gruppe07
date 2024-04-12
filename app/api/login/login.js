@@ -10,6 +10,8 @@ export const handleLoginSubmit = async (formData) => {
 
   const email = formData.email;
   const password = formData.password;
+  console.log('prøver å logge inn ( handleLoginSubmit )');
+  console.log(email, password);
 
    // Hent brukeren fra databasen
   const bruker = await getUserByEmailPromise(email);

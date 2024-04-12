@@ -3,8 +3,34 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/bigFive.png";
 import styles from "./page.module.css";
+import { auth } from "../database/firebase";
+import { logoutSubmit } from "../api/logout/logout";
+
+import { useEffect, useState } from "react";
 
 function Navbar() {
+
+  const[innloggetBruker, setInnloggetBruker] = useState(false)
+  
+  useEffect(() => {
+    const unsub = auth.onAuthStateChanged((user) => {
+      if (user) {
+        console.log('bruker innlogget:');
+        console.log(user);
+        setInnloggetBruker(true);
+      } else {
+        console.log('ingen logget inn');
+        setInnloggetBruker(false);
+      }
+    });
+    return unsub;
+  }, []);
+
+  async function logout() {
+    await logoutSubmit();
+  }
+
+
   return (
     <nav className={styles.navbar}>
       <Link href="/" className={styles.logo}>
@@ -22,14 +48,28 @@ function Navbar() {
           <Link href="/compare">Sammenlign</Link>
         </li>
         <>
-          <li className={styles.navElement}>
-            <Link href="/profil">Profil</Link>
-          </li>
-        </>
-        <>
-          <li className={styles.navElement}>
-            <Link href="/login">Logg inn</Link>
-          </li>
+          {innloggetBruker ? (
+            <>
+            <li className={styles.navElement}>
+              <Link href="/profil">Profil</Link>
+            </li>
+            <li className={styles.navElement}>
+              <Link 
+                onClick={logout} 
+                href="/">
+                  Logg ut
+              </Link>
+            </li>
+            </>
+          ) : (
+            <li className={styles.navElement}>
+              <Link 
+                href="/login">
+                  Logg inn
+              </Link>
+            </li>
+          )}
+          
         </>
       </ul>
     </nav>
