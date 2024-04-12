@@ -30,7 +30,6 @@ function Navbar() {
     await logoutSubmit();
   }
 
-
   return (
     <nav className={styles.navbar}>
       <Link href="/" className={styles.logo}>
