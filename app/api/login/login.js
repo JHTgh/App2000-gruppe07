@@ -10,14 +10,8 @@ export const handleLoginSubmit = async (formData) => {
 
   const email = formData.email;
   const password = formData.password;
-
-   // Hent brukeren fra databasen
-  const bruker = await getUserByEmailPromise(email);
-  if (!bruker) {
-    return { suksess: false, error: "Bruker ikke funnet" };
-  }
-
-  // dette betyr at bruker finnes i bedrift database og vi kan gå videre
+  console.log('prøver å logge inn ( handleLoginSubmit )');
+  console.log(email, password);
 
   // Logg inn brukeren
   try {
