@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { handleRegSubmit } from "../api/signup/signup";
 import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 function validateInput(data) {
   const errors = [];
@@ -33,6 +34,7 @@ export default function Signup() {
     password: "",
   });
   const [validation, setValidation] = useState({ isValid: true, errorMessages: [] });
+  const naviger = useRouter();
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
@@ -46,6 +48,9 @@ export default function Signup() {
       // Prøver å registrere bruker
       const svar = await handleRegSubmit(formData);
       setSuksess(svar.suksess);
+      if(svar.suksess) {
+        naviger.push('/dashbord2');
+      }
     }
   };
 

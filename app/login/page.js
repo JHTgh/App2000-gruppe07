@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { handleLoginSubmit } from "../api/login/login";
 import styles from "./page.module.css";
 import { useState } from "react";
@@ -16,13 +17,14 @@ function validerData(formData) {
 }
 
 export default function Login () {
-
+  const router = useRouter();
   const [suksess, setSuksess] = useState(false);
   const [inlogMessage, setInlogMessage] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
+  
 
 
   const handleChange = (event) => {
@@ -45,10 +47,11 @@ export default function Login () {
       const svar = await handleLoginSubmit(formData);
       setSuksess(svar.suksess);
       setInlogMessage(svar.error);
+      if(svar.suksess) {
+        router.push('/dashbord2');
+      }
     }
   };
-
-
 
     return (
       <div className={styles.flexbox}>
