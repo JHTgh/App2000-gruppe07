@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 async function hentBrukerID() {
+
   return new Promise((resolve) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {

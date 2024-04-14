@@ -7,16 +7,16 @@ function Sidebar() {
         <nav className={styles.sidebar}>
             <ul className={styles.links}>
                 <li className={styles.navElement}>
-                <Link href="/dashbord2">Hjem?</Link>
+                <Link href="/dashboard">Hjem?</Link>
                 </li>
                 <li className={styles.navElement}>
-                <Link href="/dashbord2">Profiler?</Link>
+                <Link href="/dashboard/leggTil">Profiler?</Link>
                 </li>
                 <li className={styles.navElement}>
-                <Link href="/dashbord2">Lister?</Link>
+                <Link href="/dashboard">Lister?</Link>
                 </li>
                 <li className={styles.navElement}>
-                <Link href="/dashbord2">Sammenlign?</Link>
+                <Link href="/dashboard">Sammenlign?</Link>
                 </li>
             </ul>
         </nav>

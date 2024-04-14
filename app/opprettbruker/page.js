@@ -49,7 +49,7 @@ export default function Signup() {
       const svar = await handleRegSubmit(formData);
       setSuksess(svar.suksess);
       if(svar.suksess) {
-        naviger.push('/dashbord2');
+        naviger.push('/dashboard');
       }
     }
   };

@@ -50,7 +50,7 @@ function Navbar() {
           {innloggetBruker ? (
             <>
             <li className={styles.navElement}>
-              <Link href="/dashbord2">Profil</Link>
+              <Link href="/dashboard">Profil</Link>
             </li>
             <li className={styles.navElement}>
               <Link 

@@ -48,7 +48,7 @@ export default function Login () {
       setSuksess(svar.suksess);
       setInlogMessage(svar.error);
       if(svar.suksess) {
-        router.push('/dashbord2');
+        router.push('/dashboard');
       }
     }
   };
