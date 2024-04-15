@@ -1,9 +1,11 @@
 'use client';
 import { hentTestTilDatabase } from '@/app/api/big5/hentTestTilDatabase';
 import { useEffect, useState } from 'react';
-import { userUId } from '../layout';
+import { userUId } from '../../layout';
 
 export default function YourComponent() {
+
+    // IKKE FERDIG
 
     const id = '58a70606a835c400c8b38e84';
     const [data, setData] = useState(null);
