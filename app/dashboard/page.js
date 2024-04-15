@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 import { queryBedriftNavn } from '@/app/api/querys/bedrift/queryBedrifNavn'; 
 import { userUId } from './layout';
 
+
 export default function Dashboard() {
     const [bruker, setBruker] = useState(null);
     const [feil, setFeil] = useState(null);
+
     
     useEffect(() => {
         const hentBrukerData = async () => {
@@ -24,22 +26,23 @@ export default function Dashboard() {
     }, []);
 
 
+
     if (!bruker && !feil) {
-    return (
-        <div>
-            <h1>Velkommen</h1>
-            <p>Laster inn...</p>
-        </div>
-    );
+        return (
+            <div>
+                <h1>Velkommen</h1>
+                <p>Laster inn...</p>
+            </div>
+        );
     }
 
     if (feil) {
-    return (
-        <div>
-            <h1>Feil</h1>
-            <p>{feil.message}</p>
-        </div>
-    );
+        return (
+            <div>
+                <h1>Feil</h1>
+                <p>{feil.message}</p>
+            </div>
+        );
     }
 
     return (
@@ -49,3 +52,4 @@ export default function Dashboard() {
         </div>
     );
 }
+
