@@ -1,5 +1,4 @@
 .main {
-  padding: 2%;
   height: auto;
 }
 
@@ -7,13 +6,13 @@
   display: flex;
   flex-direction: row;
   margin-top: 2%;
-  text-align: center;
+  background-color: #6FE3FF;
+  box-shadow: 0 0 10px grey;
 }
 
-.flexVenstreEn,
-.flexHøyreEn {
+.flexVenstreEn, .flexHøyreEn {
   flex: 1;
-  padding: 0 5%;
+  margin: 1% 1% 1% 1% ;
 }
 
 .images {
@@ -21,144 +20,138 @@
   height: auto;
 }
 
-.flexHøyreEn h1 {
-  font-size: 1.5vw;
-  padding-top: 7.5%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+.flexVenstreEn h1 {
+  font-size: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 7vw;
+  margin-left: 2vw;
 }
 
-.flexHøyreEn p {
-  font-size: 1.25vw;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding: 5% 25% 3% 25%;
+.flexVenstreEn p {
+  font-size: 1.2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2vw;
 }
 
-.flexHøyreEn ul li {
+.flexVenstreEn ul li {
   list-style: none;
+  margin-top: 4vw;
+  text-align: center;
 }
 
-.flexHøyreEn ul li a {
+.flexVenstreEn ul li a {
   list-style: none;
   text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  background-color: #cb9e58;
-  color: black;
+  font-size: 1.25vw;
+  padding: 1.1rem;
+  border-radius: 1rem;
+  background-color:#273746 ;
+  color: white;
   margin-bottom: 0.5rem;
+  box-shadow: 0 0 10px black;
 }
 
 .flexTo {
   display: flex;
-  flex-direction: row-reverse;
-  margin-top: 2%;
-  text-align: center;
+  padding-top: 5%;
 }
 
-.flexVenstreTo,
-.flexHøyreTo {
+.flexVenstreTo, .flexMidtTo, .flexHøyreTo {
   flex: 1;
-  padding: 0 5%;
+  background-color: #D8F6FF;
+  border-radius: 1rem;
+  margin: 1vw 3.5vw 5vw 3.5vw;
+  box-shadow: 0 0 10px grey;
 }
 
-.flexHøyreTo h1 {
-  font-size: 1.5vw;
-  padding-top: 7.5%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+.flexVenstreTo h2, .flexMidtTo h2, .flexHøyreTo h2 {
+  text-align: center;
+  font-size: 1.3vw;
 }
 
-.flexHøyreTo p {
-  font-size: 1.25vw;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding: 5% 25% 3% 25%;
-}
-
-.flexHøyreTo ul li {
-  list-style: none;
-}
-
-.flexHøyreTo ul li a {
-  list-style: none;
-  text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  background-color: #cb9e58;
-  color: black;
-  margin-bottom: 0.5rem;
+.flexVenstreTo p, .flexMidtTo p, .flexHøyreTo p {
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .flexTre {
   display: flex;
-  flex-direction: row;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  text-align: center;
+}
+.text {
+  background-color: #D8F6FF;
+  border-radius: 1rem;
+  margin: 1vw 36vw 5vw 3.5vw;
+  box-shadow: 0 0 10px grey;
+  padding: 1vw 1vw 1vw 1vw;
 }
 
-.flexVenstreTre,
-.flexHøyreTre {
-  flex: 1;
-  padding: 0 5%;
+.text h2 {
+  font-size: 2vw;
 }
 
-.flexHøyreTre h1 {
+.text p{
   font-size: 1.5vw;
-  padding-top: 7.5%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
-.flexHøyreTre p {
-  font-size: 1.25vw;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding: 5% 10% 3% 10%;
-}
-
 /*telefon format*/
 @media (max-width: 480px) {
   .flexEn {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding-bottom: 5%;
+    
   }
 
-  .flexHøyreEn h1 {
+  .flexVenstreEn h1 {
+    font-size: 4vw;
+    margin-top: 0vw;
+  }
+
+  .flexVenstreEn p {
     font-size: 3vw;
+    padding: 2% 10% 2.5% 3%;
   }
 
-  .flexHøyreEn p {
+  .flexVenstreEn ul li {
+    margin: 0vw 0vw 0vw 35vw;
+  }
+  
+  .flexVenstreEn ul li a {
     font-size: 3vw;
-    padding: 2% 25% 2.5% 25%;
+    padding: 1.1rem;
+    border-radius: 1rem;
+    background-color:#273746 ;
+    color: white;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 10px black;
   }
-
   .flexTo {
     flex-direction: column;
-    padding-bottom: 5%;
+    padding-top: 10vw;
   }
 
-  .flexHøyreTo h1 {
+  .flexVenstreTo, .flexMidtTo, .flexHøyreTo {
+    margin: 1vw 0vw 5vw 0vw;
+  }
+  
+  .flexVenstreTo h2, .flexMidtTo h2, .flexHøyreTo h2 {
+    font-size: 4vw;
+  }
+  
+  .flexVenstreTo p, .flexMidtTo p, .flexHøyreTo p {
+    padding: 0vw 2vw 0vw 2vw;
     font-size: 3vw;
   }
 
-  .flexHøyreTo p {
-    font-size: 3vw;
-    padding: 2% 25% 2.5% 25%;
+  .text {
+    margin: 1vw 0vw 5vw 0vw;
+    padding: 3vw 3vw 3vw 3vw;
   }
-
-  .flexTre {
-    flex-direction: column;
-    padding-bottom: 5%;
+  
+  .text h2 {
+    font-size: 4vw;
   }
-
-  .flexHøyreTre h1 {
-    font-size: 3vw;
+  
+  .text p{
+    font-size: 3.5vw;
   }
-
-  .flexHøyreTre p {
-    font-size: 3vw;
-    padding: 2% 25% 2.5% 25%;
-  }
+  
 }
