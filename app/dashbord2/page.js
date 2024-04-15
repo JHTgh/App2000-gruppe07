@@ -48,4 +48,6 @@ export default function DashboardBedrift() {
             <p>{bruker}</p>
         </div>
     );
+    
 }
+
