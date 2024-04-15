@@ -3,99 +3,110 @@ import { useRouter } from "next/navigation";
 import { handleLoginSubmit } from "../api/login/login";
 import styles from "./page.module.css";
 import { useState } from "react";
-
+import Link from "next/link";
 
 function validerData(formData) {
   const errors = [];
   if (!formData.email) {
-    errors.push ("Email is required");
+    errors.push("Email is required");
   }
   if (!formData.password) {
     errors.push("Password is required");
   }
-  return {isValid: errors.length === 0, errorMesg: errors};
+  return { isValid: errors.length === 0, errorMesg: errors };
 }
 
-export default function Login () {
+export default function Login() {
   const router = useRouter();
   const [suksess, setSuksess] = useState(false);
   const [inlogMessage, setInlogMessage] = useState("");
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
   });
-  
-
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 
-  const [validation, setValidation] = useState({ isValid: true, errorMessages: [] });
+  const [validation, setValidation] = useState({
+    isValid: true,
+    errorMessages: [],
+  });
 
   const handleSubmit = async (event) => {
     console.log("logging in...");
     event.preventDefault();
 
     const validationResult = validerData(formData);
-    console.log('inndata valideres')
+    console.log("inndata valideres");
     setValidation(validationResult);
-    console.log(validationResult)
+    console.log(validationResult);
     if (validationResult.isValid) {
-      console.log('inndata er gyldig - vendter på innlogging fra backend')
+      console.log("inndata er gyldig - vendter på innlogging fra backend");
       // Prøver å logge inn bruker
       const svar = await handleLoginSubmit(formData);
       setSuksess(svar.suksess);
       setInlogMessage(svar.error);
-      if(svar.suksess) {
-        router.push('/dashbord2');
+      if (svar.suksess) {
+        router.push("/dashbord2");
       }
     }
   };
 
-    return (
-      <div className={styles.flexbox}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.container}>
-            <h3>
-              Log In
-            </h3>
-            {suksess && (
-              <div className={styles.successMessage}>
-                Suksess! Du er logget inn.
-              </div>
-            )}
-
-            <label htmlFor="email" id="email">
-              Email:
-            </label>
-            <input 
-              type="email" id="email" 
-              value={formData.email}
-              onChange={handleChange}
-              required />
-            <label htmlFor="password" id="password">
-              Password:
-            </label>
-            <input 
-              type="password" 
-              id="password" 
-              value={formData.password}
-              onChange={handleChange}
-              required />
-            <br />
-            <div>
-              <button type="submit">Log in</button>
+  return (
+    <div className={styles.pageContainer}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.formContainer}>
+          {suksess && (
+            <div className={styles.successMessage}>
+              Suksess! Du er logget inn.
             </div>
+          )}
+          <h1>Logg inn</h1>
+          <input
+            className={styles.textfieldEmail}
+            type="email"
+            placeholder="Epost"
+            id="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-            {inlogMessage !== "" || !validation.isValid ? (
-              <div className={styles.errorMessage}>
-                {inlogMessage}
-                {validation.errorMesg}
-              </div>
-            ): null}
+          <input
+            className={styles.textfieldPw}
+            type="password"
+            placeholder="Passord"
+            id="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <Link href="/" className={styles.link}>
+            Glemt passord?
+          </Link>
+          <br />
+          <div>
+            <button type="submit" className={styles.loginBtn}>
+              Logg inn
+            </button>
+            <p>
+              Har du ikke brukerkonto?{" "}
+              <Link href="/opprettbruker" className={styles.link}>
+                Opprett bruker
+              </Link>
+            </p>
           </div>
-        </form>
-      </div>
-    )
+
+          {inlogMessage !== "" || !validation.isValid ? (
+            <div className={styles.errorMessage}>
+              {inlogMessage}
+              {validation.errorMesg}
+            </div>
+          ) : null}
+        </div>
+      </form>
+    </div>
+  );
 }

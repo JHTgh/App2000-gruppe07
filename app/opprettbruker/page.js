@@ -3,6 +3,7 @@ import { useState } from "react";
 import { handleRegSubmit } from "../api/signup/signup";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function validateInput(data) {
   const errors = [];
@@ -33,7 +34,10 @@ export default function Signup() {
     email: "",
     password: "",
   });
-  const [validation, setValidation] = useState({ isValid: true, errorMessages: [] });
+  const [validation, setValidation] = useState({
+    isValid: true,
+    errorMessages: [],
+  });
   const naviger = useRouter();
 
   const handleChange = (event) => {
@@ -48,14 +52,14 @@ export default function Signup() {
       // Prøver å registrere bruker
       const svar = await handleRegSubmit(formData);
       setSuksess(svar.suksess);
-      if(svar.suksess) {
-        naviger.push('/dashbord2');
+      if (svar.suksess) {
+        naviger.push("/dashbord2");
       }
     }
   };
 
   return (
-    <div className={styles.flexbox}>
+    <div className={styles.pageContainer}>
       <form className={styles.form} onSubmit={handleSubmit}>
         {suksess && (
           <div className={styles.successMessage}>
@@ -63,98 +67,62 @@ export default function Signup() {
           </div>
         )}
 
-        <div className={styles.container}>
-          <h3>Opprett bedriftskonto</h3>
-          <label htmlFor="bedriftNavn">
-            Bedriftsnavn:{" "}
-            {validation.errorMessages.includes("Bedriftsnavn er påkrevd") && (
-              <span className={styles.error}>*</span>
-            )}
-          </label>
+        <div className={styles.formContainer}>
+          <h1>Opprett bedriftskonto</h1>
+
           <input
             type="text"
+            placeholder="Bedrifts-/Org. navn"
             id="bedriftNavn"
             value={formData.bedriftNavn}
             onChange={handleChange}
-            className={
-              validation.errorMessages.includes("Bedriftsnavn er påkrevd")
-                ? styles.errorInput
-                : ""
-            }
+            className={styles.textfieldBedrift}
           />
-          {validation.errorMessages.includes("Bedriftsnavn er påkrevd") && (
-            <p className={styles.errorMessage}>
-              {validation.errorMessages[0]}
-            </p>
-          )}
-  
-          <label htmlFor="email">
-            E-postadresse:{" "}
-            {validation.errorMessages.includes("Ugyldig e-postadresse") && (
-              <span className={styles.error}>*</span>
-            )}
-          </label>
+
           <input
             type="email"
+            placeholder="Epost"
             id="email"
             value={formData.email}
             onChange={handleChange}
-            className={
-              validation.errorMessages.includes("Ugyldig e-postadresse")
-                ? styles.errorInput
-                : ""
-            }
+            className={styles.textfieldEmail}
           />
-          {validation.errorMessages.includes("Ugyldig e-postadresse") && (
-            <p className={styles.errorMessage}>
-              {validation.errorMessages[0]}
-            </p>
-          )}
-  
-          <label htmlFor="password">
-            Passord:{" "}
-            {validation.errorMessages.includes("Passordet må være minst 6 tegn") && (
-              <span className={styles.error}>*</span>
-            )}
-            {validation.errorMessages.includes("Passordet må inneholde minst én bokstav") && (
-              <span className={styles.error}>*</span>
-            )}
-            {validation.errorMessages.includes("Passordet må inneholde minst ett tall") && (
-              <span className={styles.error}>*</span>
-            )}
-          </label>
+
           <input
             type="password"
+            placeholder="Passord"
             id="password"
             value={formData.password}
             onChange={handleChange}
-            className={
-              validation.errorMessages.includes("Passordet må være minst 6 tegn") ||
-              validation.errorMessages.includes("Passordet må inneholde minst én bokstav") ||
-              validation.errorMessages.includes("Passordet må inneholde minst ett tall")
-                ? styles.errorInput
-                : ""
-            }
+            className={styles.textfieldPw}
           />
-          {validation.errorMessages.includes("Passordet må være minst 6 tegn") && (
-            <p className={styles.errorMessage}>
-              {validation.errorMessages[1]}
-            </p>
+          {validation.errorMessages.includes(
+            "Passordet må være minst 6 tegn"
+          ) && (
+            <p className={styles.errorMessage}>{validation.errorMessages[1]}</p>
           )}
-          {validation.errorMessages.includes("Passordet må inneholde minst én bokstav") && (
-            <p className={styles.errorMessage}>
-              {validation.errorMessages[2]}
-            </p>
+          {validation.errorMessages.includes(
+            "Passordet må inneholde minst én bokstav"
+          ) && (
+            <p className={styles.errorMessage}>{validation.errorMessages[2]}</p>
           )}
-          {validation.errorMessages.includes("Passordet må inneholde minst ett tall") && (
-            <p className={styles.errorMessage}>
-              {validation.errorMessages[3]}
-            </p>
+          {validation.errorMessages.includes(
+            "Passordet må inneholde minst ett tall"
+          ) && (
+            <p className={styles.errorMessage}>{validation.errorMessages[3]}</p>
           )}
-  
+
           <br />
           <div>
-            <button type="submit">Opprett konto</button>
+            <button type="submit" className={styles.regBtn}>
+              Opprett konto
+            </button>
+            <p>
+              Har du allerede konto?{" "}
+              <Link href="/login" className={styles.link}>
+                Logg inn her
+              </Link>
+            </p>
           </div>
         </div>
       </form>
