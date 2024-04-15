@@ -6,28 +6,94 @@ import {finnAnsatteBedrift} from "../../database/querys";
 import { userUId } from "../layout";
 import { EmployeeForm } from '@/app/components/employeeForm';
 
-  const ProfilListe = () => {
-    const [isFormVisible, setFormVisible] = useState(false);
-    const [ansatteListe, setAnsatteListe] = useState([]);
-    const [isListVisible, setIsListVisible] = useState(false);
-    const [bedriftId, setBedriftId] = useState(null);
+export const EmployeeForm = ({ bedriftId }) => {
+  const [employeeData, setEmployeeData] = useState({
+    name: '',
+    email: '',
+    address: '',
+    testId: ''
+  });
+
+
+  const handleChange = (e) => {
+      setEmployeeData({
+        ...employeeData,
+        [e.target.id]: e.target.value
+      });
+    };
     
-    // bruker id kan bruke litt tid på å bli hentet derfor må vi ha det i en suspense (useEffect)
-    useEffect(() => {
-      const hentBrukerData = async () => {
-          const uId = await userUId; // Vente på IDen
-          setBedriftId(uId);
-          console.log('uID: (leggTil - page) ' + uId);
-      };
-  
-      hentBrukerData();
-  }, []);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
 
-  if(!bedriftId) {
-    return <div>Loading...</div>;
+      const ansatteCollection = collection(db, 'ansatte');
+
+      
+    // Putter inn firma som FK til ansatt. 
+      const employeeWithCompany = {
+      ...employeeData,
+      companyId: bedriftId
+    };
+    
+   const newEmployeeRef = await addDoc(ansatteCollection, employeeWithCompany);
+   /*const newEmployeeRefId = newEmployeeRef.id;
+
+    const testResultCollection = collection (db, "testResults");
+
+    const testResultsData = {
+      Ekstroversjon: Math.floor(Math.random()*101),
+      Nevrotisisme: Math.floor(Math.random()*101),
+      Samhandling: Math.floor(Math.random()*101),
+      Selvinnsikt: Math.floor(Math.random()*101),
+      Tillit: Math.floor(Math.random()*101),
+      ansattId: newEmployeeRef.id
+    }
+    */
+
+    //await addDoc(testResultCollection, testResultsData);
+
+    // Legger til data om ansatt
+   // await addDoc(ansatteCollection, employeeWithCompany);
+    // Blanker ut form etter en bruker er opprettet. 
+    setEmployeeData({
+      name: '',
+      email: '',
+      address: '',
+      //testId: '',
+
+    });
+  } catch (error) {
+    console.error('Error adding employee: ', error);
   }
+}
+
+return (
+  <form onSubmit = {handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '20px', padding: '20px', border: '1px solid #eee', borderRadius: '10px', backgroundColor: '#f9f9f9' }}>
+  <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <label htmlFor="name" style={{ marginBottom: '10px' }}>Name:</label>
+    <input type="text" id="name" value={employeeData.name} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
+    <label htmlFor="email" style={{ marginBottom: '10px' }}>Email:</label>
+    <input type="email" id="email" value={employeeData.email} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <label htmlFor="address" style={{ marginBottom: '10px' }}>Address:</label>
+    <input type="text" id="address" value={employeeData.address} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
+   <label htmlFor="testId" style={{ marginBottom: '10px' }}>TestId:</label>
+    <input type="text" id="testId" value={employeeData.testId} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
+    <button type="submit">Add Employee</button>
+  </div>
+</form>
+);
+};
 
 
+
+
+
+export const DashboardBedrift = ({bedriftId}) => {
+  const [isFormVisible, setFormVisible] = useState(false);
+  const [ansatteListe, setAnsatteListe] = useState([]);
+  const [isListVisible, setIsListVisible] = useState(false);
   const toggleFormVisibility = () => {
     setFormVisible(!isFormVisible);
   };
@@ -48,8 +114,36 @@ import { EmployeeForm } from '@/app/components/employeeForm';
   .catch((error) => {
     console.error('Error fetching employees: ', error);
   });
-
-
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+      <h1 style={{ fontSize: '3em', fontWeight: 'bold', color: '#333', marginBottom: '20px', fontFamily: 'Roboto, sans-serif' }}>Velkommen</h1>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', width: '100%' }}>
+        <div style={{ width: '50%' }}>
+          <h2 style={{ fontSize: '2em', fontWeight: 'bold', color: '#007bff', fontFamily: 'Roboto, sans-serif', marginBottom: '10px' }}>Ansatte Liste</h2>
+          <ul style={{ listStyleType: 'none', padding: 0, marginTop: '10px' }}>
+            {ansatteListe.map((ansatt, index) => (
+              <li key={index} style={{ marginBottom: '10px', border: '1px solid #ccc', padding: '10px' }}>
+                <strong>Name:</strong> {ansatt.name} | <strong>Email:</strong> {ansatt.email}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div style={{ width: '50%' }}>
+          <h2 style={{ fontSize: '4em', fontWeight: 'bold', color: '#007bff', fontFamily: 'Roboto, sans-serif', marginBottom: '10px' }}>Legg til brukere</h2>
+          <div style={{ cursor: 'pointer' }} onClick={toggleFormVisibility}>
+            <span style={{ fontSize: '3em', color: '#007bff' }}>+</span>
+          </div>
+          {isFormVisible && (
+            <div>
+              <EmployeeForm bedriftId={bedriftId} />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+  }
+  /*
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
       <h1 style={{ fontSize: '3em', fontWeight: 'bold', color: '#333', marginBottom: '20px', fontFamily: 'Roboto, sans-serif' }}>Velkommen</h1>
@@ -61,36 +155,46 @@ import { EmployeeForm } from '@/app/components/employeeForm';
         <div>
           {isFormVisible && (
             <div>
-              <EmployeeForm bedriftId="2UAfkMDJHZR58Uay3pVs1LKPQL22" />
+              <EmployeeForm bedriftId={bedriftId}/>
             </div>
           )}
         </div>
-        <button   style={{
-   padding: '10px 20px',
-    fontSize: '1em',
-    fontWeight: 'bold',
-    color: '#fff',
-    backgroundColor: '#007bff',
-    border: 'none',
-    borderRadius: '5px',
-    marginTop: '20px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s',
-  }} onClick={toggleListVisibility}>
-          {isListVisible ? 'Skjul ansattliste' : 'Vis ansattliste'}
-        </button>
-        {isListVisible && (
-          <ul style={{ listStyleType: 'none', padding: 0, marginTop: '10px' }}>
-            {ansatteListe.map((ansatt, index) => (
-              <li key={index} style={{ marginBottom: '10px', border: '1px solid #ccc', padding: '10px' }}>
-                <strong>Name:</strong> {ansatt.name} | <strong>Email:</strong> {ansatt.email}
-              </li>
-            ))}
-          </ul>
-        )}
+
+  <div>
+    <div style={{ float: 'left', width: '50%' }}>
+      <ul style={{ listStyleType: 'none', padding: 0, marginTop: '10px' }}>
+        {ansatteListe.map((ansatt, index) => (
+          <li key={index} style={{ marginBottom: '10px', border: '1px solid #ccc', padding: '10px' }}>
+            <strong>Name:</strong> {ansatt.name} | <strong>Email:</strong> {ansatt.email}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div style={{ float: 'left', width: '50%' }}>
+      {/* Add component goes here *//* 
+    /*</div>
+  </div>
+
       </div>
     </div>
   );
 };
 
-export default ProfilListe;
+export default DashboardBedrift;
+
+/*
+
+<button   style={{padding: '10px 20px', fontSize: '1em',fontWeight: 'bold', color: '#fff', backgroundColor: '#007bff',
+border: 'none', borderRadius: '5px', marginTop: '20px', cursor: 'pointer',
+transition: 'background-color 0.3s',
+}} onClick={toggleListVisibility}>
+  {isListVisible ? 'Skjul ansattliste' : 'Vis ansattliste'}
+</button>
+{isListVisible && (
+  <ul style={{ listStyleType: 'none', padding: 0, marginTop: '10px' }}>
+    {ansatteListe.map((ansatt, index) => (
+      <li key={index} style={{ marginBottom: '10px', border: '1px solid #ccc', padding: '10px' }}>
+        <strong>Name:</strong> {ansatt.name} | <strong>Email:</strong> {ansatt.email}
+      </li>
+    ))}
+  </ul> */
