@@ -4,6 +4,7 @@ import { db } from "../../database/firebase";
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
 import {finnAnsatteBedrift} from "../../database/querys";
 import { userUId } from "../../dashboard/layout";
+import { hentTestTilDatabase } from '@/app/api/big5/hentTestTilDatabase';
 
 export const EmployeeForm = ({ bedriftId }) => {
   const [employeeData, setEmployeeData] = useState({
@@ -35,22 +36,15 @@ export const EmployeeForm = ({ bedriftId }) => {
       };
       
     const newEmployeeRef = await addDoc(ansatteCollection, employeeWithCompany);
-    /*const newEmployeeRefId = newEmployeeRef.id;
+    const newEmployeeRefId = newEmployeeRef.id;
 
-      const testResultCollection = collection (db, "testResults");
-
-      const testResultsData = {
-        Ekstroversjon: Math.floor(Math.random()*101),
-        Nevrotisisme: Math.floor(Math.random()*101),
-        Samhandling: Math.floor(Math.random()*101),
-        Selvinnsikt: Math.floor(Math.random()*101),
-        Tillit: Math.floor(Math.random()*101),
-        ansattId: newEmployeeRef.id
-      }
-      */
-
-      //await addDoc(testResultCollection, testResultsData);
-
+   
+    try{
+      await hentTestTilDatabase(employeeData.testId, newEmployeeRefId);
+    }catch(error){
+      console.error(error);
+    }
+    
       // Legger til data om ansatt
     // await addDoc(ansatteCollection, employeeWithCompany);
       // Blanker ut form etter en bruker er opprettet. 
