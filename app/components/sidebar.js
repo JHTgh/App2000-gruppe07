@@ -10,7 +10,7 @@ function Sidebar() {
                 <Link href="/dashboard">Hjem?</Link>
                 </li>
                 <li className={styles.navElement}>
-                <Link href="/dashboard/leggTil">Profiler?</Link>
+                <Link href="/dashboard/listeAnsatte">Profiler?</Link>
                 </li>
                 <li className={styles.navElement}>
                 <Link href="/dashboard">Lister?</Link>

@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from "../../database/firebase";
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
 import {finnAnsatteBedrift} from "../../database/querys";
-import { userUId } from "../layout";
-import { EmployeeForm } from '@/app/components/employeeForm';
+import { userUId } from "../../dashboard/layout";
 
 export const EmployeeForm = ({ bedriftId }) => {
   const [employeeData, setEmployeeData] = useState({

@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { userUId } from '../dashbord2/layout';
-import { db } from "../database/firebase";
+import { userUId } from '@/app/dashboard/layout';
+import { db } from "../../database/firebase";
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
-import { EmployeeForm, DashboardBedrift } from '../dashboard/page';
+import { EmployeeForm, DashboardBedrift } from '@/app/components/leggTil/page';
 
 export default function listeFremvisning() {
     const [bruker, setBruker] = useState(null);
