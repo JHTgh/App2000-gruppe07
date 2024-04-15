@@ -8,11 +8,12 @@
   .sidenav {
     display: flex;
     flex-direction: column;
-    width: 15vw;
-    height: 25vw;
-    background-color: #EAECEE;
+    width: 20vw;
+    height: 100vh;
+    background-color: #6FE3FF;
     border-right: 1px solid #7d7d7d;
     border-bottom: 1px solid #7d7d7d;
+    box-shadow: 0 0 10px grey;
   }
   
   .sidenav .links {
@@ -23,16 +24,18 @@
     display: block;
     text-decoration: none;
     text-align: left;
-    color: black;
+    background-color: #273746;
+    color: white;
     padding: 0.5vw 0.5vw 0.5vw 0.5vw;
-    margin: 0.5vw 0.5vw 0.5vw 0.5vw;
+    margin: 1vw 0.5vw 0.5vw 0.5vw;
     border-radius: 0.5rem;
-    font-size: 1.5vw;
+    font-size: 1.7vw;
   }
 
   .sidenav .links li a:not(.active):hover {
-    background-color: #cb9e58;
-    color: white;
+    background-color: #D8F6FF;
+    box-shadow: 0 0 10px black;
+    color: #273746;
   }
   
   /*dashboard*/

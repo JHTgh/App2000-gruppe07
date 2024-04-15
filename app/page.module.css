@@ -1,5 +1,5 @@
 .main {
-  height: auto;
+  height: 100vw;
 }
 
 .flexEn {
@@ -7,7 +7,7 @@
   flex-direction: row;
   margin-top: 2%;
   background-color: #6FE3FF;
-  box-shadow: 0 0 10px grey;
+  box-shadow: 0px 4px 10px grey;
 }
 
 .flexVenstreEn, .flexHøyreEn {
@@ -58,7 +58,7 @@
 
 .flexVenstreTo, .flexMidtTo, .flexHøyreTo {
   flex: 1;
-  background-color: #D8F6FF;
+  background-color: #B0E0E6;
   border-radius: 1rem;
   margin: 1vw 3.5vw 5vw 3.5vw;
   box-shadow: 0 0 10px grey;
@@ -78,7 +78,7 @@
   display: flex;
 }
 .text {
-  background-color: #D8F6FF;
+  background-color: #B0E0E6;
   border-radius: 1rem;
   margin: 1vw 36vw 5vw 3.5vw;
   box-shadow: 0 0 10px grey;
