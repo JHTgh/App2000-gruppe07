@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import UserList from '../api/userlist1/userinfo'; // Adjust the import based on your file structure
 
-const sammenligneBrukere = () => {
+function SammenligneBrukere () {
   const [selectedUsers, setSelectedUsers] = useState([]);
 
   const handleSelectUser = (user) => {
@@ -39,4 +39,4 @@ const sammenligneBrukere = () => {
     </div>
   );
 };
-export default sammenligneBrukere;
+export default SammenligneBrukere;

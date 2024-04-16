@@ -5,7 +5,7 @@ import { db } from "../../database/firebase";
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
 import { EmployeeForm, DashboardBedrift } from '@/app/components/leggTil/page';
 
-export default function listeFremvisning() {
+export default function ListeFremvisning() {
     const [bruker, setBruker] = useState(null);
     const [feil, setFeil] = useState(null);
     

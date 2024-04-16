@@ -8,6 +8,8 @@ import { logoutSubmit } from "../api/logout/logout";
 
 import { useEffect, useState } from "react";
 
+
+
 function Navbar() {
 
   const[innloggetBruker, setInnloggetBruker] = useState(false)
