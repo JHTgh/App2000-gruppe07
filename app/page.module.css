@@ -130,6 +130,7 @@
 
   .flexVenstreTo, .flexMidtTo, .flexHøyreTo {
     margin: 1vw 0vw 5vw 0vw;
+    padding-bottom: 3vw;
   }
   
   .flexVenstreTo h2, .flexMidtTo h2, .flexHøyreTo h2 {
