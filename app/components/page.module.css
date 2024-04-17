@@ -29,8 +29,9 @@
 }
 
 .navbar .links li a:not(.active):hover {
-  background-color: #cb9e58;
-  color: white;
+  background-color: #273746;
+    box-shadow: 0 0 10px black;
+    color: white;
 }
 
 .navbar .links li a {
@@ -43,23 +44,9 @@
 }
 
 /*Burger meny*/
-.navbar .menu {
+.navburger {
   display: none;
-  position: absolute;
-  top: 0.75rem;
-  right: 0.5rem;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2.25rem;
-  height: 2rem;
 }
-.navbar .menu span {
-  height: 0.4rem;
-  width: 100%;
-  background-color: black;
-  border-radius: 0.2rem;
-}
-
 
 /*Footer*/
 .footBody {
@@ -128,33 +115,63 @@
 }
 
 @media (max-width: 480px) {
-  .navbar .menu {
-    display: flex;
-  }
-
   .navbar {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .navbar .links {
     display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 0.25rem;
   }
 
-  .navbar .links.open {
+  .navbar .logo {
+    display: block;
+  }
+
+  /*burger meny*/
+  .burgermenu {
+    text-align: right;
+    display: block;
+  }
+  .navburger .logo {
+    margin: 0.5rem;
+    margin-left: 4vw;
+  }
+
+  .burgerIconClosed .burgerIcon {
+    font-size: 8.5vw;
+    margin-right: 4vw;
+    margin-top: 3.5vw;
+  }
+
+  .burgerIconClosed .closeIcon {
+    font-size: 8.5vw;
+    margin-right: 4vw;
+    margin-top: 3.5vw;
+  }
+  
+  .navburger {
     display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #7d7d7d;
+    margin-bottom: 4vw;
   }
 
-  .navbar .links .navElement {
-    width: 100%;
-    text-align: center;
+  .burgerElement {
+    list-style: none;
   }
-
-  .navbar .links .navElement a {
-    margin: 0.2rem 0.5rem;
+  
+  .burgerlinks {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #7d7d7d;
+    right: 0;
+  }
+  
+  .burgerlinks li {
+    display: block;
+    margin: 2vw 2vw 2vw 2vw;
+  }
+  
+  .burgerlinks li a {
+    text-decoration: none;
+    color: black;
+    font-size: 5vw;
   }
 
   /*Footer*/
