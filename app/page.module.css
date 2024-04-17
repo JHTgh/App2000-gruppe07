@@ -1,5 +1,5 @@
 .main {
- height: auto;
+  height: 100vw;
 }
 
 .flexEn {
@@ -96,7 +96,7 @@
 @media (max-width: 480px) {
   .flexEn {
     flex-direction: column-reverse;
-    padding-bottom: 5vw;
+    padding-bottom: 5%;
     
   }
 

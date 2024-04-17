@@ -52,33 +52,3 @@
 .content p {
     font-size: 2vw;
 }
-
-@media (max-width: 480px) {
-  /*sidenav*/
-  .sidenav {
-    width: 32.5vw;
-    height: 100vh;
-  }
-
-  .sidenav .links li a {
-    padding: 1vw 1vw 1vw 1vw;
-    margin: 2.5vw 0.5vw 0.5vw 0.5vw;
-    border-radius: 0.5rem;
-    font-size: 3.75vw;
-  }
-  
-  /*dashboard*/
-  .content {
-    flex: 1; 
-    text-align: right;
-    margin: 1vw 2vw 0vw 0vw;
-}
-
-.content h1 {
-    font-size: 6vw;
-}
-
-.content p {
-    font-size: 4vw;
-}
-}
