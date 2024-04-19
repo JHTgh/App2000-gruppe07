@@ -58,7 +58,7 @@ export const EmployeeForm = ({ bedriftId }) => {
         name: '',
         email: '',
         address: '',
-        //testId: '',
+        testId: '',
 
       });
     } catch (error) {
