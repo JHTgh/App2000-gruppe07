@@ -1,7 +1,7 @@
 require('dotenv').config();
 import { initializeApp } from "firebase/app";
 import { getFirestore, query, where, getDoc, collection, getDocs } from "firebase/firestore";
-import { getAuth } from 'firebase/auth';
+import { getAuth } from "firebase/auth";
 
 /*
 const apiKey = process.env.FIREBASE_API_KEY;
@@ -10,15 +10,16 @@ const projectId = process.env.FIREBASE_PROJECT_ID;
 const storageBucket = process.env.FIREBASE_STORAGE_BUCKET;
 const messagingSenderId = process.env.FIREBASE_MESSAGING_SENDER_ID;
 const appId = process.env.FIREBASE_APP_ID;
+
 export const firebaseConfig = {
   apiKey: apiKey,
   authDomain: authDomain,
   projectId: projectId,
   storageBucket: storageBucket,
   messagingSenderId: messagingSenderId,
-  appId: appId,
-};*/
-
+  appId: appId
+};
+*/
 // midletidig løsning, hvor jeg ikke får hentet gyldig info fra .env fil (selvom det er likt det under..)
 const firebaseConfig = {
   apiKey: "AIzaSyC2cHYgLBMWNvTAEUMTXYH0loFXNjHVp6M",

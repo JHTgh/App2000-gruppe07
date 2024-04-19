@@ -25,8 +25,7 @@ export const handleRegSubmit = async (formData) => {
 
     // Lagre brukeropplysninger i Firestore
     db;
-    await addDoc(collection(db, 'bedrift'), {
-      //uid: user.uid,
+    await addDoc(collection(db, 'bedrift', user.uid), {
       bedriftId: user.uid,
       email: email,
       bedriftNavn: bedriftNavn,

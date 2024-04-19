@@ -5,7 +5,7 @@ import Mann from "@/public/mann.jpg";
 import Dame from "@/public/dame.jpg";
 import Test from "@/public/testing.jpg";
 import Gruppe from "@/public/gruppe.jpg";
-import { firebaseConfig } from "./database/firebase";
+import { firebaseConfig } from "@/app/database/firebase";
 
 export default function Home() {
   return (
