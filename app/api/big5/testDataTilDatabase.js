@@ -4,7 +4,7 @@ import { db } from "../../database/firebase";
 
 export async function testDataTilDatabase(data, ansID) {
 
-    const testResultCollection = collection (db, "testResults");
+    const testResultCollection = collection (db, "testRes");
 
     console.log(data);
 

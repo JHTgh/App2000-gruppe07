@@ -7,23 +7,24 @@ export default function YourComponent() {
 
     // IKKE FERDIG
 
-    const id = '58a70606a835c400c8b38e84';
+    const id = '661d0772609673000855729c';
     const [data, setData] = useState(null);
 
     useEffect( () => {
         // henter data fra api og venter på at dataen er på plass
+
         async function fetchData() {
-            // henter testdata fra database
-            console.log('henter data fra api')
+        // henter testdata fra database
+        if( !data ) {    
+                console.log('henter data fra api')
 
-            const uid = await userUId;
-
-            const data = await hentTestTilDatabase(id, uid);
-         
-            setData(data);
+                const uid = await userUId;
+                const data = await hentTestTilDatabase(id, uid);
+                setData(data);
+            }
         }
         fetchData();
-    }, []);
+    }, [data]);
 
 
     if(!data) {
@@ -38,7 +39,7 @@ export default function YourComponent() {
     return (
         <div>
             <h1>Api Test</h1>
-            <p>{data.nevrotisisme.score}</p>
+            <p>suksess</p>
         </div>
     );
 }
