@@ -1,13 +1,13 @@
 .main {
-  height: auto;
+ height: auto;
 }
 
 .flexEn {
   display: flex;
   flex-direction: row;
   margin-top: 2%;
-  background-color: #6fe3ff;
-  box-shadow: 0 0 10px grey;
+  background-color: #6FE3FF;
+  box-shadow: 0px 4px 10px grey;
 }
 
 .flexVenstreEn,
@@ -61,7 +61,7 @@
 .flexMidtTo,
 .flexHøyreTo {
   flex: 1;
-  background-color: #d8f6ff;
+  background-color: #B0E0E6;
   border-radius: 1rem;
   margin: 1vw 3.5vw 5vw 3.5vw;
   box-shadow: 0 0 10px grey;
@@ -85,7 +85,7 @@
   display: flex;
 }
 .text {
-  background-color: #d8f6ff;
+  background-color: #B0E0E6;
   border-radius: 1rem;
   margin: 1vw 36vw 5vw 3.5vw;
   box-shadow: 0 0 10px grey;
@@ -103,7 +103,8 @@
 @media (max-width: 480px) {
   .flexEn {
     flex-direction: column-reverse;
-    padding-bottom: 5%;
+    padding-bottom: 5vw;
+    
   }
 
   .flexVenstreEn h1 {
@@ -138,6 +139,7 @@
   .flexMidtTo,
   .flexHøyreTo {
     margin: 1vw 0vw 5vw 0vw;
+    padding-bottom: 3vw;
   }
 
   .flexVenstreTo h2,
