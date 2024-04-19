@@ -21,6 +21,7 @@
   box-shadow: 0 0 10px grey;
   top: 0;
   z-index: 2;
+  align-items: center;
 }
 
 .navbar .logo {
