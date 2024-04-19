@@ -5,10 +5,7 @@ import logo from "@/public/bigFive.png";
 import styles from "./page.module.css";
 import { auth } from "../database/firebase";
 import { logoutSubmit } from "../api/logout/logout";
-
 import { useEffect, useState } from "react";
-
-
 
 function Navbar() {
 

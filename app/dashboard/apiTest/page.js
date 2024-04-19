@@ -1,7 +1,7 @@
 'use client';
 import { hentTestTilDatabase } from '@/app/api/big5/hentTestTilDatabase';
 import { useEffect, useState } from 'react';
-import { userUId } from '../../layout';
+import { userUId } from '@/app/dashboard/layout';
 
 export default function YourComponent() {
 
@@ -15,7 +15,10 @@ export default function YourComponent() {
         async function fetchData() {
             // henter testdata fra database
             console.log('henter data fra api')
-            const data = await hentTestTilDatabase(id, userUId);
+
+            const uid = await userUId;
+
+            const data = await hentTestTilDatabase(id, uid);
          
             setData(data);
         }
