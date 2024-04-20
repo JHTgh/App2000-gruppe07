@@ -1,4 +1,4 @@
-import { collection, addDoc } from "firebase/firestore";
+import { collection, setDoc, doc} from "firebase/firestore";
 import { db } from "../../database/firebase";
 
 
@@ -66,7 +66,16 @@ export async function testDataTilDatabase(data, ansID) {
         Planmessighet: planmessighet
     };
 
-    console.log(testResultsData);
+    //console.log(testResultsData);
 
-    await addDoc(testResultCollection, testResultsData);
+    await setDoc(doc(db, 'testRes', ansID), {
+        ansattID: ansID,
+        Nevrotisisme: nevrotisisme,
+        Ekstroversjon: ekstroversjon,
+        ÅpenhetForErfaringer: åpenhetForErfaringer,
+        Medmenneskelighet: medmenneskelighet,
+        Planmessighet: planmessighet
+    });
+
+    //await addDoc(testResultCollection, testResultsData);
 }

@@ -4,27 +4,26 @@ import { useEffect, useState } from 'react';
 import { userUId } from '@/app/dashboard/layout';
 
 export default function YourComponent() {
-
-    // IKKE FERDIG
-
     const id = '661d0772609673000855729c';
+    const ansID = 'tester123'
     const [data, setData] = useState(null);
+    const [dataLagret, setDataLagret] = useState(false); // Flagger for å indikere om data er lagret
+  
+    useEffect(() => {
+      async function fetchData() {
+        if (!dataLagret) {
+          console.log('henter data fra api');
+            
 
-    useEffect( () => {
-        // henter data fra api og venter på at dataen er på plass
-
-        async function fetchData() {
-        // henter testdata fra database
-        if( !data ) {    
-                console.log('henter data fra api')
-
-                const uid = await userUId;
-                const data = await hentTestTilDatabase(id, uid);
-                setData(data);
-            }
+          // scoredata blir sendt til database to ganger, men per nå blir denne dataen bare erstattet av seg selv 
+          // TODO: fiks dette!
+          const apiData = await hentTestTilDatabase(id, ansID);
+          setData(apiData);
+          setDataLagret(true); // Marker data som lagret
         }
-        fetchData();
-    }, [data]);
+      }
+      fetchData();
+    }, [id]);
 
 
     if(!data) {
