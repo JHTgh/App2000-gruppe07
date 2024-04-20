@@ -11,27 +11,18 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.flexEn}>
         <div className={styles.flexVenstreEn}>
-          <h1>Rekrutter Smartere: Velkommen Til BigFive!</h1>
           <p>
-            BigFive er en plattform som tilbyr personlighetstesting for
-            bedrifter som ønsker å forbedre sin rekrutteringsprosess. Ved å
-            bruke vår tjeneste kan bedrifter få dyp innsikt i potensielle
-            ansattes personlighetsegenskaper
+            BigFive for bedrifter <br /> En plattform som tilbyr personlighetstesting <br />
+            for bedrifter som ønsker å forbedre sin rekrutteringsprosess. <br />
+            Ved å benytte vår tjeneste kan bedrifter få innsikt <br />
+            i potensielle ansattes personlighetsegenskaper.
           </p>
           <p>Opprett en bedriftskonto her:</p>
           <ul>
             <li>
-              <Link href="/opprettbruker">Opprett konto her</Link>
+              <Link className = {styles.link} href="/opprettbruker">Opprett konto her</Link>
             </li>
           </ul>
-        </div>
-        <div className={styles.flexHøyreEn}>
-          <Image
-            src={Test}
-            priority={true}
-            alt="Test"
-            className={styles.images}
-          ></Image>
         </div>
       </div>
 
@@ -106,3 +97,12 @@ export default function Home() {
     </main>
   );
 }
+
+/*     <div className={styles.flexHøyreEn}>
+<Image
+src={Test}
+priority={true}
+alt="Test"
+className={styles.images}
+></Image> 
+</div> */
