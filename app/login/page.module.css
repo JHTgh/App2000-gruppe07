@@ -17,6 +17,7 @@
 .textfieldEmail {
   display: flex;
   height: 2.5vw;
+  margin-top: 10px;
   padding-left: 1vw;
   font-size: 1.2em;
 }
@@ -35,9 +36,10 @@
 }
 
 .loginBtn {
+  margin: 10px 0 15px 0;
   border: 1px black;
   font-size: 1em;
-  width: 30vw;
+  width: 10vw;
   padding: 10px;
   border-radius: 1.5vw;
   background-color: rgb(82, 82, 220);
