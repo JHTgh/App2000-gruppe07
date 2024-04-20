@@ -1,5 +1,6 @@
 /***  Styling for .navbar  ***/
 /* velger å style uten klasse - hvor .navbar elementet bare blir brukt slik */
+
 .navElement {
   list-style: none;
 }
@@ -12,14 +13,15 @@
 }
 
 .navbar {
+  position: sticky;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   background-image: linear-gradient(white, #fafafa);
   border-bottom: 1px solid #7d7d7d;
-  position: sticky;
+  box-shadow: 0 0 10px grey;
   top: 0;
-  z-index: 1;
+  z-index: 2;
+  align-items: center;
 }
 
 .navbar .logo {
@@ -28,140 +30,121 @@
 }
 
 .navbar .links li a:not(.active):hover {
-  background-color: #cb9e58;
-  color: white;
+  background-color: #273746;
+    box-shadow: 0 0 10px black;
+    color: white;
 }
 
 .navbar .links li a {
-  display: block;
   text-decoration: none;
   color: black;
-  padding: 0.5rem;
-  margin: 0 0.5rem;
-  border-radius: 0.5rem;
-}
-
-.navbar .links li a:not(.active):hover {
-  background-color: #cb9e58;
-  color: white;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 5px;
+  border-radius: 0.3rem;
 }
 
 /*Burger meny*/
-.navbar .menu {
+.navburger {
   display: none;
-  position: absolute;
-  top: 0.75rem;
-  right: 0.5rem;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2.25rem;
-  height: 2rem;
 }
-.navbar .menu span {
-  height: 0.4rem;
-  width: 100%;
-  background-color: black;
-  border-radius: 0.2rem;
-}
-
 
 /*Footer*/
-.footBody {
+.footerContainer {
   display: flex;
-  padding-top: 1rem;
-  background-color: #EAECEE;
+  width: 100%;
+  background-color: #eaecee;
 }
 
 .images {
-  width: 100%;
   height: auto;
 }
 
-.footVenstre,
-.footHøyre {
-  flex: 50%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.footVenstre h1 {
-  font-size: 3vw;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-left: 20px;
 }
 
 .sosMed ul {
   display: flex;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .sosMed ul li {
   list-style: none;
-  text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
+  padding-right: 0.5rem;
 }
 
 .sosMed ul li a img {
   width: 2vw;
 }
 
-.infoFoot p {
-  font-size: 1.25vw;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-bottom: 10px;
-}
-
-.copyright p {
-  font-size: 1.25vw;
-  color: rgba(0, 0, 0, 0.4);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.footHøyre h2 {
-  font-size: 1.25vw;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.footHøyre ul li {
-  list-style: none;
-}
-
-.footHøyre ul li a {
-  color: black;
-  font-size: 1vw;
-}
-
 @media (max-width: 480px) {
-  .navbar .menu {
-    display: flex;
-  }
-
   .navbar {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .navbar .links {
     display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 0.25rem;
   }
 
-  .navbar .links.open {
+  .navbar .logo {
+    display: block;
+  }
+
+  /*burger meny*/
+  .burgermenu {
+    text-align: right;
+    display: block;
+  }
+  .navburger .logo {
+    margin: 0.5rem;
+    margin-left: 4vw;
+  }
+
+  .burgerIconClosed .burgerIcon {
+    font-size: 8.5vw;
+    margin-right: 4vw;
+    margin-top: 3.5vw;
+  }
+
+  .burgerIconClosed .closeIcon {
+    font-size: 8.5vw;
+    margin-right: 4vw;
+    margin-top: 3.5vw;
+  }
+  
+  .navburger {
     display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #7d7d7d;
+    margin-bottom: 4vw;
   }
 
-  .navbar .links .navElement {
-    width: 100%;
-    text-align: center;
+  .burgerElement {
+    list-style: none;
+  }
+  
+  .burgerlinks {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #7d7d7d;
+    right: 0;
+  }
+  
+  .burgerlinks li {
+    display: block;
+    margin: 2vw 2vw 2vw 2vw;
+  }
+  
+  .burgerlinks li a {
+    text-decoration: none;
+    color: black;
+    font-size: 5vw;
   }
 
-  .navbar .links .navElement a {
-    margin: 0.2rem 0.5rem;
-  }
-
-  /*Footer*/
   .footBody {
     flex-direction: column;
   }
@@ -190,52 +173,6 @@
   .footHøyre ul li a {
     font-size: 4vw;
   }
-
 }
 /* burgermeny og .navbar ferdig */
 
-/* styling for .sidebar */
-
-.sidebar .links {
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar .links .navElement {
-  list-style: none;
-}
-
-.sidebar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-image: linear-gradient(white, #fafafa);
-  border-bottom: 1px solid #7d7d7d;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.sidebar .logo {
-  margin: 0.5rem;
-  margin-left: 3rem;
-}
-
-.sidebar .links li a:not(.active):hover {
-  background-color: #cb9e58;
-  color: white;
-}
-
-.sidebar .links li a {
-  display: block;
-  text-decoration: none;
-  color: black;
-  padding: 0.5rem;
-  margin: 0 0.5rem;
-  border-radius: 0.5rem;
-}
-
-.nsidebar .links li a:not(.active):hover {
-  background-color: #cb9e58;
-  color: white;
-}

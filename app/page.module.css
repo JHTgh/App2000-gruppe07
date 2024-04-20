@@ -1,5 +1,5 @@
 .main {
-  height: auto;
+ height: auto;
 }
 
 .flexEn {
@@ -7,12 +7,13 @@
   flex-direction: row;
   margin-top: 2%;
   background-color: #6FE3FF;
-  box-shadow: 0 0 10px grey;
+  box-shadow: 0px 4px 10px grey;
 }
 
-.flexVenstreEn, .flexHøyreEn {
+.flexVenstreEn,
+.flexHøyreEn {
   flex: 1;
-  margin: 1% 1% 1% 1% ;
+  margin: 1% 1% 1% 1%;
 }
 
 .images {
@@ -45,7 +46,7 @@
   font-size: 1.25vw;
   padding: 1.1rem;
   border-radius: 1rem;
-  background-color:#273746 ;
+  background-color: #273746;
   color: white;
   margin-bottom: 0.5rem;
   box-shadow: 0 0 10px black;
@@ -56,20 +57,26 @@
   padding-top: 5%;
 }
 
-.flexVenstreTo, .flexMidtTo, .flexHøyreTo {
+.flexVenstreTo,
+.flexMidtTo,
+.flexHøyreTo {
   flex: 1;
-  background-color: #D8F6FF;
+  background-color: #B0E0E6;
   border-radius: 1rem;
   margin: 1vw 3.5vw 5vw 3.5vw;
   box-shadow: 0 0 10px grey;
 }
 
-.flexVenstreTo h2, .flexMidtTo h2, .flexHøyreTo h2 {
+.flexVenstreTo h2,
+.flexMidtTo h2,
+.flexHøyreTo h2 {
   text-align: center;
   font-size: 1.3vw;
 }
 
-.flexVenstreTo p, .flexMidtTo p, .flexHøyreTo p {
+.flexVenstreTo p,
+.flexMidtTo p,
+.flexHøyreTo p {
   padding-left: 1vw;
   padding-right: 1vw;
 }
@@ -78,7 +85,7 @@
   display: flex;
 }
 .text {
-  background-color: #D8F6FF;
+  background-color: #B0E0E6;
   border-radius: 1rem;
   margin: 1vw 36vw 5vw 3.5vw;
   box-shadow: 0 0 10px grey;
@@ -89,14 +96,14 @@
   font-size: 2vw;
 }
 
-.text p{
+.text p {
   font-size: 1.5vw;
 }
 /*telefon format*/
 @media (max-width: 480px) {
   .flexEn {
     flex-direction: column-reverse;
-    padding-bottom: 5%;
+    padding-bottom: 5vw;
     
   }
 
@@ -113,12 +120,12 @@
   .flexVenstreEn ul li {
     margin: 0vw 0vw 0vw 35vw;
   }
-  
+
   .flexVenstreEn ul li a {
     font-size: 3vw;
     padding: 1.1rem;
     border-radius: 1rem;
-    background-color:#273746 ;
+    background-color: #273746;
     color: white;
     margin-bottom: 0.5rem;
     box-shadow: 0 0 10px black;
@@ -128,15 +135,22 @@
     padding-top: 10vw;
   }
 
-  .flexVenstreTo, .flexMidtTo, .flexHøyreTo {
+  .flexVenstreTo,
+  .flexMidtTo,
+  .flexHøyreTo {
     margin: 1vw 0vw 5vw 0vw;
+    padding-bottom: 3vw;
   }
-  
-  .flexVenstreTo h2, .flexMidtTo h2, .flexHøyreTo h2 {
+
+  .flexVenstreTo h2,
+  .flexMidtTo h2,
+  .flexHøyreTo h2 {
     font-size: 4vw;
   }
-  
-  .flexVenstreTo p, .flexMidtTo p, .flexHøyreTo p {
+
+  .flexVenstreTo p,
+  .flexMidtTo p,
+  .flexHøyreTo p {
     padding: 0vw 2vw 0vw 2vw;
     font-size: 3vw;
   }
@@ -145,13 +159,12 @@
     margin: 1vw 0vw 5vw 0vw;
     padding: 3vw 3vw 3vw 3vw;
   }
-  
+
   .text h2 {
     font-size: 4vw;
   }
-  
-  .text p{
+
+  .text p {
     font-size: 3.5vw;
   }
-  
 }

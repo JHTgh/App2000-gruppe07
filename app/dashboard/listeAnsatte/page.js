@@ -1,9 +1,8 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { userUId } from '@/app/dashboard/layout';
-import { db } from "../../database/firebase";
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
-import { EmployeeForm, DashboardBedrift } from '@/app/components/leggTil/page';
+import {AlleAnsatte} from '@/app/components/alleAnsatte';
 
 export default function ListeFremvisning() {
     const [bruker, setBruker] = useState(null);
@@ -37,7 +36,7 @@ export default function ListeFremvisning() {
     return (
     <div>
         <div>
-            <DashboardBedrift bedriftId={bruker} />
+            <AlleAnsatte bedriftId={bruker} />
         </div>
 
     </div>

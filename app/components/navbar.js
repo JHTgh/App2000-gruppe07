@@ -5,9 +5,16 @@ import logo from "@/public/bigFive.png";
 import styles from "./page.module.css";
 import { auth } from "../database/firebase";
 import { logoutSubmit } from "../api/logout/logout";
+import { FaBars , FaTimes} from 'react-icons/fa';
+
 import { useEffect, useState } from "react";
 
 function Navbar() {
+  const [burgerOpen, setBurgerOpen] = useState(false);
+
+  const toggleBurgerMenu = () => {
+    setBurgerOpen(!burgerOpen);
+  };
 
   const[innloggetBruker, setInnloggetBruker] = useState(false)
   
@@ -30,23 +37,25 @@ function Navbar() {
   }
 
   return (
-    <nav className={styles.navbar}>
-      <Link href="/" className={styles.logo}>
-        <Image src={logo} style={{ width: "100%" }} alt="Logo" />
-      </Link>
+    <div className={styles.nav}>
+      <nav className={styles.navbar}>
+        <Link href="/" className={styles.logo}>
+          <Image src={logo} style={{ width: "100%" }} alt="Logo" />
+        </Link>
 
-      <ul className={styles.links}>
-        <li className={styles.navElement}>
-          <Link href="/arb3">Arbeidskrav3</Link>
-        </li>
-        <li className={styles.navElement}>
-          <Link href="https://bigfive-test.com">Test</Link>{" "}
-        </li>
-        <li className={styles.navElement}>
-          <Link href="/compare">Sammenlign</Link>
-        </li>
-        <>
+        <ul className={styles.links}>
+          <li className={styles.navElement}>
+            <Link href="/arb3">Arbeidskrav3</Link>
+          </li>
+          <li className={styles.navElement}>
+            <Link href="https://bigfive-test.com">Test</Link>{" "}
+          </li>
+          <li className={styles.navElement}>
+            <Link href="/compare">Sammenlign</Link>
+          </li>
+          <>
           {innloggetBruker ? (
+
             <>
             <li className={styles.navElement}>
               <Link href="/dashboard">Profil</Link>
@@ -59,18 +68,62 @@ function Navbar() {
               </Link>
             </li>
             </>
+
           ) : (
-            <li className={styles.navElement}>
-              <Link 
-                href="/login">
-                  Logg inn
-              </Link>
-            </li>
+          <li className={styles.navElement}>
+          <Link href="/login">Logg inn</Link></li>
           )}
-          
-        </>
-      </ul>
+          </>
+        </ul>
+      </nav>
+      
+    <nav className={`${styles.navburger} ${burgerOpen ? styles.open : ''}`}>
+          <Link href="/" className={styles.logo}>
+            <Image src={logo} style={{ width: "100%" }} alt="Logo" />
+          </Link>
+      <div className={styles.burgermenu}>
+          <div className={styles.burgerIconClosed} onClick={toggleBurgerMenu}>
+            {burgerOpen ? (
+              <FaTimes className={styles.burgerIcon} />
+            ) : (
+              <FaBars className={styles.closeIcon} /> 
+            )}
+          </div>
+
+        {burgerOpen && (
+        <ul className={styles.burgerlinks}>
+          <li className={styles.burgerElement}>
+            <Link href="/arb3">Arbeidskrav3</Link>
+          </li>
+          <li className={styles.burgerElement}>
+            <Link href="https://bigfive-test.com">Test</Link>{" "}
+          </li>
+          <li className={styles.burgerElement}>
+            <Link href="/compare">Sammenlign</Link>
+          </li>
+          <>
+          {innloggetBruker ? (
+          <>
+          <li className={styles.burgerElement}>
+            <Link href="/dashbord2">Profil</Link>
+          </li>
+          <li className={styles.burgerElement}>
+            <Link onClick={logout} href="/">
+              Logg ut
+            </Link>
+          </li>
+          </>
+          ) : (
+          <li className={styles.burgerElement}>
+            <Link href="/login">Logg inn</Link>
+          </li>
+          )}
+          </>
+          </ul>
+          )}
+      </div>
     </nav>
+  </div>
   );
 }
 
