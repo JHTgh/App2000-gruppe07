@@ -1,4 +1,3 @@
-require('dotenv').config();
 import { initializeApp } from "firebase/app";
 import { getFirestore, query, where, getDoc, collection, getDocs } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
