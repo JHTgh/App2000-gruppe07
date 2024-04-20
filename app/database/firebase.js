@@ -19,17 +19,7 @@ export const firebaseConfig = {
   messagingSenderId: messagingSenderId,
   appId: appId
 };
-/*
-// midletidig løsning, hvor jeg ikke får hentet gyldig info fra .env fil (selvom det er likt det under..)
-const firebaseConfig = {
-  apiKey: "AIzaSyC2cHYgLBMWNvTAEUMTXYH0loFXNjHVp6M",
-  authDomain: "big5-kjartigjen.firebaseapp.com",
-  projectId: "big5-kjartigjen",
-  storageBucket: "big5-kjartigjen.appspot.com",
-  messagingSenderId: "479510979015",
-  appId: "1:479510979015:web:a6fe016353880d52a3f9e2"
-};
-*/
+
 
 const firebase = initializeApp(firebaseConfig);
 
