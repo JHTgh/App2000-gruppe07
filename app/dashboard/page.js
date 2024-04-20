@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { queryBedriftNavn } from '@/app/api/querys/bedrift/queryBedrifNavn'; 
 import { userUId } from './layout';
+import { hentBedriftNavn } from '../api/querys/bedrift/hentBedriftNavn';
 
 
 export default function Dashboard() {
@@ -14,7 +15,7 @@ export default function Dashboard() {
             try {
                 const uId = await userUId; // Vente på IDen
                 console.log('uID: (page) ' + uId);
-                const brukerData = await queryBedriftNavn(uId);
+                const brukerData = await hentBedriftNavn(uId);
                 setBruker(brukerData);
             } catch (error) {
                 setFeil(error); // Håndter feil

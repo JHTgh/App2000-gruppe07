@@ -4,7 +4,7 @@ import { userUId } from '@/app/dashboard/layout';
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
 import {AlleAnsatte} from '@/app/components/alleAnsatte';
 
-export default function listeFremvisning() {
+export default function ListeFremvisning() {
     const [bruker, setBruker] = useState(null);
     const [feil, setFeil] = useState(null);
     

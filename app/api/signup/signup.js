@@ -1,5 +1,5 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, setDoc, doc } from "firebase/firestore";
 import { auth } from '../../database/firebase';
 import { db } from '../../database/firebase';
 import bcryptjs from 'bcryptjs';
@@ -25,8 +25,7 @@ export const handleRegSubmit = async (formData) => {
 
     // Lagre brukeropplysninger i Firestore
     db;
-    await addDoc(collection(db, 'bedrift'), {
-      //uid: user.uid,
+    await setDoc(doc(db, 'bedrift', user.uid), {
       bedriftId: user.uid,
       email: email,
       bedriftNavn: bedriftNavn,
