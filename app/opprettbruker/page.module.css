@@ -1,17 +1,21 @@
+
 .pageContainer {
   display: flex;
   justify-content: center;
-  margin: 20px 0 100px 0;
+  margin: 0px 0 100px 0;
+  background-color:#ebe9e5;
+  padding-top: 5vw;
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
-  width: 30vw;
-  padding: 2vw;
+  width: 30vw;  padding: 2vw;
+
   background-color: #ffffff;
   box-shadow: 0 0 10px grey;
   border-radius: 1vw;
+  
 }
 
 .textfieldEmail {
@@ -22,6 +26,12 @@
   font-size: 1.2em;
 }
 
+.images {
+  display: flex;
+  height: 60%;
+  width: 60%;
+
+}
 .textfieldPw {
   display: flex;
   height: 2.5vw;

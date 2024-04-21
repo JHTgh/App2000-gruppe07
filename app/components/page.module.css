@@ -16,12 +16,12 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(white, #fafafa);
-  border-bottom: 1px solid #7d7d7d;
-  box-shadow: 0 0 10px grey;
+  background-color:  #ebe9e5;
   top: 0;
   z-index: 2;
   align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .navbar .logo {
@@ -30,7 +30,7 @@
 }
 
 .navbar .links li a:not(.active):hover {
-  background-color: #273746;
+  background-color:#A69679;
     box-shadow: 0 0 10px black;
     color: white;
 }
@@ -38,6 +38,7 @@
 .navbar .links li a {
   text-decoration: none;
   color: black;
+  font-size: 1.3rem;
   margin-left: 25px;
   margin-right: 25px;
   padding: 5px;
