@@ -1,15 +1,10 @@
 .pageContainer {
   display: flex;
   justify-content: center;
-  margin: 20px 0 100px 0;
+  margin: 1vw 10vw 10vw 10vw;
+  padding: 10vw 10vw 15vw 10vw;
   background-image: url("../../public/ute1.png");
   background-size: cover;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 20%;
-  padding-top: 10%;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .formContainer {
@@ -49,9 +44,9 @@
 }
 .loginBtn {
   border: 1px black;
-  font-size: 1em;
+  font-size: 1.25vw;
   width: 10vw;
-  padding: 10px;
+  padding: 1vw;
   margin-bottom: 1vw;
   border-radius: 1.5vw;
   background-color: #55788C;

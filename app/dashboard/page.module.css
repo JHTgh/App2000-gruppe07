@@ -11,10 +11,7 @@
   flex-direction: column;
   width: 20vw;
   height: 100vh;
-  background-color: #6FE3FF;
-  border-right: 1px solid #7d7d7d;
-  border-bottom: 1px solid #7d7d7d;
-  box-shadow: 0 0 10px grey;
+  background-color: #D6D6CE;
 }
 
 .sidenav .links {
@@ -25,16 +22,16 @@
   display: block;
   text-decoration: none;
   text-align: left;
-  background-color: #273746;
-  color: white;
+  background-color: #A69679;
+  color: #ffffff;
   padding: 0.5vw 0.5vw 0.5vw 0.5vw;
   margin: 1vw 0.5vw 0.5vw 0.5vw;
-  border-radius: 0.5rem;
+  border-radius: 0.5vw;
   font-size: 1.7vw;
 }
 
 .sidenav .links li a:not(.active):hover {
-  background-color: #D8F6FF;
+  background-color: #ffffff;
   box-shadow: 0 0 10px black;
   color: #273746;
 }
@@ -64,7 +61,7 @@
 .sidenav .links li a {
   padding: 1vw 1vw 1vw 1vw;
   margin: 2.5vw 0.5vw 0.5vw 0.5vw;
-  border-radius: 0.5rem;
+  border-radius: 1vw;
   font-size: 3.75vw;
 }
 

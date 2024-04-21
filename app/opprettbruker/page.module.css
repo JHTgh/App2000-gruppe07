@@ -2,15 +2,10 @@
 .pageContainer {
   display: flex;
   justify-content: center;
-  margin: 0 0 100px 0;
+  margin: 1vw 10vw 10vw 10vw;
+  padding: 10vw 10vw 15vw 10vw;
   background-image: url("../../public/workplace.png");
   background-size: cover;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 20%;
-  padding-top: 10%;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .formContainer {
@@ -43,7 +38,7 @@
   height: 2.5vw;
   margin: 1.5vw 0 1vw 0;
   padding-left: 1vw;
-  font-size: 1.2em;
+  font-size: 1.2vw;
   font-weight: 600;
 }
 
@@ -58,10 +53,9 @@
 
 .regBtn {
   border: 1px black;
-  font-size: 1em;
+  font-size: 1.25vw;
   width: 10vw;
-  padding: 10px;
-  margin-top: 2vw;
+  padding: 1vw;
   margin-bottom: 1vw;
   border-radius: 1.5vw;
   background-color: #55788C;

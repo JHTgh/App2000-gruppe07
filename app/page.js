@@ -66,7 +66,6 @@ export default function Home() {
           <p>
             I plattformen kan du enkelt sammenligne resultatene fra testen for dine ansatte og jobbsøkere. 
           </p>
-         
         </div>
       </div>
     </main>
