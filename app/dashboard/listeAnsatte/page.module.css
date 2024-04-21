@@ -1,0 +1,25 @@
+.containerLoggedOut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contentLoggedOut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerLoggedIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contentLoggedIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

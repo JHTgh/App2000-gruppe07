@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}
+
+.wrapperListe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+.button {
+  font-size: medium;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+  background-color: #6fe3ff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+
+.AddUserContainer {
+  display: flex;
+}
+
+.AddUserWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AddUserWrapper h2 {
+  margin-bottom: 10px;
+}
+
+.AddUserContainer span {
+  padding: 10px;
+  background-color: #6fe3ff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
