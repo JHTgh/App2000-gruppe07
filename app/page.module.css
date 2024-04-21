@@ -2,7 +2,7 @@
 .main {
  height: auto;
  padding-top: 0.01vw;
- background-color: #ebe9e5;
+ background-color: #D6D6CE;
 
 
 }
@@ -10,7 +10,7 @@
 .flexEn {
   display: flex;
   flex-direction: row;
-  background-color:  #ebe9e5;
+  background-color:  #D6D6CE;
   /*box-shadow: 0px 4px 10px grey;*/
   margin-bottom:2%;
   margin-top: 3%;

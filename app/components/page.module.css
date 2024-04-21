@@ -16,7 +16,7 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  background-color:  #ebe9e5;
+  background-color:  #D6D6CE;
   top: 0;
   z-index: 2;
   align-items: center;
@@ -31,7 +31,7 @@
 
 .navbar .links li a:not(.active):hover {
   background-color:#A69679;
-    box-shadow: 0 0 10px black;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     color: white;
 }
 
@@ -54,7 +54,7 @@
 .footerContainer {
   display: flex;
   width: 100%;
-  background-color: #eaecee;
+  background-color: #D6D6CE;
 }
 
 .images {

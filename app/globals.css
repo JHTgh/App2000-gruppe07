@@ -4,3 +4,6 @@
     box-sizing: border-box;
     font-family: Segoe UI;
   }
+  body {
+    background-color: #D6D6CE;
+  }

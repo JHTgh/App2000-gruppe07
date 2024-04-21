@@ -62,21 +62,14 @@ export default function Signup() {
   };
 
   return (
-    <div className={styles.pageContainer}>
-      <div>
-      <Image
-            src={workplace}
-            priority={true}
-            alt="workplace"
-            className={styles.images}
-          ></Image> </div>
+      <div className={styles.pageContainer}>
+
       <form className={styles.form} onSubmit={handleSubmit}>
         {suksess && (
           <div className={styles.successMessage}>
             Suksess! Profilen din er opprettet.
           </div>
         )}
-
         <div className={styles.formContainer}>
           <h1>Opprett bedriftskonto</h1>
 
@@ -139,3 +132,10 @@ export default function Signup() {
     </div>
   );
 }
+/*
+<Image
+src={workplace}
+priority={true}
+alt="workplace"
+className={styles.images}
+></Image> */
