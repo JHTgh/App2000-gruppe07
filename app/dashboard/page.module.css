@@ -2,6 +2,7 @@
 
 .flexSidebar {
   display: flex;
+  top: 0vw;
 }
 
 /*sidenav*/
