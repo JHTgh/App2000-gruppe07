@@ -2,7 +2,7 @@ import { collection, setDoc, doc} from "firebase/firestore";
 import { db } from "../../database/firebase";
 
 
-export async function testDataTilDatabase(data, ansID) {
+export async function testDataTilDatabase(data, id) {
 
     const testResultCollection = collection (db, "testRes");
 
@@ -56,9 +56,7 @@ export async function testDataTilDatabase(data, ansID) {
         betenksomhet: data.planmessighet.betenksomhet
     }
 
-    // legger til uid i data samlingen
     const testResultsData = {
-        ansattID: ansID,
         Nevrotisisme: nevrotisisme,
         Ekstroversjon: ekstroversjon,
         ÅpenhetForErfaringer: åpenhetForErfaringer,
@@ -68,8 +66,9 @@ export async function testDataTilDatabase(data, ansID) {
 
     //console.log(testResultsData);
 
-    await setDoc(doc(db, 'testRes', ansID), {
-        ansattID: ansID,
+    // id for test er også nøkkel for dokumentet
+    // her legger vi ikke til et dokument men heller oppdaterer, legger til hvis denne nøkkelen ikke har et dokument
+    await setDoc(doc(db, 'testRes', id), {
         Nevrotisisme: nevrotisisme,
         Ekstroversjon: ekstroversjon,
         ÅpenhetForErfaringer: åpenhetForErfaringer,
