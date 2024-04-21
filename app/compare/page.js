@@ -2,7 +2,7 @@
 "use client";
 
 import React from "react";
-import BarChart from "../components/chart";
+import BarChart from "../components/compare/chart";
 import { db } from "../database/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";

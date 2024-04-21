@@ -7,6 +7,7 @@ export function AlleAnsatte({bedriftId}) {
   const [isFormVisible, setFormVisible] = useState(false);
   const [ansatteListe, setAnsatteListe] = useState([]);
   const [isListVisible, setIsListVisible] = useState(false);
+  const [lastFetchTime, setLastFetchTime] = useState(0);
   const toggleFormVisibility = () => {
     setFormVisible(!isFormVisible);
   };

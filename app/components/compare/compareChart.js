@@ -2,8 +2,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Chart from "chart.js/auto";
-import { db } from "../database/firebase";
-import { queryBrukerNavn, queryBrukerScore } from "../database/querys";
+import { db } from "../../database/firebase";
+import { queryBrukerNavn, queryBrukerScore } from "../../database/querys";
 import { Bar } from "react-chartjs-2";
 import { doc, getDoc } from 'firebase/firestore';
 
