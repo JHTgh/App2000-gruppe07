@@ -13,10 +13,13 @@ export async function leggTilAnsatt(dataForm) {
         testId: dataForm.testId,
         companyId: dataForm.companyId
     }
+    console.log("nyAnsatt: ");
+    console.log(nyAnsatt);
     try{
          const newEmployeeRef = await addDoc(ansatteCollection, nyAnsatt);
          console.log("ny ansatt lagt til i database" + newEmployeeRef.id);
     }catch(error){
+        console.log("Feil ved lagring av ny ansatt");
         console.log(error);
     }
 }

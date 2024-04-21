@@ -25,16 +25,21 @@ export default function AnsattForm ({ bedriftId })  {
     e.preventDefault();
     try {
       // Putter inn firma som FK til ansatt. 
-        const employeeWithCompany = {
-        ...employeeData,
+      const employeeWithCompany = {
+        navn: employeeData.name,
+        epost: employeeData.email,
+        adresse: employeeData.address,
+        testId: employeeData.testId,
         companyId: bedriftId
       };
-    // legger til ny ansatt/profil i database.
-    await leggTilAnsatt(employeeWithCompany);
+      console.log('employeeWithCompany:');
+      console.log(employeeWithCompany);
+      // legger til ny ansatt/profil i database.
+      await leggTilAnsatt(employeeWithCompany);
 
-    // legger inn score til database 
-    // bruker testId som id for dokumentet også, slik at det er lett å finne igjen 
-    await hentTestTilDatabase(employeeData.testId);
+      // legger inn score til database 
+      // bruker testId som id for dokumentet også, slik at det er lett å finne igjen 
+      await hentTestTilDatabase(employeeData.testId);
   
       // Legger til data om ansatt
       // await addDoc(ansatteCollection, employeeWithCompany);
