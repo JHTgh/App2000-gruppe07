@@ -1,26 +1,29 @@
 'use client';
 import { hentTestTilDatabase } from '@/app/api/big5/hentTestTilDatabase';
 import { useEffect, useState } from 'react';
-import { userUId } from '../../layout';
+import { userUId } from '@/app/dashboard/layout';
 
 export default function YourComponent() {
-
-    // IKKE FERDIG
-
-    const id = '58a70606a835c400c8b38e84';
+    const id = '661d0772609673000855729c';
+    const ansID = 'tester123'
     const [data, setData] = useState(null);
+    const [dataLagret, setDataLagret] = useState(false); // Flagger for å indikere om data er lagret
+  
+    useEffect(() => {
+      async function fetchData() {
+        if (!dataLagret) {
+          console.log('henter data fra api');
+            
 
-    useEffect( () => {
-        // henter data fra api og venter på at dataen er på plass
-        async function fetchData() {
-            // henter testdata fra database
-            console.log('henter data fra api')
-            const data = await hentTestTilDatabase(id, userUId);
-         
-            setData(data);
+          // scoredata blir sendt til database to ganger, men per nå blir denne dataen bare erstattet av seg selv 
+          // TODO: fiks dette!
+          const apiData = await hentTestTilDatabase(id, ansID);
+          setData(apiData);
+          setDataLagret(true); // Marker data som lagret
         }
-        fetchData();
-    }, []);
+      }
+      fetchData();
+    }, [id]);
 
 
     if(!data) {
@@ -35,7 +38,7 @@ export default function YourComponent() {
     return (
         <div>
             <h1>Api Test</h1>
-            <p>{data.nevrotisisme.score}</p>
+            <p>suksess</p>
         </div>
     );
 }

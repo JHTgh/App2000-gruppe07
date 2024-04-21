@@ -10,6 +10,7 @@ async function hentBrukerID() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
+        console.log("uid (layout): " + uid);
         resolve(uid);
       } else {
         resolve(null);
@@ -30,6 +31,5 @@ export default function Layout({ children }) {
             {children}
         </div>
     </div>
-
   );
 }

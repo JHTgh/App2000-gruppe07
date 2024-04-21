@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { db } from "@/app/database/firebase";
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
+import { leggTilAnsatt } from '../api/profil/ansatt/leggTilAnsatt';
+import { hentTestTilDatabase } from '../api/big5/hentTestTilDatabase';
 
 export default function AnsattForm ({ bedriftId })  {
   const [employeeData, setEmployeeData] = useState({
@@ -22,35 +24,25 @@ export default function AnsattForm ({ bedriftId })  {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-
-        const ansatteCollection = collection(db, 'ansatte');
-
-        
       // Putter inn firma som FK til ansatt. 
-        const employeeWithCompany = {
-        ...employeeData,
+      const employeeWithCompany = {
+        navn: employeeData.name,
+        epost: employeeData.email,
+        adresse: employeeData.address,
+        testId: employeeData.testId,
         companyId: bedriftId
       };
-      
-    const newEmployeeRef = await addDoc(ansatteCollection, employeeWithCompany);
-    /*const newEmployeeRefId = newEmployeeRef.id;
+      console.log('employeeWithCompany:');
+      console.log(employeeWithCompany);
+      // legger til ny ansatt/profil i database.
+      await leggTilAnsatt(employeeWithCompany);
 
-      const testResultCollection = collection (db, "testResults");
-
-      const testResultsData = {
-        Ekstroversjon: Math.floor(Math.random()*101),
-        Nevrotisisme: Math.floor(Math.random()*101),
-        Samhandling: Math.floor(Math.random()*101),
-        Selvinnsikt: Math.floor(Math.random()*101),
-        Tillit: Math.floor(Math.random()*101),
-        ansattId: newEmployeeRef.id
-      }
-      */
-
-      //await addDoc(testResultCollection, testResultsData);
-
+      // legger inn score til database 
+      // bruker testId som id for dokumentet også, slik at det er lett å finne igjen 
+      await hentTestTilDatabase(employeeData.testId);
+  
       // Legger til data om ansatt
-    // await addDoc(ansatteCollection, employeeWithCompany);
+      // await addDoc(ansatteCollection, employeeWithCompany);
       // Blanker ut form etter en bruker er opprettet. 
       setEmployeeData({
         name: '',
