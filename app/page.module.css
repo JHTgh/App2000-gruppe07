@@ -1,14 +1,26 @@
+
 .main {
  height: auto;
+ padding-top: 0.01vw;
+ background-color: #ebe9e5;
+
+
 }
 
 .flexEn {
   display: flex;
   flex-direction: row;
-  margin-top: 2%;
-  background-color: #6FE3FF;
-  box-shadow: 0px 4px 10px grey;
+  background-color:  #ebe9e5;
+  /*box-shadow: 0px 4px 10px grey;*/
+  margin-bottom:2%;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 5vw;
+  text-align: center;
+  padding: 1vw;
 }
+
 
 .flexVenstreEn,
 .flexHøyreEn {
@@ -19,19 +31,22 @@
 .images {
   width: 100%;
   height: auto;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-bottom: 1vw;
 }
 
 .flexVenstreEn h1 {
   font-size: 2vw;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Segoe UI;
   margin-top: 7vw;
   margin-left: 2vw;
 }
 
 .flexVenstreEn p {
-  font-size: 1.2vw;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.0vw;
   margin-left: 2vw;
+  font-weight: 600;
 }
 
 .flexVenstreEn ul li {
@@ -43,28 +58,30 @@
 .flexVenstreEn ul li a {
   list-style: none;
   text-decoration: none;
-  font-size: 1.25vw;
-  padding: 1.1rem;
+  font-size: 1.2vw;
+  padding: 0.8rem;
+  font-weight: 600;
   border-radius: 1rem;
-  background-color: #273746;
-  color: white;
+  background-color: #A69679;
+  color: #ffffff;
   margin-bottom: 0.5rem;
-  box-shadow: 0 0 10px black;
+  box-shadow: rgba(114, 114, 111, 0.3) 0px 19px 38px, rgba(154, 156, 149, 0.22) 0px 15px 12px;
 }
 
 .flexTo {
   display: flex;
-  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .flexVenstreTo,
 .flexMidtTo,
 .flexHøyreTo {
   flex: 1;
-  background-color: #B0E0E6;
+  background-color: #ffffff;
   border-radius: 1rem;
   margin: 1vw 3.5vw 5vw 3.5vw;
-  box-shadow: 0 0 10px grey;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
 .flexVenstreTo h2,
@@ -85,7 +102,7 @@
   display: flex;
 }
 .text {
-  background-color: #B0E0E6;
+  background-color: #ffffff;
   border-radius: 1rem;
   margin: 1vw 36vw 5vw 3.5vw;
   box-shadow: 0 0 10px grey;
@@ -99,6 +116,11 @@
 .text p {
   font-size: 1.5vw;
 }
+.flexVenstreTo, .flexMidtTo, .flexHøyreTo {
+  text-align: center;
+  padding-bottom: 3vw;
+}
+
 /*telefon format*/
 @media (max-width: 480px) {
   .flexEn {
@@ -117,18 +139,19 @@
     padding: 2% 10% 2.5% 3%;
   }
 
-  .flexVenstreEn ul li {
+  /*.flexVenstreEn ul li {
     margin: 0vw 0vw 0vw 35vw;
   }
+  */
 
   .flexVenstreEn ul li a {
     font-size: 3vw;
-    padding: 1.1rem;
+    padding: 0.8rem;
     border-radius: 1rem;
-    background-color: #273746;
+    background-color: #a8a69b;
     color: white;
     margin-bottom: 0.5rem;
-    box-shadow: 0 0 10px black;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
   .flexTo {
     flex-direction: column;

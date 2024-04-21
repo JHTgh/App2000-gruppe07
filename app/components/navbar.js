@@ -45,13 +45,7 @@ function Navbar() {
 
         <ul className={styles.links}>
           <li className={styles.navElement}>
-            <Link href="/arb3">Arbeidskrav3</Link>
-          </li>
-          <li className={styles.navElement}>
             <Link href="https://bigfive-test.com">Test</Link>{" "}
-          </li>
-          <li className={styles.navElement}>
-            <Link href="/compare">Sammenlign</Link>
           </li>
           <>
           {innloggetBruker ? (
