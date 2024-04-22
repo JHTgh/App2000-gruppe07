@@ -21,7 +21,7 @@ function Sidebar() {
                     <Link href="/dashboard"><FaRegListAlt /> Lister</Link>
                     </li>
                     <li className={styles.navElement}>
-                    <Link href="/dashboard"><FaCodeCompare /> Sammenlign</Link>
+                    <Link href="/dashboard/compare"><FaCodeCompare /> Sammenlign</Link>
                     </li>
                 </ul>
             </nav>
