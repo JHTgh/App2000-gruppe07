@@ -79,32 +79,38 @@
   .pageContainer {
     height: 100vw;
     margin-top: 10vw;
+    margin-left: 0%;
+    margin-right: 0%;
+    align-items: center;
+
   }
   
   .formContainer {
     width: 60vw;
-    padding: 2vw;
+    padding: 2vw;    
+    font-size: 2vw;
   }
   
   .textfieldBedrift {
     margin: 1vw 1vw 1vw 1vw;
     height: 7vw;
     padding-left: 1vw;
-    font-size: 4vw;
+    font-size: 3vw;
   }
   
   .textfieldEmail {
     margin: 1vw 1vw 1vw 1vw;
     height: 7vw;
     padding-left: 1vw;
-    font-size: 4vw;
+    font-size: 3vw;
   }
   
   .textfieldPw {
     margin: 1vw 1vw 0vw 1vw;
     height: 7vw;
     padding-left: 1vw;
-    font-size: 4vw;
+    font-size: 3vw;
+    margin-bottom: 2vw;
   }
   
   .textfield::placeholder {
@@ -114,7 +120,7 @@
   
   .regBtn {
     border: 1vw black;
-    font-size: 5vw;
+    font-size: 2vw;
     width: 45vw;
     border-radius: 1.5vw;
   }
