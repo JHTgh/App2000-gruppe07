@@ -5,10 +5,12 @@ import ValgteProfilerListe from '@/app/components/compare/valgteProfiler';
 import { hentAlleProfiler } from '@/app/api/querys/profiler/hentAlleProfiler';
 import { userUId } from '@/app/dashboard/layout';
 import styles from "./page.module.css";
+import CompareAll from '@/app/components/compare/compareAll';
 
 const Sammenlign = () => {
 
     const [profiler, setProfiler] = useState([]);
+    const [profilTeller, setProfilTeller] = useState(0);
     const [valgteProfiler, setValgteProfiler] = useState([]);
     const [navn, setNavn] = useState([]);
 
@@ -23,12 +25,22 @@ const Sammenlign = () => {
         // data blir returnert som et objekt men vi vil ha det i en array
         
         setProfiler(data);
-
+        setProfilTeller(profilTeller + 1);
     };
     fetchData();
     }, []);
 
-    if( profiler.length === 0 ) {
+    if( profiler.length === 0  ) {
+        return (
+        <div className={styles.flexcontainer}>
+            <div className={styles.flexkomponent}>
+                <p>Laster inn...</p>
+            </div>
+        </div>
+        );
+    }
+
+    if(  ) { // den loader inn før data har blitt hentet.. altså en promise er igjennom men ikke ferdig
         return (
         <div className={styles.flexcontainer}>
             <div className={styles.flexkomponent}>
@@ -51,6 +63,7 @@ const Sammenlign = () => {
         <div className={styles.flexkomponent}>
             <h1>Valgte profiler</h1>
             <ValgteProfilerListe valgteProfiler={valgteProfiler} />
+            
         </div>
     </div>
     );
