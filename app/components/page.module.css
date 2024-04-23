@@ -16,32 +16,32 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(white, #fafafa);
-  border-bottom: 1px solid #7d7d7d;
-  box-shadow: 0 0 10px grey;
+  background-color:  #D6D6CE;
   top: 0;
   z-index: 2;
   align-items: center;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .navbar .logo {
-  margin: 0.5rem;
-  margin-left: 3rem;
+  margin: 1vw;
+  margin-left: 3vw;
 }
 
 .navbar .links li a:not(.active):hover {
-  background-color: #273746;
-    box-shadow: 0 0 10px black;
+  background-color:#A69679;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     color: white;
 }
 
 .navbar .links li a {
   text-decoration: none;
   color: black;
-  margin-left: 25px;
-  margin-right: 25px;
-  padding: 5px;
-  border-radius: 0.3rem;
+  margin-right: 1vw;
+  padding: 0.5vw;
+  border-radius: 0.3vw;
+  font-weight: 600;
 }
 
 /*Burger meny*/
@@ -52,8 +52,8 @@
 /*Footer*/
 .footerContainer {
   display: flex;
-  width: 100%;
-  background-color: #eaecee;
+  width: 100vw;
+  background-color: #D6D6CE;
 }
 
 .images {
@@ -63,10 +63,10 @@
 .footerContent {
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 1.25vw;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding-left: 20px;
+  padding-left: 1vw;
 }
 
 .sosMed ul {
@@ -78,7 +78,7 @@
 
 .sosMed ul li {
   list-style: none;
-  padding-right: 0.5rem;
+  padding-left: 1vw;
 }
 
 .sosMed ul li a img {
@@ -119,20 +119,23 @@
   .navburger {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #7d7d7d;
+    /*border-bottom: 1px solid #7d7d7d; */
     margin-bottom: 4vw;
   }
-
+  .navburger .burgerlinks li a:not(.active):hover {
+    background-color:#A69679;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+      color: white;
+  }
   .burgerElement {
     list-style: none;
   }
   
   .burgerlinks {
     position: absolute;
-    background-color: white;
-    border: 1px solid #7d7d7d;
+    background-color: #D6D6CE;
     right: 0;
-  }
+    }
   
   .burgerlinks li {
     display: block;
@@ -145,6 +148,7 @@
     font-size: 5vw;
   }
 
+  /*Footer*/
   .footBody {
     flex-direction: column;
   }
@@ -174,5 +178,4 @@
     font-size: 4vw;
   }
 }
-/* burgermeny og .navbar ferdig */
 

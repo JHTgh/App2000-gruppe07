@@ -4,6 +4,8 @@ import { handleRegSubmit } from "../api/signup/signup";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import workplace from "@/public/workplace.png";
+import Image from "next/image";
 
 function validateInput(data) {
   const errors = [];
@@ -60,14 +62,14 @@ export default function Signup() {
   };
 
   return (
-    <div className={styles.pageContainer}>
+      <div className={styles.pageContainer}>
+
       <form className={styles.form} onSubmit={handleSubmit}>
         {suksess && (
           <div className={styles.successMessage}>
             Suksess! Profilen din er opprettet.
           </div>
         )}
-
         <div className={styles.formContainer}>
           <h1>Opprett bedriftskonto</h1>
 
@@ -130,3 +132,10 @@ export default function Signup() {
     </div>
   );
 }
+/*
+<Image
+src={workplace}
+priority={true}
+alt="workplace"
+className={styles.images}
+></Image> */
