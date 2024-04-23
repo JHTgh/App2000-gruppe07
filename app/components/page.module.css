@@ -16,7 +16,7 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  background-color:  #D6D6CE;
+  background-color: #d6d6ce;
   top: 0;
   z-index: 2;
   align-items: center;
@@ -30,9 +30,9 @@
 }
 
 .navbar .links li a:not(.active):hover {
-  background-color:#A69679;
+  background-color: #a69679;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    color: white;
+  color: white;
 }
 
 .navbar .links li a {
@@ -53,7 +53,7 @@
 .footerContainer {
   display: flex;
   width: 100vw;
-  background-color: #D6D6CE;
+  background-color: #d6d6ce;
 }
 
 .images {
@@ -83,6 +83,63 @@
 
 .sosMed ul li a img {
   width: 2vw;
+}
+
+.ansattListeButton {
+  border: 1px black;
+  font-size: 1.25vw;
+  width: 10vw;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  border-radius: 1.5vw;
+  background-color: #55788c;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Table Styling */
+
+.hide {
+  display: none;
+}
+.alleAnsatte {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.alleAnsatte h1 {
+  font-weight: bold;
+  font-family: Roboto, sans-serif;
+  margin-bottom: 10px;
+}
+
+.displayBedriftnavn {
+  color: #007bff;
+}
+
+.antallAnsatte {
+  user-select: none;
+  text-align: right;
+}
+
+.ansattListe .ansattListe thead {
+  background-color: #a69679;
+}
+
+.ansattListe td {
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ansatteTekst {
+  margin-right: 10px;
 }
 
 @media (max-width: 480px) {
@@ -115,7 +172,7 @@
     margin-right: 4vw;
     margin-top: 3.5vw;
   }
-  
+
   .navburger {
     display: flex;
     justify-content: space-between;
@@ -123,25 +180,25 @@
     margin-bottom: 4vw;
   }
   .navburger .burgerlinks li a:not(.active):hover {
-    background-color:#A69679;
+    background-color: #a69679;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-      color: white;
+    color: white;
   }
   .burgerElement {
     list-style: none;
   }
-  
+
   .burgerlinks {
     position: absolute;
-    background-color: #D6D6CE;
+    background-color: #d6d6ce;
     right: 0;
-    }
-  
+  }
+
   .burgerlinks li {
     display: block;
     margin: 2vw 2vw 2vw 2vw;
   }
-  
+
   .burgerlinks li a {
     text-decoration: none;
     color: black;
@@ -178,4 +235,3 @@
     font-size: 4vw;
   }
 }
-
