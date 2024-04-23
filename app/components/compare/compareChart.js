@@ -8,7 +8,8 @@ import { Bar } from "react-chartjs-2";
 import { doc, getDoc } from 'firebase/firestore';
 
 
-const BarChart = ({tittel, navn, score}) => {
+const BarChart = ({tittel, testData}) => {
+  console.log(testData);
 
   const data = {
     labels: [
@@ -18,12 +19,12 @@ const BarChart = ({tittel, navn, score}) => {
       tittel[3],
       tittel[4],
     ],
-    datasets: obj.map((obj) => {
+    datasets: testData.map((enTest) => {
       return {
-        label: navn,
-        data: score,
+        label: enTest.navn,
+        data: enTest.score,
         backgroundColor: [
-          getRandomColors(),
+          enTest.farge,
         ],
         borderColor: [
           "rgba(255, 255, 255, 0.5)",

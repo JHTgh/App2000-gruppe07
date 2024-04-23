@@ -17,7 +17,11 @@ export default function ListeElement( { profil, handleProfilKlikk} ) {
     };
     
     // hvis denne profilen har blitt valgt vil vi heller returnere en skygget knapp som ikke har en trykke funksjon
-    if(selected) return null;
+    if(selected) return (
+        <li>
+            {profil.navn}
+        </li>
+    );
     
     return (
         <li 

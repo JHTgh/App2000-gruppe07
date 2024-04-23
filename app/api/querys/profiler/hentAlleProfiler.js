@@ -10,26 +10,38 @@ export async function hentAlleProfiler( uID ) {
         collection(db, 'ansatte'),
         where('companyId', '==', uID)
     );
-    const snapshot = await getDocs(queryTilProfilerCollection);
+    
+    try {
+        const snapshot = await getDocs(queryTilProfilerCollection);
 
-    // vi vil ha alle objektene queryen finner, men vi vil omformulere alle elementene til det formatet vi vil ha 
-    const alleProfiler = snapshot.docs.map(async doc => {
-        const id = doc.id;
-        const data = doc.data();
-        const navn = data.Navn; 
-        const epost = data.Epost; 
-        const testId = data.testId; 
-        // nå som har riktig test henter vi score istedenfor å returnere testID
-        const scoreData = await hentScoreData(testId);
-        console.log('scoreData (alleProfiler) ', scoreData);
-        return { id, navn, epost, scoreData };
-      });
+        // Henter alle objekter fra queryen og omformulerer dem til ønsket format
+        const alleProfiler = await Promise.all(
+        snapshot.docs.map(async (doc) => {
+            const id = doc.id;
+            const data = doc.data();
+            const navn = data.Navn;
+            const epost = data.Epost;
+            const testId = data.testId;
 
-    console.log('alleProfiler (hentAlleProfiler): ', alleProfiler);
-    if(snapshot.empty){
-        console.log('profil ikke funnet (hentAlleProfiler)');
+            // Henter score istedenfor å returnere testID
+            const scoreData = await hentScoreData(testId);
+            console.log('scoreData (alleProfiler) ', scoreData);
+
+            return { id, navn, epost, scoreData };
+        })
+        );
+
+        console.log('alleProfiler (hentAlleProfiler): ', alleProfiler);
+
+        if (snapshot.empty) {
+        console.log('Profil ikke funnet (hentAlleProfiler)');
+        return null;
+        }
+
+        // Returnerer alle profiler som et Promise
+        return alleProfiler;
+    } catch (error) {
+        console.error('Feil ved henting av profiler:', error);
         return null;
     }
-    // returnerer hele dokumenter for nå
-    return alleProfiler;
 }

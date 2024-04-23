@@ -18,10 +18,10 @@ const Sammenlign = () => {
     useEffect(() => {
     const fetchData = async () => {
         const bedriftUId = await userUId;
-        console.log(bedriftUId);
+        console.log('bedriftUId: ' + bedriftUId);
         const data = await hentAlleProfiler(bedriftUId);
 
-        console.log(data);
+        console.log('data (Sammenlign)',data);
         // data blir returnert som et objekt men vi vil ha det i en array
         
         setProfiler(data);
@@ -40,7 +40,7 @@ const Sammenlign = () => {
         );
     }
 
-    if(  ) { // den loader inn før data har blitt hentet.. altså en promise er igjennom men ikke ferdig
+    if( profiler[profilTeller] === undefined ) { 
         return (
         <div className={styles.flexcontainer}>
             <div className={styles.flexkomponent}>
@@ -49,9 +49,11 @@ const Sammenlign = () => {
         </div>
         );
     }
+ 
 
     const handleProfilKlikk = (profil) => {
     setValgteProfiler([...valgteProfiler, profil]);
+    console.log('valgteProfiler-length: ' + valgteProfiler.length);
     };
 
     return (
@@ -63,7 +65,7 @@ const Sammenlign = () => {
         <div className={styles.flexkomponent}>
             <h1>Valgte profiler</h1>
             <ValgteProfilerListe valgteProfiler={valgteProfiler} />
-            
+            <CompareAll valgteProfiler={valgteProfiler} />
         </div>
     </div>
     );
