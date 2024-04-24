@@ -2,11 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import {finnAnsatteBedrift} from '@/app/database/querys';
 import AnsattForm from '@/app/components/ansattForm';
+import styles from './page.module.css';
 
 export function AlleAnsatte({bedriftId}) {
   const [isFormVisible, setFormVisible] = useState(false);
   const [ansatteListe, setAnsatteListe] = useState([]);
   const [isListVisible, setIsListVisible] = useState(false);
+  const [lastFetchTime, setLastFetchTime] = useState(0);
   const toggleFormVisibility = () => {
     setFormVisible(!isFormVisible);
   };
@@ -23,6 +25,7 @@ export function AlleAnsatte({bedriftId}) {
           const aListe = [];
           querySnapshot.forEach((doc) => {
             aListe.push(doc.data());
+            console.log('Ansatte: ', doc.data());
           });
           setAnsatteListe(aListe);
           setLastFetchTime(currentTime); // Update the last fetch time
@@ -34,24 +37,24 @@ export function AlleAnsatte({bedriftId}) {
   };
   
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-      <h1 style={{ fontSize: '3em', fontWeight: 'bold', color: '#333', marginBottom: '20px', fontFamily: 'Roboto, sans-serif' }}>Velkommen</h1>
-      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', width: '100%' }}>
-        <div style={{ width: '50%' }}>
-          <h2 style={{ fontSize: '2em', fontWeight: 'bold', color: '#007bff', fontFamily: 'Roboto, sans-serif', marginBottom: '10px' }}>Ansatte Liste</h2>
-          <button onClick={fetchEmployeeList}>Vis ansattliste/oppdater</button><ul style={{ listStyleType: 'none', padding: 0, marginTop: '10px' }}>
+    <div className = {styles.alleAnsatte}>
+      <div className = {styles.alleAnsatteContainer}>
+        <div className = {styles.førsteContainer}>
+          <h2 className = {styles.visAnsatte}>Ansatt liste</h2>
+          <button className = {styles.leggTilAnsatteKnapp} onClick={fetchEmployeeList}>Vis ansattliste/oppdater</button>
+          <ul className = {styles.ansatteListe}>
             {ansatteListe.map((ansatt, index) => (
-              <li key={index} style={{ marginBottom: '10px', border: '1px solid #ccc', padding: '10px' }}>
-                <strong>Name:</strong> {ansatt.name} | <strong>Email:</strong> {ansatt.email}
+              <li className = {styles.ansatteListevisning} key={index}>
+                <strong>Navn:</strong> {ansatt.Navn} <strong>Epost:</strong> {ansatt.Epost} 
               </li>
             ))}
           </ul>
         </div>
 
-        <div style={{ width: '50%' }}>
-          <h2 style={{ fontSize: '4em', fontWeight: 'bold', color: '#007bff', fontFamily: 'Roboto, sans-serif', marginBottom: '10px' }}>Legg til brukere</h2>
+        <div className= {styles.andreContainer}>
+          <h2 className = {styles.leggTilAnsatte}>Legg til brukere</h2>
           <div style={{ cursor: 'pointer' }} onClick={toggleFormVisibility}>
-            <span style={{ fontSize: '3em', color: '#007bff' }}>+</span>
+            <span className = {styles.leggTilKryss}>+</span>
           </div>
           {isFormVisible && (
             <div>
