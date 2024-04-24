@@ -12,7 +12,7 @@ export default function Dashboard() {
   useEffect(() => {
     const hentBrukerData = async () => {
       try {
-        const uId = await userUId; // Vente på IDen
+        const uId = await userUId(); // Vente på IDen
         console.log("uID: (page) " + uId);
         const brukerData = await hentBedriftNavn(uId);
         setBruker(brukerData);

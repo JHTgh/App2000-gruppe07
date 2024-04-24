@@ -20,7 +20,7 @@ export default function ListeFremvisning() {
   useEffect(() => {
     const hentBrukerData = async () => {
       try {
-        const uId = await userUId; // Vente på IDen
+        const uId = await userUId(); // Vente på IDen
         const hentBrukernavn = await hentBedriftNavn(uId);
         const upperCaseBrukernavn =
           hentBrukernavn.charAt(0).toUpperCase() + hentBrukernavn.slice(1);

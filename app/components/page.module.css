@@ -99,6 +99,10 @@
 
 /* Table Styling */
 
+.container {
+  justify-items: center;
+}
+
 .hide {
   display: none;
 }
@@ -116,6 +120,11 @@
   margin-bottom: 10px;
 }
 
+.ansatteTekst,
+.displayBedriftnavn {
+  margin-right: 150px;
+}
+
 .displayBedriftnavn {
   color: #007bff;
 }
@@ -125,7 +134,13 @@
   text-align: right;
 }
 
-.ansattListe .ansattListe thead {
+.ansattListe {
+  width: 80%;
+  font-size: 20px;
+  margin-left: 250px;
+}
+
+.ansattListe thead {
   background-color: #a69679;
 }
 
@@ -136,6 +151,10 @@
 .link {
   text-decoration: none;
   color: inherit;
+}
+
+.link:hover {
+  color: rgb(158, 112, 26);
 }
 
 .ansatteTekst {
