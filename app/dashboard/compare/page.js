@@ -1,73 +1,74 @@
-'use client';
-import { useState, useEffect } from 'react';
-import ListeTilCompare from '@/app/components/compare/listeTilCompare';
-import ValgteProfilerListe from '@/app/components/compare/valgteProfiler';
-import { hentAlleProfiler } from '@/app/api/querys/profiler/hentAlleProfiler';
-import { userUId } from '@/app/dashboard/layout';
+"use client";
+import { useState, useEffect } from "react";
+import ListeTilCompare from "@/app/components/compare/listeTilCompare";
+import ValgteProfilerListe from "@/app/components/compare/valgteProfiler";
+import { hentAlleProfiler } from "@/app/api/querys/profiler/hentAlleProfiler";
+import { userUId } from "@/app/dashboard/layout";
 import styles from "./page.module.css";
-import CompareAll from '@/app/components/compare/compareAll';
+import CompareAll from "@/app/components/compare/compareAll";
 
 const Sammenlign = () => {
+  const [profiler, setProfiler] = useState([]);
+  const [profilTeller, setProfilTeller] = useState(0);
+  const [valgteProfiler, setValgteProfiler] = useState([]);
+  const [navn, setNavn] = useState([]);
 
-    const [profiler, setProfiler] = useState([]);
-    const [profilTeller, setProfilTeller] = useState(0);
-    const [valgteProfiler, setValgteProfiler] = useState([]);
-    const [navn, setNavn] = useState([]);
-
-    // henter alle profiler som har riktig bedrift id
-    useEffect(() => {
+  // henter alle profiler som har riktig bedrift id
+  useEffect(() => {
     const fetchData = async () => {
-        const bedriftUId = await userUId;
-        console.log('bedriftUId: ' + bedriftUId);
-        const data = await hentAlleProfiler(bedriftUId);
+      const bedriftUId = await userUId();
+      console.log("bedriftUId: " + bedriftUId);
+      const data = await hentAlleProfiler(bedriftUId);
 
-        console.log('data (Sammenlign)',data);
-        // data blir returnert som et objekt men vi vil ha det i en array
-        
-        setProfiler(data);
-        setProfilTeller(profilTeller + 1);
+      console.log("data (Sammenlign)", data);
+      // data blir returnert som et objekt men vi vil ha det i en array
+
+      setProfiler(data);
+      setProfilTeller(profilTeller + 1);
     };
     fetchData();
-    }, []);
+  }, []);
 
-    if( profiler.length === 0  ) {
-        return (
-        <div className={styles.flexcontainer}>
-            <div className={styles.flexkomponent}>
-                <p>Laster inn...</p>
-            </div>
-        </div>
-        );
-    }
-
-    if( profiler[profilTeller] === undefined ) { 
-        return (
-        <div className={styles.flexcontainer}>
-            <div className={styles.flexkomponent}>
-                <p>Laster inn...</p>
-            </div>
-        </div>
-        );
-    }
- 
-
-    const handleProfilKlikk = (profil) => {
-    setValgteProfiler([...valgteProfiler, profil]);
-    console.log('valgteProfiler-length: ' + valgteProfiler.length);
-    };
-
+  if (profiler.length === 0) {
     return (
-    <div className={styles.flexcontainer}>
+      <div className={styles.flexcontainer}>
         <div className={styles.flexkomponent}>
-            <h1>Profiler</h1>
-            <ListeTilCompare profiler={profiler} handleProfilKlikk={handleProfilKlikk} />
+          <p>Laster inn...</p>
         </div>
-        <div className={styles.flexkomponent}>
-            <h1>Valgte profiler</h1>
-            <ValgteProfilerListe valgteProfiler={valgteProfiler} />
-            <CompareAll valgteProfiler={valgteProfiler} />
-        </div>
-    </div>
+      </div>
     );
+  }
+
+  if (profiler[profilTeller] === undefined) {
+    return (
+      <div className={styles.flexcontainer}>
+        <div className={styles.flexkomponent}>
+          <p>Laster inn...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const handleProfilKlikk = (profil) => {
+    setValgteProfiler([...valgteProfiler, profil]);
+    console.log("valgteProfiler-length: " + valgteProfiler.length);
+  };
+
+  return (
+    <div className={styles.flexcontainer}>
+      <div className={styles.flexkomponent}>
+        <h1>Profiler</h1>
+        <ListeTilCompare
+          profiler={profiler}
+          handleProfilKlikk={handleProfilKlikk}
+        />
+      </div>
+      <div className={styles.flexkomponent}>
+        <h1>Valgte profiler</h1>
+        <ValgteProfilerListe valgteProfiler={valgteProfiler} />
+        <CompareAll valgteProfiler={valgteProfiler} />
+      </div>
+    </div>
+  );
 };
 export default Sammenlign;

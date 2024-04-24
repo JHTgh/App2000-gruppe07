@@ -17,11 +17,14 @@ export default function Home() {
       <div className={styles.flexEn}>
         <div className={styles.flexVenstreEn}>
           <p>
-            Få oversikt over dine ansattes og jobbsøkeres open-source <br /> personlighetstest resultater. <br />
+            Få oversikt over dine ansattes og jobbsøkeres open-source <br />{" "}
+            personlighetstest resultater. <br />
           </p>
           <ul>
             <li>
-              <Link className = {styles.link} href="/opprettbruker">Opprett konto</Link>
+              <Link className={styles.link} href="/opprettbruker">
+                Opprett konto
+              </Link>
             </li>
           </ul>
         </div>
@@ -36,35 +39,36 @@ export default function Home() {
             className={styles.images}
           ></Image>
           <h2>BigFive personlighetstest</h2>
-            <p>
+          <p className={styles.flexVenstreEn}>
             La dine ansatte og jobbsøkere <br />
             ta en personlighetstest, <br />
             og få oversikt av resultatene her.
-            </p>
+          </p>
         </div>
         <div className={styles.flexMidtTo}>
-        <Image
+          <Image
             src={mote}
             priority={true}
             alt="mote"
             className={styles.images}
           ></Image>
           <h2>Registrer deg nå!</h2>
-          <p>
-            Og oppdag hvordan vår plattform kan styrke din rekrutteringsprosess og
-            hjelpe deg med å bygge et team som trives og lykkes sammen.
+          <p className={styles.flexVenstreEn}>
+            Og oppdag hvordan vår plattform kan styrke din rekrutteringsprosess
+            og hjelpe deg med å bygge et team som trives og lykkes sammen.
           </p>
         </div>
         <div className={styles.flexHøyreTo}>
-        <Image
+          <Image
             src={chartto}
             priority={true}
             alt="chartto"
             className={styles.images}
           ></Image>
           <h2>Sammenlign resultatene</h2>
-          <p>
-            I plattformen kan du enkelt sammenligne resultatene fra testen for dine ansatte og jobbsøkere. 
+          <p className={styles.flexVenstreEn}>
+            I plattformen kan du enkelt sammenligne resultatene fra testen for
+            dine ansatte og jobbsøkere.
           </p>
         </div>
       </div>

@@ -1,0 +1,104 @@
+.flexSidebar {
+  display: flex;
+  top: 0vw;
+}
+
+/*sidenav*/
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 100vh;
+  background-color: #d6d6ce;
+}
+
+.sidenav .links {
+  list-style: none;
+}
+
+.sidenav .links li a {
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  background-color: #a69679;
+  color: #ffffff;
+  padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+  margin: 1vw 0.5vw 0.5vw 0.5vw;
+  border-radius: 0.5vw;
+  font-size: 1.7vw;
+}
+
+.sidenav .links li a:not(.active):hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px black;
+  color: #273746;
+}
+
+/*dashboard*/
+.content {
+  flex: 1;
+  text-align: right;
+  margin: 1vw 2vw 0vw 0vw;
+}
+
+.content h1 {
+  font-size: 3vw;
+}
+
+.content p {
+  font-size: 2vw;
+}
+
+.profilContainer {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.527);
+  border-radius: 1rem;
+  padding-bottom: 2px;
+}
+
+.profilContainer img {
+  margin-top: 10px;
+  border-radius: 100vmax;
+  height: 272px;
+  width: 272px;
+}
+
+.ansattEpost {
+  margin-left: 250px;
+}
+
+.bfID {
+  float: right;
+  padding-right: 10px;
+  color: silver;
+}
+
+@media (max-width: 480px) {
+  /*sidenav*/
+  .sidenav {
+    width: 32.5vw;
+    height: 100vh;
+  }
+
+  .sidenav .links li a {
+    padding: 1vw 1vw 1vw 1vw;
+    margin: 2.5vw 0.5vw 0.5vw 0.5vw;
+    border-radius: 1vw;
+    font-size: 3.75vw;
+  }
+
+  /*dashboard*/
+  .content {
+    flex: 1;
+    text-align: right;
+    margin: 1vw 2vw 0vw 0vw;
+  }
+
+  .content h1 {
+    font-size: 6vw;
+  }
+
+  .content p {
+    font-size: 4vw;
+  }
+}

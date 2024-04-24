@@ -37,8 +37,8 @@
   left: 2vw;
 }
 
-
-.formContainer, .loginBtn {
+.formContainer,
+.loginBtn {
   margin-top: 1vw;
   text-align: center;
 }
@@ -49,7 +49,7 @@
   padding: 1vw;
   margin-bottom: 1vw;
   border-radius: 1.5vw;
-  background-color: #55788C;
+  background-color: #55788c;
   color: #ffffff;
   cursor: pointer;
 }
@@ -63,7 +63,7 @@
   font-weight: 600;
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
   .pageContainer {
     height: 100vw;
     margin-top: 10vw;
@@ -71,32 +71,32 @@
     margin-right: 0%;
     align-items: center;
   }
-  
+
   .formContainer {
     width: 60vw;
     padding: 2vw;
     font-size: 2vw;
   }
-  
+
   .textfieldEmail {
     margin: 1vw 1vw 1vw 1vw;
     height: 7vw;
     padding-left: 1vw;
     font-size: 3vw;
   }
-  
+
   .textfieldPw {
     margin: 1vw 1vw 1vw 1vw;
     height: 7vw;
     padding-left: 1vw;
     font-size: 3vw;
   }
-  
+
   .textfield::placeholder {
     font-size: 1vw;
     left: 2vw;
   }
-  
+
   .loginBtn {
     border: 1vw black;
     font-size: 3vw;
