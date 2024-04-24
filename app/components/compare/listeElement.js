@@ -63,41 +63,26 @@ export default function ListeElement( { profil, handleProfilKlikk, handleValgteP
 }*/
 
 
-export default function ListeElement( { profil, handleProfilKlikk, handleValgteProfilerKlikk , selected, setSelected, index} ) {
-
-    const behandleEnProfilKlikk = (p) => {
+export default function ListeElement( { profil, handleProfilKlikk, handleValgteProfilerKlikk , erValgt} ) {
+        const behandleKlikk = () => {
         // Legg til logikk for å flytte profilen til den andre listen her
-        console.log('index: ' + index);
-        if(!selected[index]){
-            handleProfilKlikk(p);
-            console.log(p.navn + ' er valgt til sammenligning');
+        if(erValgt){
+            handleValgteProfilerKlikk(profil);
+            console.log(profil.navn + ' er fjernet fra sammenligning');
+            
         }else{
-            handleValgteProfilerKlikk(p);
-            console.log(p.navn + ' er fjernet fra sammenligning');
+            handleProfilKlikk(profil);
+            console.log(profil.navn + ' er valgt til sammenligning');
         }
-        // lager logikk for å selecte profilen
-        console.log(selected[index]);
-        setSelected(index, !selected[index]);
-        console.log(selected[index]);
     };
-    
-    // hvis denne profilen har blitt valgt vil vi heller returnere en skygget knapp som ikke har en trykke funksjon
 
-    if(selected){ 
-        return (
-            <li
-                onClick={() => behandleEnProfilKlikk(profil)}
-                className={styles.valgtElement}>
-                    {profil.navn}
-            </li>
-        )
-    }else{
-        return (
-            <li
-                onClick={() => behandleEnProfilKlikk(profil)}
-                className={styles.ikkeValgtElement}>
-                    {profil.navn}
-            </li>
-        )
-    }
+    // hvis denne profilen har blitt valgt vil vi heller returnere en skygget knapp som ikke har en trykke funksjon
+    return (
+        <li
+          onClick={behandleKlikk}
+          className={erValgt ? styles.valgtElement : styles.ikkeValgtElement}
+        >
+          {profil.navn}
+        </li>
+      );
 }

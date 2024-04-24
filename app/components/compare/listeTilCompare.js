@@ -2,28 +2,22 @@
 'use client';
 import ListeElement from "./listeElement";
 
-const ListeTilCompare = ({ profiler, handleProfilKlikk,handleValgteProfilerKlikk, selected, setSelected }) => {
-
-
-  for (let i = 0; i < profiler.length; i++) {
-    console.log(profiler[i].navn + ' ' + selected[i]);
-  }
-
-  console.log(selected);
-
+const ListeTilCompare = ({ profiler, handleProfilKlikk,handleValgteProfilerKlikk, valgteProfiler }) => {
   return (
     <ul>
-      {profiler.map((profil, index) => (
-        <ListeElement
-          key={profil.id}
-          profil={profil}
-          handleProfilKlikk={handleProfilKlikk}
-          handleValgteProfilerKlikk={handleValgteProfilerKlikk}
-          selected={selected[index]} 
-          setSelected={setSelected}
-          index={index}
+      {profiler.map((profil) => {
+        const erValgt = valgteProfiler && valgteProfiler.includes(profil);    
+           
+        return (
+          <ListeElement
+            key={profil.id}
+            profil={profil}
+            handleProfilKlikk={handleProfilKlikk}
+            handleValgteProfilerKlikk={handleValgteProfilerKlikk}
+            erValgt={erValgt}
           />
-      ))}
+        );
+      })}
     </ul>
   );
 };

@@ -13,7 +13,6 @@ const Sammenlign = () => {
     const [profilTeller, setProfilTeller] = useState(0);
     const [valgteProfiler, setValgteProfiler] = useState([]);
     const [ikkeValgtProfiler, setIkkeValgtProfiler] = useState([]);
-    const [selected, setSelected] = useState([]);
 
     // henter alle profiler som har riktig bedrift id
     useEffect(() => {
@@ -28,30 +27,21 @@ const Sammenlign = () => {
         setProfiler(data);
         setProfilTeller(profilTeller + 1);
         setIkkeValgtProfiler(data);
-        for(let i = 0; i < data.length; i++) {
-            setSelected(i, false);
-        }
     };
     fetchData();
     }, []);
 
-    if( profiler === null  ) {
+    if (profiler === null || profiler.length === 0) {
         return (
-        <div className={styles.flexcontainer}>
-            <div className={styles.flexkomponent}>
-                <p>Du har ingen profiler.</p>
+            <div className={styles.flexcontainer}>
+                <div className={styles.flexkomponent}>
+                    {profiler === null ? (
+                        <p>Du har ingen profiler.</p>
+                    ) : (
+                        <p>Laster inn...</p>
+                    )}
+                </div>
             </div>
-        </div>
-        );
-    }
-
-    if( profiler.length === 0  ) {
-        return (
-        <div className={styles.flexcontainer}>
-            <div className={styles.flexkomponent}>
-                <p>Laster inn...</p>
-            </div>
-        </div>
         );
     }
 
@@ -64,10 +54,12 @@ const Sammenlign = () => {
         </div>
         );
     }
+    
  
 
     const handleProfilKlikk = (profil) => {
         setValgteProfiler([...valgteProfiler, profil]);
+        console.log(profil.navn + ' er valgt til sammenligning');
         setIkkeValgtProfiler(ikkeValgtProfiler.filter((p) => p.id !== profil.id));
     };
 
@@ -84,8 +76,7 @@ const Sammenlign = () => {
                 profiler={profiler} 
                 handleProfilKlikk={handleProfilKlikk} 
                 handleValgteProfilerKlikk={handleValgteProfilerKlikk} 
-                selected={selected} 
-                setSelected={setSelected}
+                valgteProfiler={valgteProfiler}
             />
         </div>
         <div className={styles.restenPanel}>
