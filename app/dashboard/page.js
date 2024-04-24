@@ -1,9 +1,10 @@
-"use client";
-import { useEffect, useState } from "react";
-import { queryBedriftNavn } from "@/app/api/querys/bedrift/queryBedrifNavn";
-import { userUId } from "./layout";
-import { hentBedriftNavn } from "../api/querys/bedrift/hentBedriftNavn";
-import { AlleAnsatte } from "../components/alleAnsatte";
+'use client';
+import { useEffect, useState } from 'react';
+import { queryBedriftNavn } from '@/app/api/querys/bedrift/queryBedrifNavn'; 
+import { userUId } from './layout';
+import { hentBedriftNavn } from '../api/querys/bedrift/hentBedriftNavn';
+import styles from "./page.module.css";
+
 
 export default function Dashboard() {
   const [bruker, setBruker] = useState(null);
@@ -27,10 +28,30 @@ export default function Dashboard() {
 
   if (!bruker && !feil) {
     return (
-      <div>
-        <h1>Velkommen</h1>
-        <p>Laster inn...</p>
-      </div>
+        <div>
+            <h1>Velkommen</h1>
+            <p className={styles.content}>{bruker}</p>
+            <div className={styles.flexContainer}>
+                <div className={styles.flexBox}>
+                    <h1 className={styles.antallAnsatte}>14</h1>
+                    <p>Ansatte</p>
+                </div>
+  <             div className={styles.flexBox}><p>Hei på deg</p></div>
+            </div>
+            <p className={styles.innholdDashboard}>
+            Legg til nye profiler i knappen<span className={styles.buttonDashboard}>Profiler</span><br/>
+            Husk å legg til testresultat ID når du oppretter profiler, <br />
+            for å oppnå full funksjonalitet av plattformen. <br />
+            </p>
+            <p className={styles.innholdDashboard}>
+            Se listen over profiler som er laget, <br />
+            og lag din egne lister i <span className={styles.buttonDashboard}>Lister</span> <br /> 
+            </p>
+            <p className={styles.innholdDashboard}>
+            Sammenlign profilene du har laget <br />
+            i knappen <span className={styles.buttonDashboard}>Sammenlign</span> <br />
+            </p>
+        </div>
     );
   }
 
