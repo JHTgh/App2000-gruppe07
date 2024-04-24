@@ -85,6 +85,10 @@
   width: 2vw;
 }
 
+.ansattListeTelling {
+  font-size: 16px;
+}
+
 .ansattListeButton {
   border: 1px black;
   font-size: 1.25vw;

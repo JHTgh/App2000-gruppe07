@@ -26,7 +26,7 @@ export function AlleAnsatte({ bedriftId, bruker }) {
         .then((data) => {
           // [ { id, navn, epost, scoreData } ]
           setAnsatteListe(data);
-          setAntallAnsatt(ansatteListe.length);
+          setAntallAnsatt(data.length);
           console.log(antallAnsatt);
           setIsListVisible(true);
 
@@ -35,22 +35,6 @@ export function AlleAnsatte({ bedriftId, bruker }) {
         .catch((error) => {
           console.error("Error fetching employees: ", error);
         });
-
-      // finnAnsatteBedrift(bedriftId)
-      //   .then((querySnapshot) => {
-      //     const aListe = [];
-      //     querySnapshot.forEach((doc) => {
-      //       aListe.push(doc.data());
-      //     });
-      //     setAnsatteListe(aListe);
-      //     setAntallAnsatt(ansatteListe.length);
-      //     setIsListVisible(true);
-
-      //     setLastFetchTime(currentTime); // Update the last fetch time
-      //   })
-      //   .catch((error) => {
-      //     console.error("Error fetching employees: ", error);
-      //   });
     }
   };
 
@@ -101,8 +85,20 @@ export function AlleAnsatte({ bedriftId, bruker }) {
             </tbody>
           )}
         </table>
-        <h3 className={styles.antallAnsatte}>Antall ansatte </h3>
-        {antallAnsatt}
+        <h3
+          className={`${styles.antallAnsatte} ${
+            isListVisible ? "" : styles.hide
+          }`}
+        >
+          Antall ansatte{" "}
+        </h3>
+        <p
+          className={`${styles.ansattListeTelling} ${
+            isListVisible ? "" : styles.hide
+          }`}
+        >
+          {antallAnsatt}
+        </p>
       </div>
 
       <div style={{ width: "50%" }}>
