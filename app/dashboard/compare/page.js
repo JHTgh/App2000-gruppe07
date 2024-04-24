@@ -12,7 +12,8 @@ const Sammenlign = () => {
     const [profiler, setProfiler] = useState([]);
     const [profilTeller, setProfilTeller] = useState(0);
     const [valgteProfiler, setValgteProfiler] = useState([]);
-    const [navn, setNavn] = useState([]);
+    const [ikkeValgtProfiler, setIkkeValgtProfiler] = useState([]);
+    const [selected, setSelected] = useState([]);
 
     // henter alle profiler som har riktig bedrift id
     useEffect(() => {
@@ -26,9 +27,23 @@ const Sammenlign = () => {
         
         setProfiler(data);
         setProfilTeller(profilTeller + 1);
+        setIkkeValgtProfiler(data);
+        for(let i = 0; i < data.length; i++) {
+            setSelected(i, false);
+        }
     };
     fetchData();
     }, []);
+
+    if( profiler === null  ) {
+        return (
+        <div className={styles.flexcontainer}>
+            <div className={styles.flexkomponent}>
+                <p>Du har ingen profiler.</p>
+            </div>
+        </div>
+        );
+    }
 
     if( profiler.length === 0  ) {
         return (
@@ -52,19 +67,30 @@ const Sammenlign = () => {
  
 
     const handleProfilKlikk = (profil) => {
-    setValgteProfiler([...valgteProfiler, profil]);
-    console.log('valgteProfiler-length: ' + valgteProfiler.length);
+        setValgteProfiler([...valgteProfiler, profil]);
+        setIkkeValgtProfiler(ikkeValgtProfiler.filter((p) => p.id !== profil.id));
+    };
+
+    const handleValgteProfilerKlikk = (profil) => {
+        setValgteProfiler(valgteProfiler.filter((p) => p.id !== profil.id));
+        setIkkeValgtProfiler([...ikkeValgtProfiler, profil]);
     };
 
     return (
     <div className={styles.flexcontainer}>
-        <div className={styles.flexkomponent}>
+        <div className={styles.sideListe}>
             <h1>Profiler</h1>
-            <ListeTilCompare profiler={profiler} handleProfilKlikk={handleProfilKlikk} />
+            <ListeTilCompare 
+                profiler={profiler} 
+                handleProfilKlikk={handleProfilKlikk} 
+                handleValgteProfilerKlikk={handleValgteProfilerKlikk} 
+                selected={selected} 
+                setSelected={setSelected}
+            />
         </div>
-        <div className={styles.flexkomponent}>
+        <div className={styles.restenPanel}>
             <h1>Valgte profiler</h1>
-            <ValgteProfilerListe valgteProfiler={valgteProfiler} />
+            <ValgteProfilerListe valgteProfiler={valgteProfiler} handleValgteProfilerKlikk={handleValgteProfilerKlikk} />
             <CompareAll valgteProfiler={valgteProfiler} />
         </div>
     </div>

@@ -1,0 +1,49 @@
+/*   Styling for alle compare komponenter   */
+
+
+
+
+/*  valgte profiler  */
+.valgtKnapp {
+    background-color: #c0baba;
+    border: 1px solid #2c2a2a;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    
+
+}
+
+/*  liste element  */
+
+.valgtElement {
+    color : #635e5e;
+    background-color: #D6D6CE;
+    border: 1px solid #2c2a2a;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+}
+.ikkeValgtElement{
+    background-color: #c0baba;
+    border: 1px solid #2c2a2a;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+}
+
