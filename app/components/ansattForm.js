@@ -4,6 +4,7 @@ import { db } from "@/app/database/firebase";
 import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
 import { leggTilAnsatt } from '../api/profil/ansatt/leggTilAnsatt';
 import { hentTestTilDatabase } from '../api/big5/hentTestTilDatabase';
+import styles from './page.module.css';
 
 export default function AnsattForm ({ bedriftId })  {
   const [employeeData, setEmployeeData] = useState({
@@ -61,27 +62,27 @@ export default function AnsattForm ({ bedriftId })  {
   }
 
   return (
-    <form onSubmit = {handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '20px', padding: '30px', border: '1px solid #eee', borderRadius: '10px', backgroundColor: '#f9f9f9' }}>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <label htmlFor="name" style={{ marginBottom: '10px' }}>Navn:</label>
-        <input type="text" id="name" value={employeeData.name} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
-        <label htmlFor="email" style={{ marginBottom: '10px' }}>Epost:</label>
-        <input type="email" id="email" value={employeeData.email} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
+    <form className={styles.ansattForm} onSubmit = {handleSubmit} >
+      <div className={styles.ansattContainer}>
+        <label className={styles.ansattLabel} htmlFor="name">Navn:</label>
+        <input className={styles.ansattInput} type="text" id="name" value={employeeData.name} onChange={handleChange}/>
+        <label className={styles.ansattLabel} htmlFor="email" >Epost:</label>
+        <input className={styles.ansattInput} type="email" id="email" value={employeeData.email} onChange={handleChange}/>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <label htmlFor="postnummer" style={{ marginBottom: '10px' }}>Postnummer:</label>
-        <input type="text" id="postnummer" value={employeeData.postnummer} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
-        <label htmlFor="jobbtittel" style={{ marginBottom: '10px' }}>Jobbtittel:</label>
-        <input type="text" id="jobbtittel" value={employeeData.jobbtittel} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
+      <div className= {styles.ansattContainer}>
+        <label className={styles.ansattLabel} htmlFor="postnummer">Postnummer:</label>
+        <input className={styles.ansattInput} type="text" id="postnummer" value={employeeData.postnummer} onChange={handleChange}/>
+        <label className={styles.ansattLabel} htmlFor="jobbtittel">Jobbtittel:</label>
+        <input className={styles.ansattInput} type="text" id="jobbtittel" value={employeeData.jobbtittel} onChange={handleChange}/>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <label htmlFor="address" style={{ marginBottom: '10px' }}>Addresse:</label>
-        <input type="text" id="address" value={employeeData.address} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
-        <label htmlFor="testId" style={{ marginBottom: '10px' }}>TestId:</label>
-        <input type="text" id="testId" value={employeeData.testId} onChange={handleChange} style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginBottom: '20px' }} />
+      <div className= {styles.ansattContainer}>
+        <label className={styles.ansattLabel} htmlFor="address" >Addresse:</label>
+        <input className={styles.ansattInput} type="text" id="address" value={employeeData.address} onChange={handleChange}/>
+        <label className={styles.ansattLabel} htmlFor="testId">TestId:</label>
+        <input className={styles.ansattInput} type="text" id="testId" value={employeeData.testId} onChange={handleChange}/>
        </div>
-       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <button type="submit">Legg til bruker</button>
+       <div className= {styles.ansattContainer}>
+        <button className={styles.leggTilKnapp} type="submit">Legg til bruker</button>
       </div>
     </form>
   );
