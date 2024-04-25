@@ -1,13 +1,14 @@
 // panel som viser frem info om valgt profil
+import ProfilForm from "./profilForm";
 
+const ProfilInfo = ({ profil, setFormData }) => {
 
-const ProfilInfo = ({ profil }) => {
+    function oppdaterProfil() {
+        setFormData(profil);
+    }
+
     return (
-        <div>
-            <h1>{profil.navn}</h1>
-            <p>{profil.epost}</p>
-            <p>{profil.ansatte}</p>
-        </div>
+        <ProfilForm formData={formData} behandleTrykk={oppdaterProfil} setFormData={setFormData} typeEvent="oppdater" />
     );
 };
 

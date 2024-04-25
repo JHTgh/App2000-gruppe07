@@ -3,11 +3,11 @@
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '@/app/database/firebase';
 
-export async function hentAlleProfiler( uID ) {
+export async function hentProfilListe( uID ) {
     // lager query for å hente ut alle ansatte som har rikig bedrift id
     const queryTilProfilerCollection = query(
         collection(db, 'ansatte'),
-        where('companyId', '==', uID)
+        where('CompanyId', '==', uID)
     );
     
     try {
@@ -21,7 +21,7 @@ export async function hentAlleProfiler( uID ) {
             const navn = data.Navn;
             const stilling = data.Stilling;
             const epost = data.Epost;
-            const testId = data.testId;
+            const testId = data.TestId;
             const adresse = data.Adresse;
             const postNr = data.PostNr;
 

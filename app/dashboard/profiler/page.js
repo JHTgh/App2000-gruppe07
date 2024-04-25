@@ -3,35 +3,34 @@
 // hvis man legger til en profil skal denne profilen dukke opp i liste, men ikke fra database (database blir oppdatert, men unødvendig å hente denne dataen fra databese)
 "use client";
 import { useEffect, useState } from "react";
-import { hentAlleProfiler } from "@/app/api/querys/profiler/hentAlleProfiler";
+import { hentProfilListe } from "@/app/api/querys/profiler/hentProfilListe";
 import ProfilInfo from "@/app/components/profiler/profilInfo";
 import ListeProfiler from "@/app/components/profiler/listeProfiler";
 import { userUId } from '@/app/dashboard/layout';
-import { Content } from "next/font/google";
 import LeggTilKnapp from "@/app/components/profiler/leggTilKnapp";
 import styles from "./page.module.css";
-import { leggTilAnsatt } from "@/app/api/profil/ansatt/leggTilAnsatt";
+import LeggTilProfil from "@/app/components/profiler/leggTilProfil";
 
 
 function ProfilerPage() {
 
     const [formData, setFormData] = useState({
-        name: '',
+        navn: '',
+        epost: '',
+        adresse: '',
+        postNr: '',
         stilling: '',
-        email: '',
-        address: '',
-        postnummer: '',
         testId: ''
       });
     const [bedriftId, setBedriftId] = useState('');
     const [profiler, setProfiler] = useState([]);
-    const [valgtProfil, setValgtProfil] = useState({});
+    const [valgtProfil, setValgtProfil] = useState(null);
     
     useEffect(() => {
         const fetchData = async () => {
             const bedriftUId = await userUId;
             console.log('bedriftUId: ' + bedriftUId);
-            const data = await hentAlleProfiler(bedriftUId);
+            const data = await hentProfilListe(bedriftUId);
     
             console.log('data (Sammenlign)',data);
             // data blir returnert som et objekt men vi vil ha det i en array
@@ -40,10 +39,11 @@ function ProfilerPage() {
         };
         fetchData();
         }, []);
-        
 
-        // funksjon for å registrere ny profil/ansatt i databasen
     
+    const oppdaterListe = (profil) => {
+        setProfiler([...profiler, profil]);
+    }
 
     return (
         <div className={styles.flexcontainer}>
@@ -51,10 +51,15 @@ function ProfilerPage() {
                 <ListeProfiler profiler={profiler} setValgtProfil={setValgtProfil} />
             </div>
             <div className={styles.content}>
-                <LeggTilKnapp setValgtProfil={setValgtProfil} />
+                
                 {valgtProfil !== null ? 
-                    <ProfilInfo profil={valgtProfil} /> : 
-                    <h1>Velg profil</h1>
+                    <>
+                        <LeggTilKnapp setValgtProfil={setValgtProfil} />
+                        <ProfilInfo profil={valgtProfil} />
+                    </> : 
+                    <>  
+                        <LeggTilProfil formData={formData} setFormData={setFormData} bedriftId={bedriftId} oppdaterListe={oppdaterListe} />
+                    </>
                 }
             </div>
         </div>

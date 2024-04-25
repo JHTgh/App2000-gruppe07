@@ -3,11 +3,7 @@ import { db } from "../../database/firebase";
 
 
 export async function testDataTilDatabase(data, id) {
-
-    const testResultCollection = collection (db, "testRes");
-
     console.log(data);
-
 
     // lager ett objekt for alle kategorier
     const nevrotisisme = {
@@ -55,17 +51,6 @@ export async function testDataTilDatabase(data, id) {
         selvdisiplin: data.planmessighet.selvdisiplin,
         betenksomhet: data.planmessighet.betenksomhet
     }
-
-    const testResultsData = {
-        Nevrotisisme: nevrotisisme,
-        Ekstroversjon: ekstroversjon,
-        ÅpenhetForErfaringer: åpenhetForErfaringer,
-        Medmenneskelighet: medmenneskelighet,
-        Planmessighet: planmessighet
-    };
-
-    //console.log(testResultsData);
-
     // id for test er også nøkkel for dokumentet
     // her legger vi ikke til et dokument men heller oppdaterer, legger til hvis denne nøkkelen ikke har et dokument
     await setDoc(doc(db, 'testResults', id), {
