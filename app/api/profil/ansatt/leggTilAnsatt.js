@@ -8,8 +8,10 @@ export async function leggTilAnsatt(dataForm) {
     // nyAnsatt = en profil
     const nyAnsatt = {
         Navn: dataForm.navn,
+        Stilling: dataForm.stilling,
         Epost: dataForm.epost,
         Adresse: dataForm.adresse,
+        PostNr: dataForm.postNr,
         testId: dataForm.testId,
         companyId: dataForm.companyId
     }

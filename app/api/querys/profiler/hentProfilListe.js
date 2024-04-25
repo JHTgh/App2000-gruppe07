@@ -19,10 +19,13 @@ export async function hentAlleProfiler( uID ) {
             const id = doc.id;
             const data = doc.data();
             const navn = data.Navn;
+            const stilling = data.Stilling;
             const epost = data.Epost;
             const testId = data.testId;
+            const adresse = data.Adresse;
+            const postNr = data.PostNr;
 
-            return { id, navn, epost, testId };
+            return { id, navn, epost, testId, stilling, adresse, postNr };
         })
         );
 

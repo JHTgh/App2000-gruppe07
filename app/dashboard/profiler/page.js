@@ -10,10 +10,20 @@ import { userUId } from '@/app/dashboard/layout';
 import { Content } from "next/font/google";
 import LeggTilKnapp from "@/app/components/profiler/leggTilKnapp";
 import styles from "./page.module.css";
+import { leggTilAnsatt } from "@/app/api/profil/ansatt/leggTilAnsatt";
 
 
 function ProfilerPage() {
 
+    const [formData, setFormData] = useState({
+        name: '',
+        stilling: '',
+        email: '',
+        address: '',
+        postnummer: '',
+        testId: ''
+      });
+    const [bedriftId, setBedriftId] = useState('');
     const [profiler, setProfiler] = useState([]);
     const [valgtProfil, setValgtProfil] = useState({});
     
@@ -25,13 +35,15 @@ function ProfilerPage() {
     
             console.log('data (Sammenlign)',data);
             // data blir returnert som et objekt men vi vil ha det i en array
-            
+            setBedriftId(bedriftUId);
             setProfiler(data);
         };
         fetchData();
         }, []);
         
 
+        // funksjon for å registrere ny profil/ansatt i databasen
+    
 
     return (
         <div className={styles.flexcontainer}>

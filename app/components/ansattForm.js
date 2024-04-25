@@ -72,8 +72,8 @@ export default function AnsattForm ({ bedriftId })  {
       <div className= {styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="postnummer">Postnummer:</label>
         <input className={styles.ansattInput} type="text" id="postnummer" value={employeeData.postnummer} onChange={handleChange}/>
-        <label className={styles.ansattLabel} htmlFor="jobbtittel">Jobbtittel:</label>
-        <input className={styles.ansattInput} type="text" id="jobbtittel" value={employeeData.jobbtittel} onChange={handleChange}/>
+        <label className={styles.ansattLabel} htmlFor="jobbtittel">Stilling:</label>
+        <input className={styles.ansattInput} type="text" id="jobbtittel" value={employeeData.stilling} onChange={handleChange}/>
       </div>
       <div className= {styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="address" >Addresse:</label>
