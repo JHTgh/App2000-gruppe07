@@ -179,3 +179,59 @@
   }
 }
 
+/* alleAnsatte */
+.alleAnsatte {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  height: '100vh';
+  margin-top: 5vw;
+}
+.alleAnsatteContainer {
+  display: flex; 
+  flex-direction: row;
+  align-items: center; 
+  width: 100%;
+}
+.førsteContainer {
+  width: 50%;
+}
+.visAnsatte {
+  font-size: 1em;
+  font-weight: bold;
+  color: #A69679;
+  margin-bottom: 10px;
+}
+.leggTilAnsatteKnapp {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  padding: 1vw;  
+  font-size: 1vw;
+  font-weight: 600;
+  margin-bottom: 1vw;
+}
+.ansatteListe {
+  list-style-type: none;
+  font-size: 1.2vw;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.ansatteListevisning {
+  margin-bottom: 2vw;
+  margin-top: 1vw;
+  justify-content: space-between;
+
+}
+.andreContainer {
+  width: 50%;
+}
+.leggTilAnsatte {
+  font-size: 1em;
+  font-weight: bold;
+  color: #A69679;
+  margin-bottom: 10px;
+}
+.leggTilKryss {
+  font-size: 1em; 
+  color: #A69679;
+}
