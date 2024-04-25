@@ -10,3 +10,25 @@
 
     
 }
+.sideListe{
+    flex-grow: 0;
+    width: 15vw;
+    min-width: 100px;
+    height: 100vh;
+    background-color: #D6D6CE;
+    list-style: none;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+
+}
+.restenPanel{
+    flex-grow: 1;
+    width: 50vw;
+    height: 100vh;
+    background-color: #f5f5ef;
+    list-style: none;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}

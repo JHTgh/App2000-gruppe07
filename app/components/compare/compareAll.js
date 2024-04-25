@@ -192,7 +192,7 @@ function CompareAll(valgteProfiler) {
         return(enTest);
     }
 
-    // returnerer alle charts i en løkke - men ble litt for komplisert, så derfor lager vi charts for hvert tema 
+    // returnerer alle charts i en løkke 
     return (
         <div>
            {temaListe.map((tema, index) => (
