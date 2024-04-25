@@ -1,0 +1,11 @@
+/*   Styling for alle komponenter under profiler   */
+
+
+/*  Liste  */
+
+.profilListe{
+    list-style: none;
+}
+.profilListItem{
+    size: 2em;
+}

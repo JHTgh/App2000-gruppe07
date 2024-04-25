@@ -1,8 +1,7 @@
-// henter alle ansatte som er med i loggetinn sin bruker/bedrift
+// henter alle ansatte som er med i loggetinn sin bruker/bedrift UTEN scoreData
 
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '@/app/database/firebase';
-import { hentScoreData } from '../testRes/hentScoreData';
 
 export async function hentAlleProfiler( uID ) {
     // lager query for å hente ut alle ansatte som har rikig bedrift id
@@ -23,11 +22,7 @@ export async function hentAlleProfiler( uID ) {
             const epost = data.Epost;
             const testId = data.testId;
 
-            // Henter score istedenfor å returnere testID
-            const scoreData = await hentScoreData(testId);
-            console.log('scoreData (alleProfiler) ', scoreData);
-
-            return { id, navn, epost, scoreData };
+            return { id, navn, epost, testId };
         })
         );
 

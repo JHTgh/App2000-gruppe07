@@ -1,0 +1,25 @@
+.flexcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.liste{
+    flex-grow: 0;
+    width: 15vw;
+    height: 100vh;
+    background-color: #f5f5ef;
+    list-style: none;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
+.content{
+    flex-grow: 1;
+    width: 50vw;
+    height: 100vh;
+    background-color: #D6D6CE;
+    text-align: center;
+    padding: 1em;
+}

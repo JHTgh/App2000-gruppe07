@@ -54,12 +54,9 @@ const Sammenlign = () => {
         </div>
         );
     }
-    
- 
 
     const handleProfilKlikk = (profil) => {
         setValgteProfiler([...valgteProfiler, profil]);
-        console.log(profil.navn + ' er valgt til sammenligning');
         setIkkeValgtProfiler(ikkeValgtProfiler.filter((p) => p.id !== profil.id));
     };
 
