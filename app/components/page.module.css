@@ -235,3 +235,29 @@
   font-size: 1em; 
   color: #A69679;
 }
+.ansattForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; 
+  margin-top: 20px;
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 10px; 
+  background-color: #f9f9f9;
+}
+.ansattContainer {
+  display: flex;
+  flex-direction: column;
+}
+.ansattLabel {
+  margin-bottom: 10px;
+}
+.leggTilKnapp {
+  background-color: #A69679;
+}
+.ansattInput {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
