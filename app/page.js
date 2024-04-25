@@ -1,16 +1,10 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import Mann from "@/public/mann.jpg";
-import Dame from "@/public/dame.jpg";
-import Test from "@/public/testing.jpg";
-import Gruppe from "@/public/gruppe.jpg";
-import TestPersoner from "@/public/TestPersoner.png";
 import { firebaseConfig } from "@/app/database/firebase";
-import UserChart from "@/public/userChart.png";
 import chartto from "@/public/chartto.png";
-import test from "@/public/test.png";
-import mote from "@/public/mote.png";
+import personlighetstest from "@/public/personlighetstest.png";
+import workplace from "@/public/workplace.png";
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -30,9 +24,9 @@ export default function Home() {
       <div className={styles.flexTo}>
         <div className={styles.flexVenstreTo}>
           <Image
-            src={test}
+            src={personlighetstest}
             priority={true}
-            alt="test"
+            alt="personlighetstest"
             className={styles.images}
           ></Image>
           <h2>BigFive personlighetstest</h2>
@@ -44,9 +38,9 @@ export default function Home() {
         </div>
         <div className={styles.flexMidtTo}>
         <Image
-            src={mote}
+            src={workplace}
             priority={true}
-            alt="mote"
+            alt="workplace"
             className={styles.images}
           ></Image>
           <h2>Registrer deg nå!</h2>

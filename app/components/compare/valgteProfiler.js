@@ -17,7 +17,7 @@ const ValgteProfilerListe = ({ valgteProfiler, handleValgteProfilerKlikk }) => {
           key={profil.id}
           className={styles.valgtKnapp}
           onClick={() => handleKlikk(profil)}>
-          {profil.navn} - {profil.epost}
+          {profil.navn}
         </div>
       ))}
     </div>

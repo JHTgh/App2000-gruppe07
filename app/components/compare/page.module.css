@@ -1,20 +1,22 @@
 /*   Styling for alle compare komponenter   */
 
-
+.liste {
+    list-style: none;
+}
 
 
 /*  valgte profiler  */
 .valgtKnapp {
-    background-color: #c0baba;
-    border: 1px solid #2c2a2a;
-    border-radius: 5px;
-    height: auto;
-    width: auto;
-    padding: 5px;
-    margin: 5px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    background-color: #cbcbcb65;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin: 1vw;
     text-align: center;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1vw;
+    padding: 0.3vw;
+    border-radius: 0.5vw;
     
 
 }
@@ -22,28 +24,43 @@
 /*  liste element  */
 
 .valgtElement {
-    color : #635e5e;
-    background-color: #D6D6CE;
-    border: 1px solid #2c2a2a;
-    border-radius: 5px;
+    color : #000000;
+    background-color: #55788c6d;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     height: auto;
     width: auto;
-    padding: 5px;
-    margin: 5px;
+    margin-top: 0.4vw;
+    margin-bottom: 0.4vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 0.6vw;
     text-align: center;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 0.7vw;
+    border-radius: 0.5vw;
 }
 .ikkeValgtElement{
-    background-color: #c0baba;
-    border: 1px solid #2c2a2a;
-    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     height: auto;
     width: auto;
-    padding: 5px;
-    margin: 5px;
+    margin-top: 0.4vw;
+    margin-bottom: 0.4vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 0.6vw;
+    font-weight: 600;
     text-align: center;
-    font-weight: bold;
-    font-size: 1em;
+    font-size: 0.7vw;
+    border-radius: 0.5vw;
 }
 
+
+
+.chartContainer {
+    width: 750px; 
+    height: 450px;
+    margin: 1vw;
+    align-items: center;
+    padding-left: 3vw;
+}

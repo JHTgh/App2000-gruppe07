@@ -5,7 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 
 export async function hentScoreData(testID) {
  
-    const docRef = doc(db, "testRes", testID);
+    const docRef = doc(db, "testResults", testID);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
