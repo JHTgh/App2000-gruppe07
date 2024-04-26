@@ -11,12 +11,15 @@ import {
 } from "firebase/firestore";
 import { leggTilAnsatt } from "../api/profil/ansatt/leggTilAnsatt";
 import { hentTestTilDatabase } from "../api/big5/hentTestTilDatabase";
+import styles from "./page.module.css";
 
 export default function AnsattForm({ bedriftId }) {
   const [employeeData, setEmployeeData] = useState({
     name: "",
     email: "",
     address: "",
+    postnummer: "",
+    jobbtittel: "",
     testId: "",
   });
 
@@ -54,6 +57,8 @@ export default function AnsattForm({ bedriftId }) {
         name: "",
         email: "",
         address: "",
+        postnummer: "",
+        jobbtittel: "",
         testId: "",
       });
     } catch (error) {

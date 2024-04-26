@@ -1,12 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { finnAnsatteBedrift, queryBrukerNavn } from "@/app/database/querys";
+import { finnAnsatteBedrift } from "@/app/database/querys";
 import AnsattForm from "@/app/components/ansattForm";
 import styles from "./page.module.css";
-import Link from "next/link";
-import { hentAlleProfiler } from "../api/querys/profiler/hentAlleProfiler";
 
-export function AlleAnsatte({ bedriftId, bruker }) {
+export function AlleAnsatte({ bedriftId }) {
   const [isFormVisible, setFormVisible] = useState(false);
   const [ansatteListe, setAnsatteListe] = useState([]);
   const [antallAnsatt, setAntallAnsatt] = useState(0);
@@ -22,14 +20,13 @@ export function AlleAnsatte({ bedriftId, bruker }) {
 
     // Only fetch data if the list is empty or if more than 5 minutes have passed since the last fetch
     if (!ansatteListe.length || currentTime - lastFetchTime > 300000) {
-      hentAlleProfiler(bedriftId)
-        .then((data) => {
-          // [ { id, navn, epost, scoreData } ]
-          setAnsatteListe(data);
-          setAntallAnsatt(ansatteListe.length);
-          console.log(antallAnsatt);
-          setIsListVisible(true);
-
+      finnAnsatteBedrift(bedriftId)
+        .then((querySnapshot) => {
+          const aListe = [];
+          querySnapshot.forEach((doc) => {
+            aListe.push(doc.data());
+          });
+          setAnsatteListe(aListe);
           setLastFetchTime(currentTime); // Update the last fetch time
         })
         .catch((error) => {
@@ -55,48 +52,17 @@ export function AlleAnsatte({ bedriftId, bruker }) {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "3em",
-          fontWeight: "bold",
-          color: "#333",
-          marginBottom: "20px",
-          fontFamily: "Roboto, sans-serif",
-        }}
-      >
-        Velkommen
-      </h1>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
-        <div style={{ width: "50%" }}>
-          <h2
-            style={{
-              fontSize: "2em",
-              fontWeight: "bold",
-              color: "#007bff",
-              fontFamily: "Roboto, sans-serif",
-              marginBottom: "10px",
-            }}
+    <div className={styles.alleAnsatte}>
+      <div className={styles.alleAnsatteContainer}>
+        <div className={styles.førsteContainer}>
+          <h2 className={styles.visAnsatte}>Ansatt liste</h2>
+          <button
+            className={styles.leggTilAnsatteKnapp}
+            onClick={fetchEmployeeList}
           >
-            Ansatte Liste
-          </h2>
-          <button onClick={fetchEmployeeList}>Vis ansattliste/oppdater</button>
-          <ul style={{ listStyleType: "none", padding: 0, marginTop: "10px" }}>
+            Vis ansattliste/oppdater
+          </button>
+          <ul className={styles.ansatteListe}>
             {ansatteListe.map((ansatt, index) => (
               <li
                 key={index}

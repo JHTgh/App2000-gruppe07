@@ -66,16 +66,17 @@ const Sammenlign = () => {
     return (
     <div className={styles.flexcontainer}>
         <div className={styles.sideListe}>
-            <h1>Profiler</h1>
+            <div className={styles.overskrift}>Profiler</div>
             <ListeTilCompare 
                 profiler={profiler} 
                 handleProfilKlikk={handleProfilKlikk} 
                 handleValgteProfilerKlikk={handleValgteProfilerKlikk} 
                 valgteProfiler={valgteProfiler}
+                styles={styles.liste}
             />
         </div>
         <div className={styles.restenPanel}>
-            <h1>Valgte profiler</h1>
+            <div className={styles.overskriftValgt}>Sammenlign</div>
             <ValgteProfilerListe valgteProfiler={valgteProfiler} handleValgteProfilerKlikk={handleValgteProfilerKlikk} />
             <CompareAll valgteProfiler={valgteProfiler} />
         </div>

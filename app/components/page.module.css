@@ -16,7 +16,7 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  background-color: #d6d6ce;
+  background-color: #f8f7f6dd;
   top: 0;
   z-index: 2;
   align-items: center;
@@ -30,7 +30,7 @@
 }
 
 .navbar .links li a:not(.active):hover {
-  background-color: #a69679;
+  background-color: #55788c;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   color: white;
 }

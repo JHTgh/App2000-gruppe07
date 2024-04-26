@@ -4,7 +4,6 @@ import { db } from "../../database/firebase";
 
 export async function testDataTilDatabase(data, id) {
 
-    const testResultCollection = collection (db, "testRes");
 
     console.log(data);
 
@@ -68,7 +67,7 @@ export async function testDataTilDatabase(data, id) {
 
     // id for test er også nøkkel for dokumentet
     // her legger vi ikke til et dokument men heller oppdaterer, legger til hvis denne nøkkelen ikke har et dokument
-    await setDoc(doc(db, 'testRes', id), {
+    await setDoc(doc(db, 'testResults', id), {
         Nevrotisisme: nevrotisisme,
         Ekstroversjon: ekstroversjon,
         ÅpenhetForErfaringer: åpenhetForErfaringer,

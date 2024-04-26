@@ -3,32 +3,57 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-  
 }
 .flexkomponent{
-
-    
+    height: auto;
 }
+
 .sideListe{
     flex-grow: 0;
-    width: 15vw;
-    min-width: 100px;
-    height: 100vh;
-    background-color: #D6D6CE;
+    width: 14vw;
+    max-width: 15vw;
+    justify-content: baseline;
+    background-color: #cbcbcb65;
+    margin-left: 0.7vw;
     list-style: none;
-    margin: 1em;
-    padding: 1em;
     text-align: center;
-
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 0.5vw;
+    align-self: self-start;
+    height: auto;
+    margin-top: 4vw;
+    padding: 1vw;
+    
 }
+
+
 .restenPanel{
     flex-grow: 1;
     width: 50vw;
-    height: 100vh;
-    background-color: #f5f5ef;
+    background-color: #ffffff;
     list-style: none;
     margin: 1em;
+    margin-top: 4vw;
     padding: 1em;
     text-align: center;
+    align-items: center;
+    border-radius: 0.5vw;
+    margin-left: 1vw;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.overskrift{
+    text-align: center;
+    color:#55788C;
+    font-size: 1.2vw;
+    margin-top: 1vw;
+    font-weight: 600;
+}
+.overskriftValgt {
+    text-align: center;
+    color:#55788C;
+    font-size: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-weight: 600;
+
 }
