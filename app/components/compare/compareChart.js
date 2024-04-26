@@ -31,7 +31,7 @@ const BarChart = ({tittel, testData}) => {
           "rgba(255, 255, 255, 0.5)",
         ],
         borderWidth: 1,
-        barThickness: 30
+        barThickness: 20
       };
     }),
   };
