@@ -2,6 +2,7 @@
 'use client';
 import { useState } from 'react';
 import styles from './page.module.css';
+import { LiaPlusSolid } from "react-icons/lia";
 /*
 export default function ListeElement( { profil, handleProfilKlikk, handleValgteProfilerKlikk , ikkeValgtProfiler} ) {
 
@@ -77,12 +78,24 @@ export default function ListeElement( { profil, handleProfilKlikk, handleValgteP
     };
 
     // hvis denne profilen har blitt valgt vil vi heller returnere en skygget knapp som ikke har en trykke funksjon
+    
+    if (erValgt) {
+        return (
+            <li
+            onClick={behandleKlikk}
+            className={styles.valgtElement}
+          >
+            {profil.navn} 
+          </li>
+        );
+    }
+    
     return (
         <li
           onClick={behandleKlikk}
-          className={erValgt ? styles.valgtElement : styles.ikkeValgtElement}
+          className={styles.ikkeValgtElement}
         >
-          {profil.navn}
+          {profil.navn} <LiaPlusSolid className={styles.ikonLeggTil} />
         </li>
       );
 }

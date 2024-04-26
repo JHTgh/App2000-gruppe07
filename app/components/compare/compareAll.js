@@ -1,5 +1,5 @@
 import BarChart from "./compareChart";
-
+import styles from './page.module.css';
 
 const getRandomColors = () => {
     // funksjon som returnerer en random farge
@@ -46,7 +46,7 @@ function CompareAll(valgteProfiler) {
     if(profiler.length === 0) {
         return(
             <div>
-                <p>Velg en bruker</p>
+                <p className={styles.ingenting}>Velg profilene du vil sammenligne</p>
             </div>
         );
     }

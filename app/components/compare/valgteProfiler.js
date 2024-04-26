@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './page.module.css';
+import { RxCross1 } from "react-icons/rx";
 
 const ValgteProfilerListe = ({ valgteProfiler, handleValgteProfilerKlikk }) => {
 
@@ -17,7 +18,7 @@ const ValgteProfilerListe = ({ valgteProfiler, handleValgteProfilerKlikk }) => {
           key={profil.id}
           className={styles.valgtKnapp}
           onClick={() => handleKlikk(profil)}>
-          {profil.navn}
+          {profil.navn} <RxCross1 className={styles.kryssUt} />
         </div>
       ))}
     </div>
