@@ -13,11 +13,10 @@ export default function YourComponent() {
       async function fetchData() {
         if (!dataLagret) {
           console.log('henter data fra api');
-            
 
-          // scoredata blir sendt til database to ganger, men per nå blir denne dataen bare erstattet av seg selv 
+          // scoredata blir sendt til database to ganger, men per nå blir denne dataen bare erstattet av seg selv - en profil skal bare ha en test uansett
           // TODO: fiks dette!
-          const apiData = await hentTestTilDatabase(id, ansID);
+          const apiData = await hentTestTilDatabase(id);
           setData(apiData);
           setDataLagret(true); // Marker data som lagret
         }

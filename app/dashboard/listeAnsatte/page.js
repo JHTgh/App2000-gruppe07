@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { userUId } from "@/app/dashboard/layout";
-import styles from "./page.module.css";
 import {
   addDoc,
   collection,
@@ -11,6 +10,7 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { AlleAnsatte } from "@/app/components/alleAnsatte";
+import { hentBedriftNavn } from "@/app/api/querys/bedrift/hentBedriftNavn";
 
 export default function ListeFremvisning() {
   const [bruker, setBruker] = useState(null);
@@ -33,18 +33,16 @@ export default function ListeFremvisning() {
 
   if (!bruker && !feil) {
     return (
-      <div className={styles.containerLoggedOut}>
-        <div className={styles.contentLoggedOut}>
-          <h1>Ingen tilgang</h1>
-          <p>Vennligst logg inn og forsøk på nytt.</p>
-        </div>
+      <div>
+        <h1>Ingen tilgang</h1>
+        <p>Vennligst logg inn og forsøk på nytt.</p>
       </div>
     );
   }
 
   return (
-    <div className={styles.containerLoggedIn}>
-      <div className={styles.contentLoggedIn}>
+    <div>
+      <div>
         <AlleAnsatte bedriftId={bruker} />
       </div>
     </div>

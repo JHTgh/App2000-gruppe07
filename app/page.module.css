@@ -1,37 +1,44 @@
+
 .main {
  height: auto;
+ padding-top: 0.01vw;
+ background-color: #D6D6CE;
+
+
 }
 
 .flexEn {
   display: flex;
   flex-direction: row;
-  margin-top: 2%;
-  background-color: #6FE3FF;
-  box-shadow: 0px 4px 10px grey;
+  background-color:  #D6D6CE;
+  /*box-shadow: 0px 4px 10px grey;*/
+  margin-bottom:2vw;
+  margin-top: 3vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  border-radius: 5vw;
+  text-align: center;
+  padding: 1vw;
 }
 
-.flexVenstreEn,
-.flexHøyreEn {
+
+.flexVenstreEn {
   flex: 1;
-  margin: 1% 1% 1% 1%;
+  margin: 1vw 1vw 1vw 1vw;
 }
 
 .images {
   width: 100%;
   height: auto;
-}
-
-.flexVenstreEn h1 {
-  font-size: 2vw;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 7vw;
-  margin-left: 2vw;
+  border-top-left-radius: 1vw;
+  border-top-right-radius: 1vw;
+  padding-bottom: 1vw;
 }
 
 .flexVenstreEn p {
-  font-size: 1.2vw;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.0vw;
   margin-left: 2vw;
+  font-weight: 600;
 }
 
 .flexVenstreEn ul li {
@@ -43,28 +50,31 @@
 .flexVenstreEn ul li a {
   list-style: none;
   text-decoration: none;
-  font-size: 1.25vw;
-  padding: 1.1rem;
-  border-radius: 1rem;
-  background-color: #273746;
-  color: white;
-  margin-bottom: 0.5rem;
-  box-shadow: 0 0 10px black;
+  font-size: 1.2vw;
+  padding: 0.8vw;
+  font-weight: 600;
+  border-radius: 1vw;
+  background-color: #A69679;
+  color: #ffffff;
+  box-shadow: rgba(114, 114, 111, 0.3) 0px 19px 38px, rgba(154, 156, 149, 0.22) 0px 15px 12px;
 }
 
 .flexTo {
   display: flex;
-  padding-top: 5%;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .flexVenstreTo,
 .flexMidtTo,
 .flexHøyreTo {
   flex: 1;
-  background-color: #B0E0E6;
-  border-radius: 1rem;
+  background-color: #ffffff;
+  text-align: center;
+  padding-bottom: 3vw;
+  border-radius: 1vw;
   margin: 1vw 3.5vw 5vw 3.5vw;
-  box-shadow: 0 0 10px grey;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
 .flexVenstreTo h2,
@@ -81,90 +91,45 @@
   padding-right: 1vw;
 }
 
-.flexTre {
-  display: flex;
-}
-.text {
-  background-color: #B0E0E6;
-  border-radius: 1rem;
-  margin: 1vw 36vw 5vw 3.5vw;
-  box-shadow: 0 0 10px grey;
-  padding: 1vw 1vw 1vw 1vw;
-}
-
-.text h2 {
-  font-size: 2vw;
-}
-
-.text p {
-  font-size: 1.5vw;
-}
 /*telefon format*/
 @media (max-width: 480px) {
-  .flexEn {
-    flex-direction: column-reverse;
-    padding-bottom: 5vw;
-    
-  }
-
-  .flexVenstreEn h1 {
-    font-size: 4vw;
-    margin-top: 0vw;
-  }
 
   .flexVenstreEn p {
-    font-size: 3vw;
-    padding: 2% 10% 2.5% 3%;
-  }
-
-  .flexVenstreEn ul li {
-    margin: 0vw 0vw 0vw 35vw;
+    font-size: 5vw;
+    padding: 1vw 5vw 5vw 5vw;
   }
 
   .flexVenstreEn ul li a {
-    font-size: 3vw;
-    padding: 1.1rem;
-    border-radius: 1rem;
+    font-size: 4vw;
+    padding: 3vw;
+    border-radius: 5vw;
     background-color: #273746;
     color: white;
-    margin-bottom: 0.5rem;
     box-shadow: 0 0 10px black;
   }
   .flexTo {
     flex-direction: column;
-    padding-top: 10vw;
+    padding-top: 15vw;
   }
 
   .flexVenstreTo,
   .flexMidtTo,
   .flexHøyreTo {
-    margin: 1vw 0vw 5vw 0vw;
-    padding-bottom: 3vw;
+    margin: 0vw 0vw 10vw 0vw;
+    padding-bottom: 10vw;
   }
 
   .flexVenstreTo h2,
   .flexMidtTo h2,
   .flexHøyreTo h2 {
-    font-size: 4vw;
+    font-size: 5vw;
+    margin-bottom: 2vw;
   }
 
   .flexVenstreTo p,
   .flexMidtTo p,
   .flexHøyreTo p {
     padding: 0vw 2vw 0vw 2vw;
-    font-size: 3vw;
-  }
-
-  .text {
-    margin: 1vw 0vw 5vw 0vw;
-    padding: 3vw 3vw 3vw 3vw;
-  }
-
-  .text h2 {
-    font-size: 4vw;
-  }
-
-  .text p {
     font-size: 3.5vw;
   }
 }

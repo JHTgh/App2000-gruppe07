@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { db } from "@/app/database/firebase";
-import styles from "./alleAnsatte.module.css";
 import {
   addDoc,
   collection,
@@ -31,33 +30,22 @@ export default function AnsattForm({ bedriftId }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const ansatteCollection = collection(db, "ansatte");
-
       // Putter inn firma som FK til ansatt.
       const employeeWithCompany = {
-        ...employeeData,
+        navn: employeeData.name,
+        epost: employeeData.email,
+        adresse: employeeData.address,
+        testId: employeeData.testId,
         companyId: bedriftId,
       };
+      console.log("employeeWithCompany:");
+      console.log(employeeWithCompany);
+      // legger til ny ansatt/profil i database.
+      await leggTilAnsatt(employeeWithCompany);
 
-      const newEmployeeRef = await addDoc(
-        ansatteCollection,
-        employeeWithCompany
-      );
-      /*const newEmployeeRefId = newEmployeeRef.id;
-
-      const testResultCollection = collection (db, "testResults");
-
-      const testResultsData = {
-        Ekstroversjon: Math.floor(Math.random()*101),
-        Nevrotisisme: Math.floor(Math.random()*101),
-        Samhandling: Math.floor(Math.random()*101),
-        Selvinnsikt: Math.floor(Math.random()*101),
-        Tillit: Math.floor(Math.random()*101),
-        ansattId: newEmployeeRef.id
-      }
-      */
-
-      //await addDoc(testResultCollection, testResultsData);
+      // legger inn score til database
+      // bruker testId som id for dokumentet også, slik at det er lett å finne igjen
+      await hentTestTilDatabase(employeeData.testId);
 
       // Legger til data om ansatt
       // await addDoc(ansatteCollection, employeeWithCompany);
@@ -88,11 +76,8 @@ export default function AnsattForm({ bedriftId }) {
       }}
     >
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <label
-          htmlFor="name"
-          style={{ marginBottom: "10px", fontWeight: "bold" }}
-        >
-          Navn:
+        <label htmlFor="name" style={{ marginBottom: "10px" }}>
+          Name:
         </label>
         <input
           type="text"
@@ -106,11 +91,8 @@ export default function AnsattForm({ bedriftId }) {
             marginBottom: "20px",
           }}
         />
-        <label
-          htmlFor="email"
-          style={{ marginBottom: "10px", fontWeight: "bold" }}
-        >
-          E-post:
+        <label htmlFor="email" style={{ marginBottom: "10px" }}>
+          Email:
         </label>
         <input
           type="email"
@@ -126,11 +108,8 @@ export default function AnsattForm({ bedriftId }) {
         />
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <label
-          htmlFor="address"
-          style={{ marginBottom: "10px", fontWeight: "bold" }}
-        >
-          Addresse:
+        <label htmlFor="address" style={{ marginBottom: "10px" }}>
+          Address:
         </label>
         <input
           type="text"
@@ -144,10 +123,7 @@ export default function AnsattForm({ bedriftId }) {
             marginBottom: "20px",
           }}
         />
-        <label
-          htmlFor="testId"
-          style={{ marginBottom: "10px", fontWeight: "bold" }}
-        >
+        <label htmlFor="testId" style={{ marginBottom: "10px" }}>
           TestId:
         </label>
         <input
@@ -162,9 +138,7 @@ export default function AnsattForm({ bedriftId }) {
             marginBottom: "20px",
           }}
         />
-        <button className={styles.button} type="submit">
-          Legg til
-        </button>
+        <button type="submit">Add Employee</button>
       </div>
     </form>
   );

@@ -7,10 +7,9 @@
 .sidenav {
   display: flex;
   flex-direction: column;
-  width: 10vw;
+  width: 20vw;
   height: 100vh;
   background-color: #d6d6ce;
-  margin-left: 10vw;
 }
 
 .sidenav .links {
@@ -26,11 +25,11 @@
   padding: 0.5vw 0.5vw 0.5vw 0.5vw;
   margin: 1vw 0.5vw 0.5vw 0.5vw;
   border-radius: 0.5vw;
-  font-size: 1.1vw;
+  font-size: 1.7vw;
 }
 
 .sidenav .links li a:not(.active):hover {
-  background-color: #d8f6ff;
+  background-color: #ffffff;
   box-shadow: 0 0 10px black;
   color: #273746;
 }
@@ -44,39 +43,34 @@
 
 .content h1 {
   font-size: 3vw;
-  margin-right: 10vw;
 }
 
-.content {
+.content p {
   font-size: 2vw;
 }
-.flexContainer {
-  display: flex;
-  flex-direction: row;
-  margin-right: 10vw;
-  justify-content: center;
-}
 
-.flexBox {
-  height: 100px;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+.profilContainer {
   text-align: center;
-  padding: 2vw;
-  margin: 3vw;
+  background-color: rgba(255, 255, 255, 0.527);
+  border-radius: 1rem;
+  padding-bottom: 2px;
 }
 
-.innholdDashboard {
-  margin-right: 10vw;
-  font-size: 1.5vw;
-  margin-top: 2vw;
-  color: black;
+.profilContainer img {
+  margin-top: 10px;
+  border-radius: 100vmax;
+  height: 272px;
+  width: 272px;
 }
-.buttonDashboard {
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 0px 8px;
-  padding-left: 1vw;
-  padding-right: 1vw;
+
+.ansattEpost {
+  margin-left: 250px;
+}
+
+.bfID {
+  float: right;
+  padding-right: 10px;
+  color: silver;
 }
 
 @media (max-width: 480px) {
@@ -89,7 +83,7 @@
   .sidenav .links li a {
     padding: 1vw 1vw 1vw 1vw;
     margin: 2.5vw 0.5vw 0.5vw 0.5vw;
-    border-radius: 0.5rem;
+    border-radius: 1vw;
     font-size: 3.75vw;
   }
 

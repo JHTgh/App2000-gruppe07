@@ -16,32 +16,32 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(white, #fafafa);
-  border-bottom: 1px solid #7d7d7d;
-  box-shadow: 0 0 10px grey;
+  background-color: #d6d6ce;
   top: 0;
   z-index: 2;
   align-items: center;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .navbar .logo {
-  margin: 0.5rem;
-  margin-left: 3rem;
+  margin: 1vw;
+  margin-left: 3vw;
 }
 
 .navbar .links li a:not(.active):hover {
-  background-color: #273746;
-    box-shadow: 0 0 10px black;
-    color: white;
+  background-color: #a69679;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  color: white;
 }
 
 .navbar .links li a {
   text-decoration: none;
   color: black;
-  margin-left: 25px;
-  margin-right: 25px;
-  padding: 5px;
-  border-radius: 0.3rem;
+  margin-right: 1vw;
+  padding: 0.5vw;
+  border-radius: 0.3vw;
+  font-weight: 600;
 }
 
 /*Burger meny*/
@@ -52,8 +52,8 @@
 /*Footer*/
 .footerContainer {
   display: flex;
-  width: 100%;
-  background-color: #eaecee;
+  width: 100vw;
+  background-color: #d6d6ce;
 }
 
 .images {
@@ -63,10 +63,10 @@
 .footerContent {
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 1.25vw;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding-left: 20px;
+  padding-left: 1vw;
 }
 
 .sosMed ul {
@@ -78,11 +78,87 @@
 
 .sosMed ul li {
   list-style: none;
-  padding-right: 0.5rem;
+  padding-left: 1vw;
 }
 
 .sosMed ul li a img {
   width: 2vw;
+}
+
+.ansattListeButton {
+  border: 1px black;
+  font-size: 1.25vw;
+  width: 10vw;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  border-radius: 1.5vw;
+  background-color: #55788c;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Table Styling */
+
+.container {
+  justify-items: center;
+}
+
+.hide {
+  display: none;
+}
+.alleAnsatte {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.alleAnsatte h1 {
+  font-weight: bold;
+  font-family: Roboto, sans-serif;
+  margin-bottom: 10px;
+}
+
+.ansatteTekst,
+.displayBedriftnavn {
+  margin-right: 150px;
+}
+
+.displayBedriftnavn {
+  color: #007bff;
+}
+
+.antallAnsatte {
+  user-select: none;
+  text-align: right;
+}
+
+.ansattListe {
+  width: 80%;
+  font-size: 20px;
+  margin-left: 250px;
+}
+
+.ansattListe thead {
+  background-color: #a69679;
+}
+
+.ansattListe td {
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  color: rgb(158, 112, 26);
+}
+
+.ansatteTekst {
+  margin-right: 10px;
 }
 
 @media (max-width: 480px) {
@@ -115,36 +191,40 @@
     margin-right: 4vw;
     margin-top: 3.5vw;
   }
-  
+
   .navburger {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #7d7d7d;
+    /*border-bottom: 1px solid #7d7d7d; */
     margin-bottom: 4vw;
   }
-
+  .navburger .burgerlinks li a:not(.active):hover {
+    background-color: #a69679;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    color: white;
+  }
   .burgerElement {
     list-style: none;
   }
-  
+
   .burgerlinks {
     position: absolute;
-    background-color: white;
-    border: 1px solid #7d7d7d;
+    background-color: #d6d6ce;
     right: 0;
   }
-  
+
   .burgerlinks li {
     display: block;
     margin: 2vw 2vw 2vw 2vw;
   }
-  
+
   .burgerlinks li a {
     text-decoration: none;
     color: black;
     font-size: 5vw;
   }
 
+  /*Footer*/
   .footBody {
     flex-direction: column;
   }
@@ -174,5 +254,3 @@
     font-size: 4vw;
   }
 }
-/* burgermeny og .navbar ferdig */
-
