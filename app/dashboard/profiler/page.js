@@ -48,14 +48,14 @@ function ProfilerPage() {
     return (
         <div className={styles.flexcontainer}>
             <div className={styles.liste}>
-                <ListeProfiler profiler={profiler} setValgtProfil={setValgtProfil} />
+                <ListeProfiler profiler={profiler} setValgtProfil={setValgtProfil} setFormData={setFormData}/>
             </div>
             <div className={styles.content}>
                 
                 {valgtProfil !== null ? 
                     <>
-                        <LeggTilKnapp setValgtProfil={setValgtProfil} />
-                        <ProfilInfo profil={valgtProfil} />
+                        <LeggTilKnapp setValgtProfil={setValgtProfil} setFormData={setFormData} />
+                        <ProfilInfo profil={valgtProfil} formData={formData} setFormData={setFormData} />
                     </> : 
                     <>  
                         <LeggTilProfil formData={formData} setFormData={setFormData} bedriftId={bedriftId} oppdaterListe={oppdaterListe} />

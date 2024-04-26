@@ -5,10 +5,20 @@
 import styles from './component.module.css'
 
 
-const ListeProfiler = ( {profiler, setValgtProfil} ) => {
+const ListeProfiler = ( {profiler, setValgtProfil, setFormData} ) => {
 
     // hvis trykk skal profil bli valgt og det endrer på valgt profil
-   
+   function behandleTrykk(p){
+    setValgtProfil(p)
+    setFormData({
+        navn: p.navn,
+        epost: p.epost,
+        adresse: p.adresse,
+        postNr: p.postNr,
+        stilling: p.stilling,
+        testId: p.testId
+    })
+   };
 
     return (
     <ul className={styles.profilListe}>
@@ -16,7 +26,7 @@ const ListeProfiler = ( {profiler, setValgtProfil} ) => {
         return (
             <li
                 key={profil.id}
-                onClick={() => setValgtProfil(profil)}
+                onClick={() => behandleTrykk(profil)}
                 className={styles.profilListItem}
                 >
                 {profil.navn} - {profil.epost}
