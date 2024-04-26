@@ -5,7 +5,7 @@
 import styles from './component.module.css'
 
 
-const ListeProfiler = ( {profiler, setValgtProfil, setFormData} ) => {
+const ListeProfiler = ( {profiler, setValgtProfil, setFormData, setVisFrem} ) => {
 
     // hvis trykk skal profil bli valgt og det endrer på valgt profil
    function behandleTrykk(p){
@@ -18,6 +18,7 @@ const ListeProfiler = ( {profiler, setValgtProfil, setFormData} ) => {
         stilling: p.stilling,
         testId: p.testId
     })
+    setVisFrem(false);
    };
 
     return (

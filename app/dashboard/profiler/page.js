@@ -10,6 +10,8 @@ import { userUId } from '@/app/dashboard/layout';
 import LeggTilKnapp from "@/app/components/profiler/leggTilKnapp";
 import styles from "./page.module.css";
 import LeggTilProfil from "@/app/components/profiler/leggTilProfil";
+import VisApiKnapp from "@/app/components/profiler/visApiKnapp";
+import ApiData from "@/app/components/profiler/dataFraApi";
 
 
 function ProfilerPage() {
@@ -25,6 +27,7 @@ function ProfilerPage() {
     const [bedriftId, setBedriftId] = useState('');
     const [profiler, setProfiler] = useState([]);
     const [valgtProfil, setValgtProfil] = useState(null);
+    const [visFrem, setVisFrem] = useState(false);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -44,21 +47,54 @@ function ProfilerPage() {
     const oppdaterListe = (profil) => {
         setProfiler([...profiler, profil]);
     }
+    const oppdaterSlett = (profil) => {
+        setProfiler(profiler.filter(p => p.id !== profil.id));
+    }
+    const oppdaterUpdate = (oppdatertProfil) => {
+        setProfiler(profiler.map(p => p.id === oppdatertProfil.id ? oppdatertProfil : p));
+    }
 
     return (
         <div className={styles.flexcontainer}>
             <div className={styles.liste}>
-                <ListeProfiler profiler={profiler} setValgtProfil={setValgtProfil} setFormData={setFormData}/>
+                <ListeProfiler 
+                    profiler={profiler} 
+                    setValgtProfil={setValgtProfil} 
+                    setFormData={setFormData}
+                    setVisFrem={setVisFrem}
+                />
             </div>
             <div className={styles.content}>
                 
                 {valgtProfil !== null ? 
                     <>
-                        <LeggTilKnapp setValgtProfil={setValgtProfil} setFormData={setFormData} />
-                        <ProfilInfo profil={valgtProfil} formData={formData} setFormData={setFormData} />
+                        <LeggTilKnapp 
+                            setValgtProfil={setValgtProfil} 
+                            setFormData={setFormData} 
+                        />
+                        <ProfilInfo 
+                            profil={valgtProfil} 
+                            formData={formData} 
+                            setFormData={setFormData} 
+                            oppdaterSlett={oppdaterSlett} 
+                            oppdaterUpdate={oppdaterUpdate}
+                        />
+                        {visFrem ? 
+                            <ApiData 
+                                id={valgtProfil.testId}
+                            /> : 
+                            <VisApiKnapp 
+                                setVisFrem={setVisFrem} 
+                            />
+                        }
                     </> : 
                     <>  
-                        <LeggTilProfil formData={formData} setFormData={setFormData} bedriftId={bedriftId} oppdaterListe={oppdaterListe} />
+                        <LeggTilProfil 
+                            formData={formData} 
+                            setFormData={setFormData} 
+                            bedriftId={bedriftId} 
+                            oppdaterListe={oppdaterListe} 
+                        />
                     </>
                 }
             </div>

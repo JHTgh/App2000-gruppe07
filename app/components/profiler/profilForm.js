@@ -1,17 +1,12 @@
 // en komponent som viser frem ett Form, har to funksjoner 1. fungere som et form det submit er legge til en profil, 2. oppdatere en eksisterende profil
 import styles from './../page.module.css';
 
-const ProfilForm = ({profil, formData, behandleTrykk, setFormData, typeEvent}) => {
+const ProfilForm = ({profil, formData, behandleTrykk, behandleEkstraTrykk, setFormData, typeEvent}) => {
 
     
    const handleChange = (event) => {
         setFormData({ ...formData, [event.target.id]: event.target.value });
     };
-   
-    const handleDelete = async (event) => {
-        event.preventDefault();
-        console.log(profil.id);
-    }
 
 
     return (
@@ -41,7 +36,7 @@ const ProfilForm = ({profil, formData, behandleTrykk, setFormData, typeEvent}) =
                 </div> :
                 <div className= {styles.ansattContainer}>
                     <button className={styles.leggTilKnapp} type="submit">Oppdater bruker</button>
-                    <button className={styles.leggTilKnapp} type="button" onClick={handleDelete}>Slett profil</button>
+                    <button className={styles.leggTilKnapp} type="button" onClick={behandleEkstraTrykk}>Slett profil</button>
                 </div>
             }
         </form>

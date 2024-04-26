@@ -52,7 +52,7 @@ const LeggTilProfil = ({formData, setFormData, bedriftId, oppdaterListe}) => {
 
     return (
         <>
-            <ProfilForm profil={null} formData={formData} behandleTrykk={handleSubmit} setFormData={setFormData} typeEvent={"submit"} />
+            <ProfilForm profil={null} formData={formData} behandleTrykk={handleSubmit} behandleEkstraTrykk={null} setFormData={setFormData} typeEvent={"submit"} />
         </>
     )
 }
