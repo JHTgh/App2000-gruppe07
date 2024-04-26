@@ -131,3 +131,4 @@ export function getUserByEmailPromise(email) {
     );
     return getDocs(queryTilBedriftCollection);
   }
+
