@@ -82,6 +82,7 @@ function ProfilerPage() {
                         {visFrem ? 
                             <ApiData 
                                 id={valgtProfil.testId}
+                                navn={valgtProfil.navn}
                             /> : 
                             <VisApiKnapp 
                                 setVisFrem={setVisFrem} 
