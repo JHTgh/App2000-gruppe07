@@ -6,6 +6,8 @@ import { FaRegListAlt } from "react-icons/fa";
 import { FaCodeCompare } from "react-icons/fa6";
 import { BsBarChartFill } from "react-icons/bs";
 
+/*-- Laget av Markus --*/
+
 function Sidebar() {
     return (
 

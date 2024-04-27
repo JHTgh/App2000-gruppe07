@@ -9,6 +9,7 @@ import { FaBars , FaTimes} from 'react-icons/fa';
 
 import { useEffect, useState } from "react";
 
+/*-- Laget Jørgen og Markus --*/
 function Navbar() {
   const [burgerOpen, setBurgerOpen] = useState(false);
 

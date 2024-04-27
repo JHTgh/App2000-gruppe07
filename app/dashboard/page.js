@@ -7,8 +7,9 @@ import styles from "./page.module.css";
 import { IoMdPersonAdd } from "react-icons/io";
 import { FaRegRectangleList } from "react-icons/fa6";
 import { TfiBarChart } from "react-icons/tfi";
+import { hentCount } from '../api/querys/bedrift/hentCountProfiler';
 
-
+/*-- Kode skrevet av Marte-Marie Rønningen -- */
 export default function Dashboard() {
     const [bruker, setBruker] = useState(null);
     const [feil, setFeil] = useState(null);
@@ -20,6 +21,7 @@ export default function Dashboard() {
                 const uId = await userUId; // Vente på IDen
                 console.log('uID: (page) ' + uId);
                 const brukerData = await hentBedriftNavn(uId);
+                const countAnsatte = await (hentCount(uId));
                 setBruker(brukerData);
             } catch (error) {
                 setFeil(error); // Håndter feil

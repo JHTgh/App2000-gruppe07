@@ -6,6 +6,7 @@ import github from "@/public/githubLogo.png";
 import linkedin from "@/public/linkedinLogo.png";
 import styles from "./page.module.css";
 
+/*-- Laget av Jørgen og Markus --*/
 const Footer = () => {
   return (
     <div className={styles.footerContainer}>

@@ -1,6 +1,7 @@
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../database/firebase";
 
+/* -- Kode skrevet av Marte-Marie Rønningen --*/
 export async function leggTilAnsatt(dataForm) {
      const ansatteCollection = collection(db, 'ansatte');
 

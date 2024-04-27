@@ -2,6 +2,7 @@ import { db } from "../database/firebase";
 import firebase from "firebase/app";
 import { collection, getDocs,  query, where, getDoc } from "firebase/firestore";
 
+/* -- Kode skrevet av Kjartan Øyen og Mie Rønningen --*/
 export async function queryBrukerNavn(uID){
     // funksjon som henter data om bruker ved hjelp av uID (som er lik i begge databasene i firebase)
  
