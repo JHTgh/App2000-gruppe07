@@ -16,7 +16,7 @@
   position: sticky;
   display: flex;
   justify-content: space-between;
-  background-color:  #D6D6CE;
+  background-color:  #f8f7f6dd;
   top: 0;
   z-index: 2;
   align-items: center;
@@ -30,7 +30,7 @@
 }
 
 .navbar .links li a:not(.active):hover {
-  background-color:#A69679;
+  background-color:#55788C;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     color: white;
 }
@@ -53,7 +53,7 @@
 .footerContainer {
   display: flex;
   width: 100vw;
-  background-color: #D6D6CE;
+  background-color: #f8f7f6dd;
 }
 
 .images {
@@ -123,7 +123,7 @@
     margin-bottom: 4vw;
   }
   .navburger .burgerlinks li a:not(.active):hover {
-    background-color:#A69679;
+    background-color:#55788c6d;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
       color: white;
   }
@@ -133,7 +133,7 @@
   
   .burgerlinks {
     position: absolute;
-    background-color: #D6D6CE;
+    background-color: #55788C;
     right: 0;
     }
   

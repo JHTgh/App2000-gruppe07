@@ -7,6 +7,7 @@ import Link from "next/link";
 import workplace from "@/public/workplace.png";
 import Image from "next/image";
 
+/* -- Kode skrevet av Kjartan, Jørgen, Mie og Markus --*/
 function validateInput(data) {
   const errors = [];
   if (!data.bedriftNavn) {

@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import Link from "next/link";
 
+/* -- Kode skrevet av Jørgen, Kjartan og Markus --*/
 function validerData(formData) {
   const errors = [];
   if (!formData.email) {

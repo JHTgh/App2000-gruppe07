@@ -4,6 +4,9 @@ import { FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { FaRegListAlt } from "react-icons/fa";
 import { FaCodeCompare } from "react-icons/fa6";
+import { BsBarChartFill } from "react-icons/bs";
+
+/*-- Laget av Markus --*/
 
 function Sidebar() {
     return (
@@ -21,7 +24,7 @@ function Sidebar() {
                     <Link href="/dashboard"><FaRegListAlt /> Lister</Link>
                     </li>
                     <li className={styles.navElement}>
-                    <Link href="/dashboard/compare"><FaCodeCompare /> Sammenlign</Link>
+                    <Link href="/dashboard/compare"><BsBarChartFill /> Sammenlign</Link>
                     </li>
                 </ul>
             </nav>

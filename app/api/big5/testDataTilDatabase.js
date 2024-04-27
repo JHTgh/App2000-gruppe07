@@ -3,6 +3,7 @@ import { db } from "../../database/firebase";
 
 
 export async function testDataTilDatabase(data, id) {
+
     console.log(data);
 
     // lager ett objekt for alle kategorier

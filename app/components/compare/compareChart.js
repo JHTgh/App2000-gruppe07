@@ -6,6 +6,7 @@ import { db } from "../../database/firebase";
 import { queryBrukerNavn, queryBrukerScore } from "../../database/querys";
 import { Bar } from "react-chartjs-2";
 import { doc, getDoc } from 'firebase/firestore';
+import styles from "./page.module.css";
 
 
 const BarChart = ({tittel, testData}) => {
@@ -30,7 +31,7 @@ const BarChart = ({tittel, testData}) => {
           "rgba(255, 255, 255, 0.5)",
         ],
         borderWidth: 1,
-        barThickness: 30
+        barThickness: 20
       };
     }),
   };
@@ -49,7 +50,7 @@ const BarChart = ({tittel, testData}) => {
 
   return (
     <div>
-      <div style={{ width: "800px", height: "500px" }}>
+      <div className={styles.chartContainer}>
         <Bar data={data} options={options} />
       </div>
     </div>
