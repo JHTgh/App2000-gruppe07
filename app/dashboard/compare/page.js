@@ -29,7 +29,7 @@ const Sammenlign = () => {
         setIkkeValgtProfiler(data);
     };
     fetchData();
-    }, []);
+    }, [profilTeller]);
 
     if (profiler === null || profiler.length === 0) {
         return (

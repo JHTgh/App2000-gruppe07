@@ -1,8 +1,4 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, collection, getDocs, query, where, getDoc } from "firebase/firestore";
-import { db } from '../../database/firebase';
-import bcryptjs from 'bcryptjs';
-import { getUserByEmailPromise } from '@/app/database/querys';
 
 /***************Innlogging*******************/
 // Funksjon for å håndtere skjemainnsending

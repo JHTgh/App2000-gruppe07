@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import {finnAnsatteBedrift} from '@/app/database/querys';
+import {finnAnsatteBedrift} from '@/app/api/querys/bedrift/finnAnsattBedrift';
 import AnsattForm from '@/app/components/ansattForm';
 import styles from './page.module.css';
 

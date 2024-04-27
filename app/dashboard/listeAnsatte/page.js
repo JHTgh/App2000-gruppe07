@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { userUId } from '@/app/dashboard/layout';
-import { addDoc, collection, doc, query, where, getDocs } from "firebase/firestore";
 import {AlleAnsatte} from '@/app/components/alleAnsatte';
 
 export default function ListeFremvisning() {

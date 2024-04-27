@@ -21,7 +21,7 @@ const ApiData = ({id, navn}) => {
       setLoading(false);
     }
     fetchData();
-  }, []);
+  }, [apiLenke]);
 
   let content = null;
   if (loading) {
