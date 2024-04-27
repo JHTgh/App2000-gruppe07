@@ -21,7 +21,7 @@ export async function hentAlleProfiler( uID ) {
             const data = doc.data();
             const navn = data.Navn;
             const epost = data.Epost;
-            const testId = data.testId;
+            const testId = data.TestId;
 
             // Henter score istedenfor å returnere testID
             const scoreData = await hentScoreData(testId);

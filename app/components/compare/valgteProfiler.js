@@ -17,8 +17,9 @@ const ValgteProfilerListe = ({ valgteProfiler, handleValgteProfilerKlikk }) => {
         <div 
           key={profil.id}
           className={styles.valgtKnapp}
-          onClick={() => handleKlikk(profil)}>
-          {profil.navn} <RxCross1 className={styles.kryssUt} />
+          onClick={() => handleKlikk(profil)}
+          >
+            {profil.navn} <RxCross1 className={styles.kryssUt}/>
         </div>
       ))}
     </div>

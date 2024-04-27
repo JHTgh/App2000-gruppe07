@@ -15,8 +15,8 @@ export async function leggTilAnsatt(dataForm) {
         Epost: dataForm.epost,
         Adresse: dataForm.adresse,
         PostNr: dataForm.postNr,
-        testId: dataForm.testId,
-        companyId: dataForm.companyId
+        TestId: dataForm.testId,
+        CompanyId: dataForm.companyId
     }
     console.log("nyAnsatt: ");
     
