@@ -22,6 +22,10 @@ const LeggTilProfil = ({formData, setFormData, bedriftId, oppdaterListe}) => {
             console.log(profilMedBedrifID);
             // legger til ny ansatt/profil i database.
             const nyAnsatt = await leggTilAnsatt(profilMedBedrifID);
+            // legger også inn test scor informsajon inn i databasen 
+
+            hentTestTilDatabase(formData.testId);
+
             //legger også ny profil inn til liste
             // må gjøre om dataen igjen (stor for bokstav i database men ikke i appen)
             const profil = {
