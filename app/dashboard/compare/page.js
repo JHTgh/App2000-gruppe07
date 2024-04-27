@@ -10,7 +10,6 @@ import CompareAll from '@/app/components/compare/compareAll';
 const Sammenlign = () => {
 
     const [profiler, setProfiler] = useState([]);
-    const [profilTeller, setProfilTeller] = useState(0);
     const [valgteProfiler, setValgteProfiler] = useState([]);
     const [ikkeValgtProfiler, setIkkeValgtProfiler] = useState([]);
 
@@ -25,11 +24,10 @@ const Sammenlign = () => {
         // data blir returnert som et objekt men vi vil ha det i en array
         
         setProfiler(data);
-        setProfilTeller(profilTeller + 1);
         setIkkeValgtProfiler(data);
     };
     fetchData();
-    }, [profilTeller]);
+    }, []);
 
     if (profiler === null || profiler.length === 0) {
         return (
@@ -45,7 +43,7 @@ const Sammenlign = () => {
         );
     }
 
-    if( profiler[profilTeller] === undefined ) { 
+    if( profiler[0] === undefined ) { 
         return (
         <div className={styles.flexcontainer}>
             <div className={styles.flexkomponent}>
