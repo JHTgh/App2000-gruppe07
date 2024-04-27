@@ -4,6 +4,11 @@ import ListeElement from "./listeElement";
 import styles from './page.module.css';
 
 const ListeTilCompare = ({ profiler, handleProfilKlikk,handleValgteProfilerKlikk, valgteProfiler }) => {
+  
+  if(profiler === null || profiler.length === 0) {
+    return null;
+  }
+  
   return (
     <ul className={styles.liste}>
       {profiler.map((profil) => {  
