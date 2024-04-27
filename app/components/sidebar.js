@@ -21,7 +21,7 @@ function Sidebar() {
                     <Link href="/dashboard/listeAnsatte"><CgProfile /> Profiler</Link>
                     </li>
                     <li className={styles.navElement}>
-                    <Link href="/dashboard"><FaRegListAlt /> Lister</Link>
+                    <Link href="/dashboard/profiler"><FaRegListAlt /> Lister</Link>
                     </li>
                     <li className={styles.navElement}>
                     <Link href="/dashboard/compare"><BsBarChartFill /> Sammenlign</Link>
