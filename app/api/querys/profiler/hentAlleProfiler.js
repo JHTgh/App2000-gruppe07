@@ -8,7 +8,7 @@ export async function hentAlleProfiler( uID ) {
     // lager query for å hente ut alle ansatte som har rikig bedrift id
     const queryTilProfilerCollection = query(
         collection(db, 'ansatte'),
-        where('CompanyId', '==', uID)
+        where('companyId', '==', uID)
     );
     
     try {
