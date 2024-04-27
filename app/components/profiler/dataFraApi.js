@@ -4,12 +4,13 @@ import React, { useState, useEffect } from "react";
 import SingelChart from "./chart";
 import styles from "./component.module.css";
 
-const ApiData = (id, navn) => {
+const ApiData = ({id, navn}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(id.id);
-  const apiLenke = "https://bigfive-f9cymyeb1-rubynor.vercel.app/api/result/" + id.id + "/no";
+  console.log(id);
+  const apiLenke = "https://bigfive-f9cymyeb1-rubynor.vercel.app/api/result/" + id + "/no";
   console.log(apiLenke);
+  console.log (navn);
 
   useEffect(() => {
     async function fetchData() {
@@ -27,6 +28,7 @@ const ApiData = (id, navn) => {
     content = <p>Loading...</p>;
   } else if (data) {
     
+    // henter data til for å vise frem hovedkategoriene til profilen
     const scoreData = data.results.map((result) => {
       return {
         score: result.score,
@@ -36,17 +38,17 @@ const ApiData = (id, navn) => {
     
     content = (
       <div>
-        <h2>{navn} sine Big-5 test resulater</h2>
-        <p>Test resultatene er skrevet i perspektivet til {navn}</p>
-        <br /><br />
+        <h2>{navn} sin Big Five test</h2>
+        <br /> <br />
+        
         <SingelChart testData={scoreData} />
         {data.results.map((result, index) => (
           <div key={index}>
             <h3>{result.title}</h3>
             <p>{result.text}</p>
             {/* kan legge til flere ting her, men for nå har vi bare tekst rettet mot den som har tatt testen. 
-                kan også bruke; result.description, result.shortDescription  */}
-            <p>Score: {result.scoreText} - {result.scoreText}</p>
+            kan også bruke; result.description, result.shortDescription  */}
+            <p>Score:{result.score} - {result.scoreText}</p>
             <h4>Facets:</h4>            
             <SingelChart testData={result.facets} />
             {result.facets.map((facet, facetIndex) => (
