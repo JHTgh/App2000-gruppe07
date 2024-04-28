@@ -237,26 +237,20 @@
 }
 .ansattForm {
   display: flex;
-  flex-direction: column;
-
-  
+  table-layout: fixed;  
   gap: 2vw; 
   padding: 1vw;
   font-size: 1.2vw;
   font-weight: 600;
+  align-items: self-end;
 }
-/*
 .ansattContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  width: 40vw;
-} 
-*/
-.ansattLabel {
-  margin-bottom: 1vw;
 }
+
+
 .leggTilKnapp {
   background-color: #55788C;
   color: white; 
@@ -267,11 +261,41 @@
   font-size: 1vw;
   margin: 1vw;
   margin-top: 1vw;
+  margin-bottom: 3vw;
   border-radius: 0.5vw;
   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
+.oppdaterKnapp {
+  background-color: #55788C;
+  color: white;
+  padding: 0.4vw;
+  border-radius: 0.5vw;
+}
 .ansattInput {
+  margin-left: 0.5vw;
+  margin-right: 1vw;
   padding: 0.5vw;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+.ansattLabel {
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.knappOppdater {
+  background-color: #55788C;
+  color: white;
+  padding: 0.4vw;
+  border-radius: 0.5vw;
+  justify-self: baseline;
+  margin-bottom: 0.5vw;
+}
+.knappSlett {
+  align-self: start;
+  background-color: #55788C;
+  color: white;
+  padding: 0.4vw;
+  border-radius: 0.5vw;
+  margin-bottom: 3vw;
+
 }

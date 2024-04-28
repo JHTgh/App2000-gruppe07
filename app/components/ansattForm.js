@@ -67,14 +67,24 @@ export default function AnsattForm ({ bedriftId })  {
       <div className={styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="name">Navn:</label>
         <input className={styles.ansattInput} type="text" id="name" value={employeeData.name} onChange={handleChange}/>
+        </div>
+        <div className={styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="email" >Epost:</label>
         <input className={styles.ansattInput} type="email" id="email" value={employeeData.email} onChange={handleChange}/>
-        <label className={styles.ansattLabel} htmlFor="postnummer">Postnummer:</label>
+        </div>
+        <div className={styles.ansattContainer}>
+        <label className={styles.ansattLabel} htmlFor="postnummer">Postnr:</label>
         <input className={styles.ansattInput} type="text" id="postnummer" value={employeeData.postnummer} onChange={handleChange}/>
+        </div>
+        <div className={styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="jobbtittel">Stilling:</label>
         <input className={styles.ansattInput} type="text" id="jobbtittel" value={employeeData.stilling} onChange={handleChange}/>
+        </div>
+        <div className={styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="address" >Addresse:</label>
         <input className={styles.ansattInput} type="text" id="address" value={employeeData.address} onChange={handleChange}/>
+        </div> 
+        <div className={styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="testId">TestId:</label>
         <input className={styles.ansattInput} type="text" id="testId" value={employeeData.testId} onChange={handleChange}/>
        </div>
