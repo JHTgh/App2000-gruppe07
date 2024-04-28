@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { queryBedriftNavn } from '@/app/api/querys/bedrift/queryBedrifNavn'; 
 import { userUId } from './layout';
 import { hentBedriftNavn } from '../api/querys/bedrift/hentBedriftNavn';
 import styles from "./page.module.css";

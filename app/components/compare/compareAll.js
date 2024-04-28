@@ -1,6 +1,12 @@
 import BarChart from "./compareChart";
 import styles from './page.module.css';
 
+/**
+ * @author Kjartan
+ * Liten hjelpe metode/funksjon som returnerer en random farge
+ * 
+ * @returns {string} random farge
+ */
 const getRandomColors = () => {
     // funksjon som returnerer en random farge
     return (`rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.8)`);

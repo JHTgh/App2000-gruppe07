@@ -7,7 +7,7 @@ import bcryptjs from 'bcryptjs';
 
 /**
  * @author Kjartan
- * @contributor Jørgen, ChatGPT, CODEIUM (for JSDocs)
+ * @contributor Jørgen, ChatGPT, CODEIUM (for JSDoc)
  * Funksjon for å registrere en ny bruker.
  * Bruker Firebase Auth for å registrere en ny bruker.
  * Et dokument blir også laget i Firestore.

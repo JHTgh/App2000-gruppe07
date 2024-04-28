@@ -1,7 +1,7 @@
 
 /**
  * @author Kjartan 
- * @contributor Gimini og ChatGPT, CODEIUM (for JSDocs)
+ * @contributor Gimini og ChatGPT, CODEIUM (for JSDoc)
  * Henter testdata fra en ekstern API basert på den oppgitte ID-en.
  * Valgte å hardkode dataen her, slik at det altid blir riktig for databasen
  * 

@@ -18,10 +18,10 @@ function Sidebar() {
                     <Link href="/dashboard"><FaHome /> Hjem</Link>
                     </li>
                     <li className={styles.navElement}>
-                    <Link href="/dashboard/listeAnsatte"><CgProfile /> Profiler</Link>
+                    <Link href="/dashboard/profiler"><CgProfile /> Profiler</Link>
                     </li>
                     <li className={styles.navElement}>
-                    <Link href="/dashboard/profiler"><FaRegListAlt /> Lister</Link>
+                    <Link href="/dashboard/"><FaRegListAlt /> Lister</Link>
                     </li>
                     <li className={styles.navElement}>
                     <Link href="/dashboard/compare"><BsBarChartFill /> Sammenlign</Link>

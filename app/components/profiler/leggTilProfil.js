@@ -4,6 +4,17 @@ import ProfilForm from "./profilForm";
 import { leggTilAnsatt } from "@/app/api/profil/ansatt/leggTilAnsatt";
 import { hentTestTilDatabase } from "@/app/api/big5/hentTestTilDatabase"; 
 
+/**
+ * @author Mie
+ * @con Kjartan, codeium 
+ * Denne komponenten bruker et Form fra profilForm.js. har også funksjonaliteten til å legge til en profil
+ * 
+ * @param {objekt} formData - tabell med info om profilen.
+ * @param {function} setFormData - funksjon for å kalle på setFormData i ProfilerPage.js
+ * @param {string} bedriftId - id for bedriften.
+ * @param {function} oppdaterListe - funksjon for å kalle på oppdaterListe i ProfilerPage.js
+ * @returns {JSX.Element} - komponenten LeggTilProfil
+ */
 const LeggTilProfil = ({formData, setFormData, bedriftId, oppdaterListe}) => {
 
     const handleSubmit = async (event) => {

@@ -3,6 +3,16 @@ import React, { useState, useEffect } from "react";
 import SingelChart from "./chart";
 import styles from "./component.module.css";
 
+
+/**
+ * @author Mie og Nicco
+ * @contributor Kjartan, ChatGPT, Gemini, CODEIUM (for JSDoc)
+ * Henter data fra big5 sitt API, behandler data og viser det frem, bruker også komponenten SingelChart for å vise diagram.
+ *
+ * @param {string} id - id brukt til å hente data.
+ * @param {string} navn - Navnet på den som har tatt testen
+ * @return {JSX.Element} komponent som viser frem dataen fra api
+ */
 const ApiData = ({id, navn}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,7 +25,6 @@ const ApiData = ({id, navn}) => {
     async function fetchData() {
       const apiData = await fetch(apiLenke);
       const json = await apiData.json();
-      console.log(json);
       setData(json);
       setLoading(false);
     }

@@ -3,7 +3,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 /**
  * @author Kjartan
- * @contributor Jørgen, Mie, ChatGPT, CODEIUM (for JSDocs)
+ * @contributor Jørgen, ChatGPT, CODEIUM (for JSDoc)
  * 
  * Validerer innloggingsskjemaet. 
  * Returnerer en boolean, der true betyr at vi klarte å behandle dataen riktig

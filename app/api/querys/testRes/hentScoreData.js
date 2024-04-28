@@ -3,6 +3,14 @@
 import { db } from "@/app/database/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
+/**
+ * @author Kjartan
+ * @contributor ChatGPT
+ * Henter test resulater for en profil.
+ * 
+ * @param {string} testID 
+ * @returns {object} Test resulater.
+ */
 export async function hentScoreData(testID) {
  
     const docRef = doc(db, "testResults", testID);

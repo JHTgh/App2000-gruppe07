@@ -2,6 +2,14 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../../database/firebase";
 
 
+/**
+ * @author Nicco
+ * @contributor Mie, Kjartan, CODEIUM
+ * Henter antall ansatte i bedriften.
+ * 
+ * @param {string} bedriftID 
+ * @returns {int} count - Antall ansatte i bedriften. eller 0 hvis ingen.
+ */
 export async function hentCount(bedriftID) {
     try {
         if (!bedriftID) {
