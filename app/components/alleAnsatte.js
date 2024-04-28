@@ -40,7 +40,7 @@ export function AlleAnsatte({bedriftId}) {
     <div className = {styles.alleAnsatte}>
       <div className = {styles.alleAnsatteContainer}>
         <div className = {styles.førsteContainer}>
-          <h2 className = {styles.visAnsatte}>Ansatt liste</h2>
+          <h2 className = {styles.visAnsatte}>Ansatt liste:</h2>
           <button className = {styles.leggTilAnsatteKnapp} onClick={fetchEmployeeList}>Vis ansattliste/oppdater</button>
           <ul className = {styles.ansatteListe}>
             {ansatteListe.map((ansatt, index) => (

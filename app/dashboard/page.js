@@ -4,8 +4,12 @@ import { queryBedriftNavn } from '@/app/api/querys/bedrift/queryBedrifNavn';
 import { userUId } from './layout';
 import { hentBedriftNavn } from '../api/querys/bedrift/hentBedriftNavn';
 import styles from "./page.module.css";
+import { IoMdPersonAdd } from "react-icons/io";
+import { FaRegRectangleList } from "react-icons/fa6";
+import { TfiBarChart } from "react-icons/tfi";
+import { hentCount } from '../api/querys/bedrift/hentCountProfiler';
 
-
+/*-- Kode skrevet av Marte-Marie Rønningen -- */
 export default function Dashboard() {
     const [bruker, setBruker] = useState(null);
     const [feil, setFeil] = useState(null);
@@ -17,6 +21,7 @@ export default function Dashboard() {
                 const uId = await userUId; // Vente på IDen
                 console.log('uID: (page) ' + uId);
                 const brukerData = await hentBedriftNavn(uId);
+                const countAnsatte = await (hentCount(uId));
                 setBruker(brukerData);
             } catch (error) {
                 setFeil(error); // Håndter feil
@@ -31,7 +36,7 @@ export default function Dashboard() {
 
     if (!bruker && !feil) {
         return (
-            <div>
+            <div className={styles.main}>
                 <h1>Velkommen</h1>
                 <p>Laster inn...</p>
             </div>
@@ -49,24 +54,27 @@ export default function Dashboard() {
 
     return (
         <div>
-            <h1>Velkommen</h1>
-            <p className={styles.content}>{bruker}</p>
+            <div className={styles.overskriftDashboard}>Velkommen,<span className={styles.content}>{bruker}</span></div>
+            <div className={styles.flexContainer}> <span className={styles.underskriftDashboard}> Du har opprettet </span></div>
             <div className={styles.flexContainer}>
                 <div className={styles.flexBox}>
-                    <h1 className={styles.antallAnsatte}>14</h1>
-                    <p>Ansatte</p>
+                    <div className={styles.antallAnsatte}>14</div>
+                    <p>Profiler</p>
                 </div>
-  <             div className={styles.flexBox}><p>Hei på deg</p></div>
-            </div>
+            </div>    
+            <span><IoMdPersonAdd className={styles.ikon} /></span>
             <p className={styles.innholdDashboard}>
+            
             Legg til nye profiler i knappen<span className={styles.buttonDashboard}>Profiler</span><br/>
             Husk å legg til testresultat ID når du oppretter profiler, <br />
-            for å oppnå full funksjonalitet av plattformen. <br />
+            for å oppnå full funksjonalitet av plattformen <br />
             </p>
+            <span><FaRegRectangleList className={styles.ikon} /></span>
             <p className={styles.innholdDashboard}>
             Se listen over profiler som er laget, <br />
             og lag din egne lister i <span className={styles.buttonDashboard}>Lister</span> <br /> 
             </p>
+            <span><TfiBarChart className={styles.ikon} /></span>
             <p className={styles.innholdDashboard}>
             Sammenlign profilene du har laget <br />
             i knappen <span className={styles.buttonDashboard}>Sammenlign</span> <br />

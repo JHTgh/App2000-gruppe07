@@ -2,6 +2,7 @@ import { db } from "@/app/database/firebase";
 import firebase from "firebase/app";
 import { collection, getDocs,  query, where, getDoc } from "firebase/firestore";
 
+/* -- Kode skrevet av Kjartan --*/
 export async function queryBedriftNavnPromise(uID) {
     console.log('uID: (query) ' + uID);
   

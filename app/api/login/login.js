@@ -6,6 +6,7 @@ import { getUserByEmailPromise } from '@/app/database/querys';
 
 /***************Innlogging*******************/
 // Funksjon for å håndtere skjemainnsending
+/*-- Kode skrevet av Kjartan -- */
 export const handleLoginSubmit = async (formData) => {
 
   const email = formData.email;

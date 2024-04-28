@@ -6,6 +6,7 @@ import github from "@/public/githubLogo.png";
 import linkedin from "@/public/linkedinLogo.png";
 import styles from "./page.module.css";
 
+/*-- Laget av Jørgen og Markus --*/
 const Footer = () => {
   return (
     <div className={styles.footerContainer}>
@@ -71,7 +72,7 @@ const Footer = () => {
           <br></br>
           <p>bigfive-test@rubynor.com</p>
         </div>
-        <div className="copyright">
+        <div className={styles.copyright}>
           <p>© 2024 — Rubynor - all rights reserved.</p>
         </div>
       </div>

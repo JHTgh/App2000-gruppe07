@@ -1,5 +1,7 @@
 // henter alle profiler som passer til innlogget bruker
 // brukes ikke
+
+/* -- Kode skrevet av Marte-Marie Rønningen --*/
 export async function hentListe () {
 
     const queryTilBrukerCollection = query(
