@@ -11,6 +11,7 @@
     background-color: #f6f6f6;
     margin-bottom: 1vw;
     margin-top: 0.2vw;
+    font-size: 1.5vw;
     border-radius: 0.5vw;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
@@ -48,4 +49,37 @@
     .profilListItem{
         font-size: 3vw;
     }
-}
+    .testSkrift {
+      margin-top: 45vw;
+
+    }
+    .chartContainer {
+      
+      margin-left: 4vw;
+      height: 50vw;
+      width: 85vw;
+      
+    }
+    .miniSkrift {
+      font-size: 3vw;
+      margin: 1vw;
+    }
+    .litenSkrift {
+      font-size: 2.5vw;
+      margin: 0.5vw;
+      margin-left: 3vw;
+      margin-right: 3vw;
+    }
+    .scoreTop {
+      font-size: 2.5vw;
+      font-weight: 600;
+    }
+    .oOverskrift {
+      font-size: 4vw;
+      font-weight: 600;
+    }
+    .overskriftUnderkategori {
+      font-size: 3vw;
+    }
+
+  }

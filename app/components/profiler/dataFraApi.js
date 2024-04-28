@@ -44,7 +44,7 @@ const ApiData = ({id, navn}) => {
         <SingelChart  className={styles.chart2}  testData={scoreData} />
         {data.results.map((result, index) => (
           <div key={index}>
-            <h5>{result.title}</h5>
+            <div className = {styles.oOverskrift}>{result.title}</div>
             <div className={styles.scoreTop} >Score:{result.score} - {result.scoreText}</div>
             <div className={styles.litenSkrift}>{result.text}</div>
             {/* kan legge til flere ting her, men for nå har vi bare tekst rettet mot den som har tatt testen. 
@@ -52,7 +52,7 @@ const ApiData = ({id, navn}) => {
             <SingelChart testData={result.facets}  />
             {result.facets.map((facet, facetIndex) => (
               <div key={facetIndex}>
-                <h6>{facet.title}</h6>
+                <div className={styles.overskriftUnderkategori}>{facet.title}</div>
                 <div className={styles.miniSkrift}>Score: {facet.score} - {facet.scoreText}</div>
                 <div className={styles.litenSkrift}>{facet.text}</div>
                 <br />

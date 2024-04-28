@@ -149,12 +149,12 @@
   padding: 1vw;
   font-size: 1.2vw;
   font-weight: 600;
+  justify-content: space-evenly;
 }
 
 .ansattContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   width: 40vw;
 } 
 
@@ -175,10 +175,13 @@
   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 .ansattInput {
-  padding: 0.5vw;
-  border-radius: 5px;
+  border-radius: 0.5vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  width: 10vw;
   border: 1px solid #ccc;
 }
+
 
 @media (max-width: 480px) {
   .navbar {
@@ -242,7 +245,10 @@
   .footerContent h1 {
     font-size: 6vw;
   }
+  .footerContainer {
+    display: none;
 
+  }
   .sosMed ul li a img {
     width: 6vw;
   }
@@ -254,25 +260,31 @@
   .copyright p {
     font-size: 3vw;
   }
-
+.footerContainer {
+  margin-top: 200vw;
+}
   /*Lister siden*/
 .ansattForm {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;  
   align-items: center;
-  gap: 1vw; 
-  padding: 1vw;
-  font-size: 4vw;
+  gap: 0.5vw; 
+  padding: 0.2vw;
+  font-size: 3vw;
   font-weight: 600;
-  align-items: self-end;
+  height: 40vw;
+  border-radius: 0.5vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
 }
 
 .ansattContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 3vw;
+  margin-top: 2vw;
   width: 40vw;
+  margin-bottom: 0.1vw;
 } 
 
 .ansattLabel {
