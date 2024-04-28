@@ -42,14 +42,10 @@
   width: 60%;
 }
 
-@media (max-width: 480px) {
+    
 
-    .chartContainer {
-      width: auto;
-      height: auto;
-      align-items: center;
-
+@media (max-width: 480px) { 
+    .profilListItem{
+        font-size: 3vw;
     }
-
 }
-

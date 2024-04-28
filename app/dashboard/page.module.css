@@ -42,7 +42,7 @@
 .content {
   flex: 1; 
   text-align: center;
-  margin-right: 10vw;
+  margin: 0;
   font-size: 2vw;
   color: #55788C;
   margin-top: 3vw;
