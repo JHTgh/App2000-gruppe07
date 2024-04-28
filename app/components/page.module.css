@@ -85,101 +85,7 @@
   width: 2vw;
 }
 
-@media (max-width: 480px) {
-  .navbar {
-    display: none;
-  }
-
-  .navbar .logo {
-    display: block;
-  }
-
-  /*burger meny*/
-  .burgermenu {
-    text-align: right;
-    display: block;
-  }
-  .navburger .logo {
-    margin: 0.5rem;
-    margin-left: 4vw;
-  }
-
-  .burgerIconClosed .burgerIcon {
-    font-size: 8.5vw;
-    margin-right: 4vw;
-    margin-top: 3.5vw;
-  }
-
-  .burgerIconClosed .closeIcon {
-    font-size: 8.5vw;
-    margin-right: 4vw;
-    margin-top: 3.5vw;
-  }
-  
-  .navburger {
-    display: flex;
-    justify-content: space-between;
-    /*border-bottom: 1px solid #7d7d7d; */
-    margin-bottom: 4vw;
-  }
-  .navburger .burgerlinks li a:not(.active):hover {
-    background-color:#55788c6d;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-      color: white;
-  }
-  .burgerElement {
-    list-style: none;
-  }
-  
-  .burgerlinks {
-    position: absolute;
-    background-color: #55788C;
-    right: 0;
-    }
-  
-  .burgerlinks li {
-    display: block;
-    margin: 2vw 2vw 2vw 2vw;
-  }
-  
-  .burgerlinks li a {
-    text-decoration: none;
-    color: black;
-    font-size: 5vw;
-  }
-
-  /*Footer*/
-  .footBody {
-    flex-direction: column;
-  }
-
-  .footVenstre h1 {
-    font-size: 7vw;
-  }
-
-  .sosMed ul li a img {
-    width: 6vw;
-  }
-
-  .infoFoot p {
-    font-size: 4.5vw;
-  }
-
-  .copyright p {
-    font-size: 3.5vw;
-  }
-
-  .footHøyre h2 {
-    font-size: 5vw;
-    margin-top: 2vw;
-  }
-
-  .footHøyre ul li a {
-    font-size: 4vw;
-  }
-}
-
-/* alleAnsatte */
+/* Profiler siden (SIDEN ER IKKE I BRUK LENGRE) */
 .alleAnsatte {
   display: flex;
   flex-direction: column;
@@ -220,7 +126,6 @@
   margin-bottom: 2vw;
   margin-top: 1vw;
   justify-content: space-between;
-
 }
 .andreContainer {
   width: 50%;
@@ -235,29 +140,184 @@
   font-size: 1em; 
   color: #A69679;
 }
+
+/*Lister siden*/
 .ansattForm {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px; 
-  margin-top: 20px;
-  padding: 30px;
-  border: 1px solid #eee;
-  border-radius: 10px; 
-  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;  
+  gap: 1vw; 
+  padding: 1vw;
+  font-size: 1.2vw;
+  font-weight: 600;
+  justify-content: space-evenly;
 }
+
+.ansattContainer {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+} 
+
+.ansattLabel {
+  margin-bottom: 1vw;
+}
+.leggTilKnapp {
+  background-color: #55788C;
+  color: white; 
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 1vw;
+  margin: 1vw;
+  margin-top: 1vw;
+  border-radius: 0.5vw;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.ansattInput {
+  border-radius: 0.5vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  width: 10vw;
+  border: 1px solid #ccc;
+}
+
+
+@media (max-width: 480px) {
+  .navbar {
+    display: none;
+  }
+
+  .navbar .logo {
+    display: block;
+  }
+
+  /*burger meny*/
+  .burgermenu {
+    text-align: right;
+    display: block;
+  }
+  .navburger .logo {
+    margin: 0.5rem;
+    margin-left: 4vw;
+  }
+
+  .burgerIconClosed .burgerIcon {
+    font-size: 8.5vw;
+    margin-right: 4vw;
+    margin-top: 3.5vw;
+  }
+
+  .burgerIconClosed .closeIcon {
+    font-size: 8.5vw;
+    margin-right: 4vw;
+    margin-top: 3.5vw;
+  }
+  
+  .navburger {
+    display: flex;
+    justify-content: space-between;
+    /*border-bottom: 1px solid #7d7d7d; */
+    margin-bottom: 4vw;
+  }
+  .burgerElement {
+    list-style: none;
+  }
+  
+  .burgerlinks {
+    position: absolute;
+    background-color: #f8f7f6dd;
+    right: 0;
+    }
+  
+  .burgerlinks li {
+    display: block;
+    margin: 2vw 2vw 2vw 2vw;
+  }
+  
+  .burgerlinks li a {
+    text-decoration: none;
+    color: black;
+    font-size: 5vw;
+  }
+  
+  /*Footer*/
+  .footerContent h1 {
+    font-size: 6vw;
+  }
+  .footerContainer {
+    display: none;
+
+  }
+  .sosMed ul li a img {
+    width: 6vw;
+  }
+
+  .infoFoot p {
+    font-size: 4.5vw;
+  }
+
+  .copyright p {
+    font-size: 3vw;
+  }
+.footerContainer {
+  margin-top: 200vw;
+}
+  /*Lister siden*/
+.ansattForm {
+  display: inline-flex;
+  flex-direction: column;  
+  align-items: center;
+  gap: 0.5vw; 
+  padding: 0.2vw;
+  font-size: 3vw;
+  font-weight: 600;
+  height: 40vw;
+  border-radius: 0.5vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
 .ansattContainer {
   display: flex;
   flex-direction: column;
-}
+  justify-content: space-between;
+  margin-top: 2vw;
+  width: 40vw;
+  margin-bottom: 0.1vw;
+} 
+
 .ansattLabel {
-  margin-bottom: 10px;
+  margin-bottom: 1vw;
 }
+
+
 .leggTilKnapp {
-  background-color: #A69679;
+  background-color: #55788C;
+  color: white; 
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 4vw;
+  margin: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+  border-radius: 0.5vw;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.oppdaterKnapp {
+  background-color: #55788C;
+  color: white;
+  padding: 0.4vw;
+  border-radius: 0.5vw;
 }
 .ansattInput {
-  padding: 10px;
+  margin-left: 0.5vw;
+  margin-right: 1vw;
+  padding: 0.5vw;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-bottom: 20px;
+}
+
 }

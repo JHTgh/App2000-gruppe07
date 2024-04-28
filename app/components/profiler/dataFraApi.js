@@ -36,26 +36,26 @@ const ApiData = ({id, navn}) => {
     });
     
     content = (
-      <div>
-        <h2>{navn} sin Big Five test</h2>
-        <br /> <br />
+      <div className={styles.flexcontainer}>
+        <h4 className={styles.testSkrift}>{navn} sin Big Five test</h4>
+        <br />
         
-        <SingelChart testData={scoreData} />
+        <SingelChart  className={styles.chart2}  testData={scoreData} />
         {data.results.map((result, index) => (
           <div key={index}>
-            <h3>{result.title}</h3>
-            <p>{result.text}</p>
+            <div className = {styles.oOverskrift}>{result.title}</div>
+            <div className={styles.scoreTop} >Score:{result.score} - {result.scoreText}</div>
+            <div className={styles.litenSkrift}>{result.text}</div>
             {/* kan legge til flere ting her, men for nå har vi bare tekst rettet mot den som har tatt testen. 
-            kan også bruke; result.description, result.shortDescription  */}
-            <p>Score:{result.score} - {result.scoreText}</p>
-            <h4>Facets:</h4>            
-            <SingelChart testData={result.facets} />
+            kan også bruke; result.description, result.shortDescription  */}      
+            <SingelChart testData={result.facets}  />
             {result.facets.map((facet, facetIndex) => (
               <div key={facetIndex}>
-                <h4>{facet.title}</h4>
-                <p className={styles.miniSkrift}>Score: {facet.score} - {facet.scoreText}</p>
-                <p className={styles.litenSkrift}>{facet.text}</p>
-              </div>
+                <div className={styles.overskriftUnderkategori}>{facet.title}</div>
+                <div className={styles.miniSkrift}>Score: {facet.score} - {facet.scoreText}</div>
+                <div className={styles.litenSkrift}>{facet.text}</div>
+                <br />
+                </div>
             ))}
           </div>
         ))}

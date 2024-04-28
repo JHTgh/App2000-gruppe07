@@ -38,30 +38,23 @@
   color: #273746;
 }
 
-
-
 /*dashboard*/
 .content {
   flex: 1; 
   text-align: center;
-  margin-right: 10vw;
-}
-
-
-.content{
+  margin: 0;
   font-size: 2vw;
   color: #55788C;
-  margin-left: 0.5vw;
   margin-top: 3vw;
 }
+
 .overskriftDashboard {
   font-size: 2vw;
   font-weight: 600;
-  margin-right: 10vw;
-  margin-left: 10vw;
   color: black;
   
 }
+
 .underskriftDashboard {
   color: black;
   margin-top: 1vw;
@@ -71,13 +64,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-left: 10vw;
-  margin-right: 20vw;
 }
-
-.flexBox {
+.antallAnsatte {
   height: auto;
-  width: 10vw;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   text-align: center;
   padding: 1vw;
@@ -91,8 +80,6 @@
 }
 
 .innholdDashboard {
-  margin-left: 10vw;
-  margin-right: 20vw;
   font-size: 1.2vw;
   margin-top: 0.5vw;
   color: black;
@@ -106,33 +93,30 @@
   margin-left: 0.3vw;
 }
 .ikon {
-  margin-left: 10vw;
-  margin-right: 20vw;
   margin-top: 2vw;
   margin-bottom: 0.5vw;
   color: #55788C;
 }
-.antallAnsatte {
-  font-size: 1.5vw;
-  text-align: center;
-}
+
 @media (max-width: 480px) {
   .flexSidebar {
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
 
 /*sidenav*/
 .sidenav {
   width: 100vw;
   height: auto;
-  margin: 0vw 0vw 0vw 5vw;
+  margin: 0;
 }
 
 .sidenav .links {
   display: flex;
   flex-direction: row;
   list-style: none;
+  margin-left: 5vw;
 }
 
 .sidenav .links li a {
@@ -145,15 +129,68 @@
 /*dashboard*/
 .content {
   flex: 1; 
-  text-align: right;
-  margin: 1vw 2vw 0vw 0vw;
+  text-align: center;
+  margin-right: 0vw;
+  font-size: 3vw;
+  color: #55788C;
+  margin-top: 6vw;
 }
 
-.content h1 {
-  font-size: 6vw;
+.opprett {
+  font-size: 4vw;
+  color: black;
+  margin: 3vw 0vw 1vw 0vw;
 }
 
-.content p {
+.overskriftDashboard {
+  font-size: 5vw;
+  font-weight: 600;
+  color: black;
+  
+}
+
+.underskriftDashboard {
+  color: black;
+  margin-top: 1vw;
   font-size: 4vw;
 }
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.antallAnsatte {
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  text-align: center;
+  padding: 2vw;
+  border-radius: 1vw;
+  background-color: #55788cab;
+  border: solid 1px #8d8d8d00;
+  font-weight: 600;
+  color: white;
+  margin-top: 1vw;
+  font-size: 4vw;
+}
+
+.innholdDashboard {
+  font-size: 4vw;
+  margin-top: 0.5vw;
+  color: black;
+
+}
+.buttonDashboard {
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 0.5vw;
+  margin-left: 0.3vw;
+}
+.ikon {
+  margin: 3vw 0vw 1vw 0vw;
+  font-size: 8vw;
+  color: #55788C;
+}
+
 }

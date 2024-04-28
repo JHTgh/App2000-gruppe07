@@ -26,12 +26,12 @@ const ListeProfiler = ( {profiler, setValgtProfil, setFormData, setVisFrem} ) =>
     <ul className={styles.profilListe}>
         {profiler.map((profil) => {
         return (
-            <li
+            <li 
                 key={profil.id}
                 onClick={() => behandleTrykk(profil)}
                 className={styles.profilListItem}
                 >
-                {profil.navn} - {profil.epost}
+                {profil.navn}
             </li>
         )
       })}
