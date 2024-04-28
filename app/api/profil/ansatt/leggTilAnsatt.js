@@ -4,7 +4,7 @@ import { db } from "../../../database/firebase";
 /* -- Kode skrevet av Marte-Marie Rønningen --*/
 /**
  * @author Marte-Marie Rønningen
- * @Con Kjartan, ChatGPT, CODEIUM (for JSDocs)
+ * @Con Kjartan, ChatGPT, CODEIUM (for JSDoc)
  * Legger til en ny profil i databasen.
  * Lager en referanse til den nye profilen, brukes for å lagre id til profilen senere
  *

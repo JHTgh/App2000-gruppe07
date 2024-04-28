@@ -1,9 +1,17 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
+
+/**
+ * @author Kjartan og Jørgen
+ * @contributor  Codeium (for JSDoc)
+ * 
+ * Komponent for ett diagram, kan brukes til forskjellige temaer
+ *
+ * @param {object} testData - ett objekt med scoreData og titteler
+ * @return {JSX.Element} et diagram komponent
+ */
 const SingelChart = ({testData}) => {  
-  
-  console.log('testData',testData);
 
   const scoreData = testData.map((enTest) => {
     return {

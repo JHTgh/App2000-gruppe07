@@ -3,7 +3,7 @@ import { signOut } from "firebase/auth";
 
 /**
  * @author Kjartan
- * @contributor ChatGPT, CODEIUM (for JSDocs)
+ * @contributor ChatGPT, CODEIUM (for JSDoc)
  * 
  * En void metode/funksjon for å logge ut. Tar ikke inn noen parametere.
  * bruker Firebase Auth sin metode signOut for å logge ut.

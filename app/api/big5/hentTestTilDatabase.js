@@ -3,7 +3,7 @@ import { testDataTilDatabase } from "./testDataTilDatabase";
 
 /**
  * @author Kjartan
- * @contributor CODEIUM (for JSDocs)
+ * @contributor CODEIUM (for JSDoc)
  * En hjelpe funksjon for å slippe å kalle på to funksjoner i frontend.
  * Returnerer en boolean, der true betyr at vi klarte å behandle dataen riktig
  *

@@ -4,11 +4,20 @@ import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '@/app/database/firebase';
 import { hentScoreData } from '../testRes/hentScoreData';
 
-export async function hentAlleProfiler( uID ) {
+/**
+ * @author Kjartan
+ * @contributor ChatGPT
+ * Henter alle profilene til bedriften.
+ * Bruker hentScoreData for å hente test resulater til gitt profil
+ * 
+ * @param {string} bedriftID 
+ * @returns {Array[object]} alle profilene til bedriften, null hvis ingen
+ */
+export async function hentAlleProfiler( bedriftID ) {
     // lager query for å hente ut alle ansatte som har rikig bedrift id
     const queryTilProfilerCollection = query(
         collection(db, 'ansatte'),
-        where('CompanyId', '==', uID)
+        where('CompanyId', '==', bedriftID)
     );
     
     try {
@@ -25,13 +34,10 @@ export async function hentAlleProfiler( uID ) {
 
             // Henter score istedenfor å returnere testID
             const scoreData = await hentScoreData(testId);
-            console.log('scoreData (alleProfiler) ', scoreData);
 
             return { id, navn, epost, scoreData };
         })
         );
-
-        console.log('alleProfiler (hentAlleProfiler): ', alleProfiler);
 
         if (snapshot.empty) {
         console.log('Profil ikke funnet (hentAlleProfiler)');
