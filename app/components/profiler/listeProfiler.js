@@ -20,7 +20,7 @@ const ListeProfiler = ( {profiler, setValgtProfil, setFormData, setVisFrem} ) =>
     })
     setVisFrem(false);
    };
-   if (!profiler) return null;
+   if (!profiler || profiler.length === 0) return null;
 
     return (
     <ul className={styles.profilListe}>

@@ -38,19 +38,31 @@ function ProfilerPage() {
             console.log('data (Sammenlign)',data);
             // data blir returnert som et objekt men vi vil ha det i en array
             setBedriftId(bedriftUId);
-            setProfiler(data);
+            if (data === null) {
+                setProfiler([]);
+            }else{
+                setProfiler(data);
+            }
         };
         fetchData();
         }, []);
 
     
     const oppdaterListe = (profil) => {
+        // hvis profiler er tom, må vi håndtere dette siden [...profiler] ikke er lovelig kode hvis den er tom
+        if (profiler.length === 0) {
+            //legger inn "første" profil i listen
+            setProfiler([profil]);
+        }
+        // utvider profillisten
         setProfiler([...profiler, profil]);
     }
     const oppdaterSlett = (profil) => {
+        //fjerner profil som blir slettet fra listen, sammenligener på id som alltid er unik
         setProfiler(profiler.filter(p => p.id !== profil.id));
     }
     const oppdaterUpdate = (oppdatertProfil) => {
+        // oppdaterer profil i listen, sammenligende på id igjen
         setProfiler(profiler.map(p => p.id === oppdatertProfil.id ? oppdatertProfil : p));
     }
 

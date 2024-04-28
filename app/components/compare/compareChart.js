@@ -9,13 +9,7 @@ const BarChart = ({tittel, testData}) => {
   console.log(testData);
 
   const data = {
-    labels: [
-      tittel[0],
-      tittel[1],
-      tittel[2],
-      tittel[3],
-      tittel[4],
-    ],
+    labels: tittel,
     datasets: testData.map((enTest) => {
       return {
         label: enTest.navn,
@@ -42,8 +36,6 @@ const BarChart = ({tittel, testData}) => {
       },
     },
   };
-
-
   return (
     <div>
       <div className={styles.chartContainer}>
