@@ -72,7 +72,7 @@ const Footer = () => {
           <br></br>
           <p>bigfive-test@rubynor.com</p>
         </div>
-        <div className="copyright">
+        <div className={styles.copyright}>
           <p>© 2024 — Rubynor - all rights reserved.</p>
         </div>
       </div>

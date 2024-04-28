@@ -36,7 +36,7 @@ export default function Dashboard() {
 
     if (!bruker && !feil) {
         return (
-            <div>
+            <div className={styles.main}>
                 <h1>Velkommen</h1>
                 <p>Laster inn...</p>
             </div>

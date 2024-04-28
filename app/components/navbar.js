@@ -90,14 +90,11 @@ function Navbar() {
           <li className={styles.burgerElement}>
             <Link href="https://bigfive-test.com">Test</Link>{" "}
           </li>
-          <li className={styles.burgerElement}>
-            <Link href="/compare">Sammenlign</Link>
-          </li>
           <>
           {innloggetBruker ? (
           <>
           <li className={styles.burgerElement}>
-            <Link href="/dashbord2">Profil</Link>
+            <Link href="/dashboard">Profil</Link>
           </li>
           <li className={styles.burgerElement}>
             <Link onClick={logout} href="/">
