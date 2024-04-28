@@ -1,4 +1,4 @@
-
+import styles from './../page.module.css';
 
 export default function VisApiKnapp({setVisFrem}) {
     
@@ -7,7 +7,7 @@ export default function VisApiKnapp({setVisFrem}) {
     }
 
     return (
-        <button
+        <button className={styles.oppdaterKnapp}
             onClick={behandleTrykk}
         >
             Vis Big-5 test resulater

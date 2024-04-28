@@ -16,14 +16,12 @@ const ProfilForm = ({profil, formData, behandleTrykk, behandleEkstraTrykk, setFo
                 <input className={styles.ansattInput} type="text" id="navn" value={formData.navn} onChange={handleChange}/>
                 <label className={styles.ansattLabel} htmlFor="email" >Epost:</label>
                 <input className={styles.ansattInput} type="email" id="epost" value={formData.epost} onChange={handleChange}/>
-            </div>
-            <div className= {styles.ansattContainer}>
                 <label className={styles.ansattLabel} htmlFor="postnummer">Postnummer:</label>
                 <input className={styles.ansattInput} type="text" id="postNr" value={formData.postNr} onChange={handleChange}/>
+            </div>
+            <div className={styles.ansattContainer}>
                 <label className={styles.ansattLabel} htmlFor="jobbtittel">Stilling:</label>
                 <input className={styles.ansattInput} type="text" id="stilling" value={formData.stilling} onChange={handleChange}/>
-            </div>
-            <div className= {styles.ansattContainer}>
                 <label className={styles.ansattLabel} htmlFor="address" >Addresse:</label>
                 <input className={styles.ansattInput} type="text" id="adresse" value={formData.adresse} onChange={handleChange}/>
                 <label className={styles.ansattLabel} htmlFor="testId">TestId:</label>
@@ -35,8 +33,8 @@ const ProfilForm = ({profil, formData, behandleTrykk, behandleEkstraTrykk, setFo
                     <button className={styles.leggTilKnapp} type="submit">Legg til bruker</button>
                 </div> :
                 <div className= {styles.ansattContainer}>
-                    <button className={styles.leggTilKnapp} type="submit">Oppdater bruker</button>
-                    <button className={styles.leggTilKnapp} type="button" onClick={behandleEkstraTrykk}>Slett profil</button>
+                    <button className={styles.knappOppdater} type="submit">Oppdater bruker</button>
+                    <button className={styles.knappSlett} type="button" onClick={behandleEkstraTrykk}>Slett profil</button>
                 </div>
             }
         </form>
