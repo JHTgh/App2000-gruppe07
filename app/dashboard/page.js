@@ -53,33 +53,35 @@ export default function Dashboard() {
     }
 
     return (
-        <div>
-            <div className={styles.overskriftDashboard}>Velkommen,<span className={styles.content}>{bruker}</span></div>
-            <div className={styles.flexContainer}> <span className={styles.underskriftDashboard}> Du har opprettet </span></div>
-            <div className={styles.flexContainer}>
-                <div className={styles.flexBox}>
-                    <div className={styles.antallAnsatte}>14</div>
-                    <p>Profiler</p>
+            <div className={styles.mainDashboard}>
+                <div className={styles.overskriftDashboard}>Velkommen, {bruker}</div>
+                <div className={styles.opprett}>Du har opprettet</div>
+                <div className={styles.flexContainer}>
+                    <div className={styles.antallAnsatte}><p>14 Profiler</p></div>
+                 </div>  
+                <IoMdPersonAdd className={styles.ikon} />
+                <div className={styles.innholdDashboard}>
+                    <p>
+                        Legg til nye profiler i knappen <span className={styles.buttonDashboard}>Profiler</span><br/>
+                        Husk å legg til testresultat ID når du oppretter profiler, <br />
+                        for å oppnå full funksjonalitet av plattformen
+                    </p>
                 </div>
-            </div>    
-            <span><IoMdPersonAdd className={styles.ikon} /></span>
-            <p className={styles.innholdDashboard}>
-            
-            Legg til nye profiler i knappen<span className={styles.buttonDashboard}>Profiler</span><br/>
-            Husk å legg til testresultat ID når du oppretter profiler, <br />
-            for å oppnå full funksjonalitet av plattformen <br />
-            </p>
-            <span><FaRegRectangleList className={styles.ikon} /></span>
-            <p className={styles.innholdDashboard}>
-            Se listen over profiler som er laget, <br />
-            og lag din egne lister i <span className={styles.buttonDashboard}>Lister</span> <br /> 
-            </p>
-            <span><TfiBarChart className={styles.ikon} /></span>
-            <p className={styles.innholdDashboard}>
-            Sammenlign profilene du har laget <br />
-            i knappen <span className={styles.buttonDashboard}>Sammenlign</span> <br />
-            </p>
-        </div>
+                <FaRegRectangleList className={styles.ikon} />
+                <div className={styles.innholdDashboard}>
+                    <p>
+                    Se listen over profiler som er laget, <br />
+                    og lag din egne lister i <span className={styles.buttonDashboard}>Lister</span>
+                    </p>
+                </div>
+                <TfiBarChart className={styles.ikon} />
+                <div className={styles.innholdDashboard}>
+                    <p>
+                    Sammenlign profilene du har laget <br />
+                    i knappen <span className={styles.buttonDashboard}>Sammenlign</span>
+                    </p>
+                </div>
+            </div>
     );
 }
 

@@ -122,18 +122,13 @@
     /*border-bottom: 1px solid #7d7d7d; */
     margin-bottom: 4vw;
   }
-  .navburger .burgerlinks li a:not(.active):hover {
-    background-color:#55788c6d;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-      color: white;
-  }
   .burgerElement {
     list-style: none;
   }
   
   .burgerlinks {
     position: absolute;
-    background-color: #55788C;
+    background-color: #f8f7f6dd;
     right: 0;
     }
   
@@ -147,14 +142,10 @@
     color: black;
     font-size: 5vw;
   }
-
+  
   /*Footer*/
-  .footBody {
-    flex-direction: column;
-  }
-
-  .footVenstre h1 {
-    font-size: 7vw;
+  .footerContent h1 {
+    font-size: 6vw;
   }
 
   .sosMed ul li a img {
@@ -166,17 +157,9 @@
   }
 
   .copyright p {
-    font-size: 3.5vw;
+    font-size: 3vw;
   }
 
-  .footHøyre h2 {
-    font-size: 5vw;
-    margin-top: 2vw;
-  }
-
-  .footHøyre ul li a {
-    font-size: 4vw;
-  }
 }
 
 /* alleAnsatte */
@@ -237,9 +220,7 @@
 }
 .ansattForm {
   display: flex;
-  flex-direction: column;
-
-  
+  flex-direction: column;  
   gap: 2vw; 
   padding: 1vw;
   font-size: 1.2vw;
