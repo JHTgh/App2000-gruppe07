@@ -42,6 +42,28 @@
   height: auto;
   width: 60%;
 }
+.knappOppdater {
+  background-color: #55788C;
+  color: white; 
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 1vw;
+  border-radius: 0.5vw;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.knappSlett {
+  background-color: #55788C;
+  color: white; 
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 1vw;
+  border-radius: 0.5vw;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
 
     
 
