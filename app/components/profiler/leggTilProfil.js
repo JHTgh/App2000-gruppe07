@@ -2,6 +2,7 @@
 
 import ProfilForm from "./profilForm";
 import { leggTilAnsatt } from "@/app/api/profil/ansatt/leggTilAnsatt";
+import { hentTestTilDatabase } from "@/app/api/big5/hentTestTilDatabase"; // app\api\big5\hentTestTilDatabase.js
 
 const LeggTilProfil = ({formData, setFormData, bedriftId, oppdaterListe}) => {
 
@@ -24,7 +25,7 @@ const LeggTilProfil = ({formData, setFormData, bedriftId, oppdaterListe}) => {
             const nyAnsatt = await leggTilAnsatt(profilMedBedrifID);
             // legger også inn test scor informsajon inn i databasen 
 
-            hentTestTilDatabase(formData.testId);
+            await hentTestTilDatabase(formData.testId);
 
             //legger også ny profil inn til liste
             // må gjøre om dataen igjen (stor for bokstav i database men ikke i appen)

@@ -52,12 +52,4 @@ const BarChart = ({tittel, testData}) => {
     </div>
   );
 };
-
-
-const getRandomColors = () => {
-  // funksjon som returnerer en random farge
-  return (`rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.8)`);
-};
-
-
 export default BarChart;
