@@ -93,7 +93,7 @@
     flex-wrap: wrap;
     background-color: #cbcbcb65;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    margin: 1vw;
+    margin-top: 1vw;
     text-align: center;
     font-weight: bold;
     font-size: 2vw;
@@ -145,9 +145,6 @@
     align-items: center;
     
     
-
-}
-.page_chartContainer__WSZFn {
 
 }
 .kryssUt {
