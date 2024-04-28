@@ -6,6 +6,7 @@ import { leggTilAnsatt } from '../api/profil/ansatt/leggTilAnsatt';
 import { hentTestTilDatabase } from '../api/big5/hentTestTilDatabase';
 import styles from './page.module.css';
 
+/* -- Kode skrevet av Marte -- */
 export default function AnsattForm ({ bedriftId })  {
   const [employeeData, setEmployeeData] = useState({
     name: '',
@@ -68,14 +69,10 @@ export default function AnsattForm ({ bedriftId })  {
         <input className={styles.ansattInput} type="text" id="name" value={employeeData.name} onChange={handleChange}/>
         <label className={styles.ansattLabel} htmlFor="email" >Epost:</label>
         <input className={styles.ansattInput} type="email" id="email" value={employeeData.email} onChange={handleChange}/>
-      </div>
-      <div className= {styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="postnummer">Postnummer:</label>
         <input className={styles.ansattInput} type="text" id="postnummer" value={employeeData.postnummer} onChange={handleChange}/>
         <label className={styles.ansattLabel} htmlFor="jobbtittel">Stilling:</label>
         <input className={styles.ansattInput} type="text" id="jobbtittel" value={employeeData.stilling} onChange={handleChange}/>
-      </div>
-      <div className= {styles.ansattContainer}>
         <label className={styles.ansattLabel} htmlFor="address" >Addresse:</label>
         <input className={styles.ansattInput} type="text" id="address" value={employeeData.address} onChange={handleChange}/>
         <label className={styles.ansattLabel} htmlFor="testId">TestId:</label>
