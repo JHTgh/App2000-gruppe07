@@ -4,7 +4,7 @@ import { db } from "../../database/firebase";
 
 /**
  * @author Kjartan
- * @contributor Gimini og ChatGPT, CODEIUM (for JSDocs)
+ * @contributor Gimini og ChatGPT, CODEIUM (for JSDoc)
  * Funkjson for å lagre testdata til databasen. Gjør om all data til slik vi vil ha den i databasen
  *
  * @param {object} data - testdataen.

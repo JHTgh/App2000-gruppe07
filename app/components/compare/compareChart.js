@@ -4,7 +4,15 @@ import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import styles from "./page.module.css";
 
-
+/**
+ * @author Kjartan
+ * @con Jørgen
+ * Bygger opp ett diagram for valgte profiler 
+ *
+ * @param {Array} props.tittel - en tabell med titteler for søylene
+ * @param {Array} props.testData - en tabell med hvor lang hver søyle er samt farge og navn
+ * @return {JSX.Element} BarChart komponenten - altså ett diagram
+ */
 const BarChart = ({tittel, testData}) => {
   console.log(testData);
 

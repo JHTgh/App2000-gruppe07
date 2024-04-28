@@ -3,11 +3,20 @@
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '@/app/database/firebase';
 
-export async function hentProfilListe( uID ) {
+/**
+ * @author Kjartan
+ * Veldig lik hentAlleProfiler, men målet med denne funksjonen er å hente alle profileren til bedriften.
+ * Ikke score data, altså ikke ekstra data fra firestore.
+ * Så funksjonen er til for å hente alle profiler som er linket med bedriftID
+ * 
+ * @param {string} bedriftID 
+ * @returns {Array[object]} alle profilene til bedriften, null hvis ingen
+ */
+export async function hentProfilListe( bedriftID ) {
     // lager query for å hente ut alle ansatte som har rikig bedrift id
     const queryTilProfilerCollection = query(
         collection(db, 'ansatte'),
-        where('CompanyId', '==', uID)
+        where('CompanyId', '==', bedriftID)
     );
     
     try {

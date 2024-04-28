@@ -1,7 +1,16 @@
 import { db } from "@/app/database/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
-/* -- Kode skrevet av Mie -- */
+/**
+ * @author Mie
+ * @con Kjartan, ChatGPT, CODEIUM (for JSDoc)
+ * 
+ * Finner navnet til bedrift ved hjel av egen collection, søker med id for bedriften 
+ * Altså - søker ikke som query i dokumentet men heller nøkkelen til dokumentet
+ *
+ * @param {string} bedriftID - id
+ * @return {object} - navnet til bedrift eller null 
+ */
 export async function hentBedriftNavn(bedriftID) {
  
     const docRef = doc(db, "bedrift", bedriftID);
