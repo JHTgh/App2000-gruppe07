@@ -2,6 +2,15 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../database/firebase";
 
 /* -- Kode skrevet av Marte-Marie Rønningen --*/
+/**
+ * @author Marte-Marie Rønningen
+ * @Con Kjartan, ChatGPT, CODEIUM (for JSDocs)
+ * Legger til en ny profil i databasen.
+ * Lager en referanse til den nye profilen, brukes for å lagre id til profilen senere
+ *
+ * @param {Object} dataForm - dataen som trengs for å oppdette en bruker
+ * @return {Object} returnerer en referanse til den nye profilen
+ */
 export async function leggTilAnsatt(dataForm) {
     console.log("leggTilAnsatt");
     console.log('inndata:', dataForm);
@@ -21,9 +30,8 @@ export async function leggTilAnsatt(dataForm) {
     console.log("nyAnsatt: ");
     
     try{
-        console.log("try");
-         const newEmployeeRef = await addDoc(ansatteCollection, dataForm);
-         console.log("ny ansatt lagt til i database" + newEmployeeRef.id);
+        const newEmployeeRef = await addDoc(ansatteCollection, dataForm);
+        console.log("ny ansatt lagt til i database" + newEmployeeRef.id);
         return newEmployeeRef;
     }catch(error){
         console.log("Feil ved lagring av ny ansatt (leggTilAnsatt)");

@@ -19,7 +19,6 @@ export default function ListeElement( { profil, handleProfilKlikk, handleValgteP
     };
 
     // hvis denne profilen har blitt valgt vil vi heller returnere en skygget knapp som ikke har en trykke funksjon
-    
     if (erValgt) {
         return (
             <li
@@ -30,7 +29,6 @@ export default function ListeElement( { profil, handleProfilKlikk, handleValgteP
           </li>
         );
     }
-    
     return (
         <li
           onClick={behandleKlikk}

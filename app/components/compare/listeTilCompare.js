@@ -13,9 +13,6 @@ const ListeTilCompare = ({ profiler, handleProfilKlikk,handleValgteProfilerKlikk
     <ul className={styles.liste}>
       {profiler.map((profil) => {  
         const erValgt = valgteProfiler && valgteProfiler.includes(profil); 
-     
-
-           
         return (
           <ListeElement
             key={profil.id}

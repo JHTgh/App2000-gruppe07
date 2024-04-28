@@ -2,6 +2,14 @@ import { collection, setDoc, doc} from "firebase/firestore";
 import { db } from "../../database/firebase";
 
 
+/**
+ * @author Kjartan
+ * @contributor Gimini og ChatGPT, CODEIUM (for JSDocs)
+ * Funkjson for å lagre testdata til databasen. Gjør om all data til slik vi vil ha den i databasen
+ *
+ * @param {object} data - testdataen.
+ * @param {string} id - id til testdataen
+ */
 export async function testDataTilDatabase(data, id) {
 
     console.log(data);
@@ -61,6 +69,4 @@ export async function testDataTilDatabase(data, id) {
         Medmenneskelighet: medmenneskelighet,
         Planmessighet: planmessighet
     });
-
-    //await addDoc(testResultCollection, testResultsData);
 }

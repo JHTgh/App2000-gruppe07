@@ -1,7 +1,16 @@
 import { auth } from "@/app/database/firebase"
 import { signOut } from "firebase/auth";
 
-/* -- Kode skrevet av Kjartan --*/
+/**
+ * @author Kjartan
+ * @contributor ChatGPT, CODEIUM (for JSDocs)
+ * 
+ * En void metode/funksjon for å logge ut. Tar ikke inn noen parametere.
+ * bruker Firebase Auth sin metode signOut for å logge ut.
+ *
+ * 
+ */
+
 export const logoutSubmit = async () => {
    auth.signOut().then(() => {
       console.log("Sign-out successful.");

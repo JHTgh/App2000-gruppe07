@@ -1,8 +1,19 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-/***************Innlogging*******************/
-// Funksjon for å håndtere skjemainnsending
-/*-- Kode skrevet av Kjartan -- */
+
+/**
+ * @author Kjartan
+ * @contributor Jørgen, Mie, ChatGPT, CODEIUM (for JSDocs)
+ * 
+ * Validerer innloggingsskjemaet. 
+ * Returnerer en boolean, der true betyr at vi klarte å behandle dataen riktig
+ * bruker Firebase Auth for å logge inn
+ * 
+ * @param {Object} formData - The data from the login form.
+ * @return {boolean} .suksess - Indikerer hvis innloggingen vellykket.
+ * @return {string} .error - Sender feilmelding til frontend, hvis det er noen eller en vellykket melding
+ */
+
 export const handleLoginSubmit = async (formData) => {
 
   const email = formData.email;

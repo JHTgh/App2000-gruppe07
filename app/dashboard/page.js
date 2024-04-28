@@ -7,12 +7,13 @@ import styles from "./page.module.css";
 import { IoMdPersonAdd } from "react-icons/io";
 import { FaRegRectangleList } from "react-icons/fa6";
 import { TfiBarChart } from "react-icons/tfi";
-import { hentCount } from '../api/querys/bedrift/hentCountProfiler';
+import { hentCount } from '@/app/api/querys/bedrift/hentCountProfiler';
 
 /*-- Kode skrevet av Marte-Marie Rønningen -- */
 export default function Dashboard() {
     const [bruker, setBruker] = useState(null);
     const [feil, setFeil] = useState(null);
+    const [antProfiler, setAntProfiler] = useState(0);
 
     
     useEffect(() => {
@@ -21,7 +22,8 @@ export default function Dashboard() {
                 const uId = await userUId; // Vente på IDen
                 console.log('uID: (page) ' + uId);
                 const brukerData = await hentBedriftNavn(uId);
-                const countAnsatte = await (hentCount(uId));
+                const countAnsatte = await hentCount(uId);
+                setAntProfiler(countAnsatte);
                 setBruker(brukerData);
             } catch (error) {
                 setFeil(error); // Håndter feil
@@ -58,7 +60,7 @@ export default function Dashboard() {
             <div className={styles.flexContainer}> <span className={styles.underskriftDashboard}> Du har opprettet </span></div>
             <div className={styles.flexContainer}>
                 <div className={styles.flexBox}>
-                    <div className={styles.antallAnsatte}>14</div>
+                    <div className={styles.antallAnsatte}>{antProfiler}</div>
                     <p>Profiler</p>
                 </div>
             </div>    

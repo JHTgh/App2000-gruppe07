@@ -1,6 +1,16 @@
 import { hentTestData } from "./hentTestData";
 import { testDataTilDatabase } from "./testDataTilDatabase";
 
+/**
+ * @author Kjartan
+ * @contributor CODEIUM (for JSDocs)
+ * En hjelpe funksjon for å slippe å kalle på to funksjoner i frontend.
+ * Returnerer en boolean, der true betyr at vi klarte å behandle dataen riktig
+ *
+ * @param {string} id - ID for test.
+ * @return {boolean} Returnerer en boolean.
+ */
+
 export async function hentTestTilDatabase(id) {
     // er ikke uid vi skal ha, vi skal ha ansattID
 

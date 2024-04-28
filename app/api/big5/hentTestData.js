@@ -1,8 +1,15 @@
 
+/**
+ * @author Kjartan 
+ * @contributor Gimini og ChatGPT, CODEIUM (for JSDocs)
+ * Henter testdata fra en ekstern API basert på den oppgitte ID-en.
+ * Valgte å hardkode dataen her, slik at det altid blir riktig for databasen
+ * 
+ * @param {string} id - ID-en til testdataene som skal hentes.
+ * @return {Object} - Hentede testdata.
+ */
 
 export async function hentTestData(id) {
-    
-
     const response  = await fetch(`https://bigfive-f9cymyeb1-rubynor.vercel.app/api/result/${id}/no`);
     const jsonData = await response.json();
     const dataString = JSON.stringify(jsonData);

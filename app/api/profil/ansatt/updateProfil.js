@@ -1,6 +1,16 @@
 import { db } from "../../../database/firebase";
 import { doc, setDoc } from "firebase/firestore";
 
+/**
+ * @author Kjartan
+ * Oppdater profil, all data er lovelig
+ * bruker firestor sin metode for å oppdatere profil
+ *
+ * @param {Object} nyData - ny data for profil.
+ * @param {string} id - id for profil.
+ * @param {string} cId - id for company.
+ * @return {boolean} - hvis oppdateringen er vellykket eller ikke
+ */
 export async function updateProfil(id, nyData, cId) {
     
     try{

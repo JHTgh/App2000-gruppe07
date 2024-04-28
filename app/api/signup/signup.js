@@ -4,8 +4,19 @@ import { auth } from '../../database/firebase';
 import { db } from '../../database/firebase';
 import bcryptjs from 'bcryptjs';
 
-/***************Registrering*******************/ 
-// Funksjon for å håndtere skjemainnsending
+
+/**
+ * @author Kjartan
+ * @contributor Jørgen, ChatGPT, CODEIUM (for JSDocs)
+ * Funksjon for å registrere en ny bruker.
+ * Bruker Firebase Auth for å registrere en ny bruker.
+ * Et dokument blir også laget i Firestore.
+ *
+ * @param {Object} formData - opprett bruker-skjemaet.
+ * @return {boolean} .suksess - Indikerer hvis registreringen vellykket.
+ * @return {String} .error - Sender feilmelding til frontend, hvis det er en
+ */
+
 
 export const handleRegSubmit = async (formData) => {
 
@@ -13,9 +24,6 @@ export const handleRegSubmit = async (formData) => {
   const email = formData.email;
   const password = formData.password;
   const bedriftNavn = formData.bedriftNavn;
-  //const username = event.target.username.value;
-  console.log('Registrering av bruker startet');
-  console.log('email: ' + email + ' password: ' + password + ' bedriftNavn: ' + bedriftNavn);
 
   try {
     // Oppretter brukerkonto i Firebase Authentication

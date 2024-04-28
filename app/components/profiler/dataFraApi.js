@@ -1,5 +1,4 @@
 "use client";
-import { hentAllData } from "@/app/api/big5/hentAllData";
 import React, { useState, useEffect } from "react";
 import SingelChart from "./chart";
 import styles from "./component.module.css";
