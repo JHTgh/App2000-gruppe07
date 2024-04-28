@@ -7,5 +7,12 @@
     list-style: none;
 }
 .profilListItem{
-    size: 2em;
+    font-size: 1.5vw;
+    
+}
+
+@media (max-width: 480px) { 
+    .profilListItem{
+        font-size: 3vw;
+    }
 }
