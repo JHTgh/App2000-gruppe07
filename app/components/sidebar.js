@@ -7,7 +7,12 @@ import { FaCodeCompare } from "react-icons/fa6";
 import { BsBarChartFill } from "react-icons/bs";
 
 /*-- Laget av Markus --*/
-
+/**
+ * @author Markus og Jørgen 
+ * Egen komponent for visning av sidebar, bruker kan navigerer på nettsiden med denne
+ * 
+ * @returns {JSX.Element} Sidebar komponent
+ */
 function Sidebar() {
     return (
 

@@ -10,6 +10,14 @@ import { FaBars , FaTimes} from 'react-icons/fa';
 import { useEffect, useState } from "react";
 
 /*-- Laget Jørgen og Markus --*/
+/**
+ * @author Jørgen, Markus
+ * @contributor Kjartan
+ * Komponenten viser frem hovedmenyen til applikasjonen,  bruker kan navigerer på nettsiden med denne
+ * Bruker en useState for å vise og skjule deler av hovedmenyen.
+ * 
+ * @returns {JSX.Element} Navbar komponent
+ */
 function Navbar() {
   const [burgerOpen, setBurgerOpen] = useState(false);
 

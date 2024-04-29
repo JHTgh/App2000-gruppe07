@@ -6,7 +6,12 @@ import github from "@/public/githubLogo.png";
 import linkedin from "@/public/linkedinLogo.png";
 import styles from "./page.module.css";
 
-/*-- Laget av Jørgen og Markus --*/
+/**
+ * @author Jørgen og Markus
+ * Skredder sydd egen komponent for Footer
+ * 
+ * @returns {JSX.Element} Footer komponent
+ */
 const Footer = () => {
   return (
     <div className={styles.footerContainer}>
