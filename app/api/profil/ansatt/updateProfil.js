@@ -1,5 +1,6 @@
 import { db } from "../../../database/firebase";
 import { doc, setDoc } from "firebase/firestore";
+import { hentTestTilDatabase } from "@/app/api/big5/hentTestTilDatabase";
 
 /**
  * @author Kjartan
