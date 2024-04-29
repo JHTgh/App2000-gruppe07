@@ -30,8 +30,9 @@ const LeggTilProfil = ({formData, setFormData, bedriftId, oppdaterListe}) => {
                 TestId: formData.testId,
                 CompanyId: bedriftId
             };
-            console.log('profilMedBedrifID:');
-            console.log(profilMedBedrifID);
+            //console.log('profilMedBedrifID:');
+            //console.log(profilMedBedrifID);
+
             // legger til ny ansatt/profil i database.
             const nyAnsatt = await leggTilAnsatt(profilMedBedrifID);
             // legger også inn test scor informsajon inn i databasen 
@@ -45,8 +46,8 @@ const LeggTilProfil = ({formData, setFormData, bedriftId, oppdaterListe}) => {
                 ...formData,
                 companyId: bedriftId
             };
-            console.log('profil:');
-            console.log(profil);
+            //console.log('profil:');
+            //console.log(profil);
 
             oppdaterListe(profil);
             // Blanker ut form etter en profil er opprettet.

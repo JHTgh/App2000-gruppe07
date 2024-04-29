@@ -12,9 +12,9 @@ import { db } from "../../../database/firebase";
  * @return {Object} returnerer en referanse til den nye profilen
  */
 export async function leggTilAnsatt(dataForm) {
-    console.log("leggTilAnsatt");
-    console.log('inndata:', dataForm);
-     const ansatteCollection = collection(db, 'ansatte');
+    //console.log("leggTilAnsatt");
+    //console.log('inndata:', dataForm);
+    const ansatteCollection = collection(db, 'ansatte');
 
     // all data som skal til database ligger i dataForm
     // nyAnsatt = en profil
@@ -30,8 +30,8 @@ export async function leggTilAnsatt(dataForm) {
     console.log("nyAnsatt: ");
     
     try{
-        const newEmployeeRef = await addDoc(ansatteCollection, dataForm);
-        console.log("ny ansatt lagt til i database" + newEmployeeRef.id);
+        const newEmployeeRef = await addDoc(ansatteCollection, nyAnsatt);
+        //console.log("ny ansatt lagt til i database" + newEmployeeRef.id);
         return newEmployeeRef;
     }catch(error){
         console.log("Feil ved lagring av ny ansatt (leggTilAnsatt)");

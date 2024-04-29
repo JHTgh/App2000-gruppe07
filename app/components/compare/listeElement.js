@@ -21,11 +21,11 @@ export default function ListeElement( { profil, handleProfilKlikk, handleValgteP
         // Legg til logikk for å flytte profilen til den andre listen her
         if(erValgt){
             handleValgteProfilerKlikk(profil);
-            console.log(profil.navn + ' er fjernet fra sammenligning');
+            //console.log(profil.navn + ' er fjernet fra sammenligning');
             
         }else{
             handleProfilKlikk(profil);
-            console.log(profil.navn + ' er valgt til sammenligning');
+            //console.log(profil.navn + ' er valgt til sammenligning');
         }
     };
 
