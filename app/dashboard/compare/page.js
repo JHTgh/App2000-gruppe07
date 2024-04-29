@@ -7,6 +7,12 @@ import { userUId } from '@/app/dashboard/layout';
 import styles from "./page.module.css";
 import CompareAll from '@/app/components/compare/compareAll';
 
+/**
+ * @author Kjartan 
+ * Henter data i sammenheng for sammenligning, bruker flere egen lagde komponenter.
+ * 
+ * @returns {JSX.Element} - siden for sammenligning
+ */
 const Sammenlign = () => {
 
     const [profiler, setProfiler] = useState([]);

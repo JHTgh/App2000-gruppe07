@@ -7,7 +7,15 @@ import Link from "next/link";
 import workplace from "@/public/workplace.png";
 import Image from "next/image";
 
-/* -- Kode skrevet av Kjartan, Jørgen, Mie og Markus --*/
+/**
+ * @author ChatGPT
+ * @con Jørgen, Kjartan, Mie og Markus
+ * Hjelpe metode for å sjekke om det bruker har tastet inn er godkjent data
+ * 
+ * @param {object} data 
+ * @returns {boolean} - om input er gyldig eller ikke
+ * @returns {string} - feilmelding hvis input ikke er gyldig
+ */
 function validateInput(data) {
   const errors = [];
   if (!data.bedriftNavn) {
@@ -29,7 +37,13 @@ function validateInput(data) {
   }
   return { isValid: errors.length === 0, errorMessages: errors };
 }
-
+/**
+ * @author Jørgen, Kjartan, Mie og Markus
+ * @con ChatGPT
+ * Siden hånder signup funksjoner for å registrere en ny bruker.
+ * 
+ * @returns {JSX.Element} signup komponent
+ */
 export default function Signup() {
   const [suksess, setSuksess] = useState(false);
   const [formData, setFormData] = useState({
@@ -133,10 +147,3 @@ export default function Signup() {
     </div>
   );
 }
-/*
-<Image
-src={workplace}
-priority={true}
-alt="workplace"
-className={styles.images}
-></Image> */

@@ -13,7 +13,13 @@ import LeggTilProfil from "@/app/components/profiler/leggTilProfil";
 import VisApiKnapp from "@/app/components/profiler/visApiKnapp";
 import ApiData from "@/app/components/profiler/dataFraApi";
 
-
+/**
+ * @author Kjartan og Mie
+ * 
+ * Profiler page bruker flere egne komponenter. har også flere funksjoner som brukes til de forskjene komponentene.
+ * 
+ * @returns {JSX.Element} Profiler page
+ */
 function ProfilerPage() {
 
     const [formData, setFormData] = useState({

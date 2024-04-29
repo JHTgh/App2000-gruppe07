@@ -5,7 +5,15 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import Link from "next/link";
 
-/* -- Kode skrevet av Jørgen, Kjartan og Markus --*/
+/**
+ * @author Jørgen, Kjartan og Markus
+ * @con ChatGPT
+ * Hjelpe metode for å sjekke om det bruker har tastet inn er kodkjent data
+ * 
+ * @param {object} formData - informasjon om innlogging
+ * @returns {boolean} - om innlogging er vellykket eller ikke
+ * @returns {string} - feilmelding hvis innlogging ikke er vellykket
+ */
 function validerData(formData) {
   const errors = [];
   if (!formData.email) {
@@ -16,7 +24,13 @@ function validerData(formData) {
   }
   return { isValid: errors.length === 0, errorMesg: errors };
 }
-
+/**
+ * @author Jørgen, Kjartan og Markus
+ * 
+ * Siden tar imot inn data og kjører backend kode for å logge inn bedrift
+ * 
+ * @returns {JSX.Element} komponent for innlogging
+ */
 export default function Login() {
   const router = useRouter();
   const [suksess, setSuksess] = useState(false);

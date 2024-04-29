@@ -5,6 +5,16 @@ import { firebaseConfig } from "@/app/database/firebase";
 import chartto from "@/public/chartto.png";
 import personlighetstest from "@/public/personlighetstest.png";
 import workplace from "@/public/workplace.png";
+
+
+/**
+ * @auther Jørgen, Markus og Mie
+ * Landings siden, viser oversikt over hva nettsiden er for.
+ * 
+ * 
+ * @returns {JSX.Element} - Landings siden 
+ */
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -65,12 +75,3 @@ export default function Home() {
     </main>
   );
 }
-
-/*     <div className={styles.flexHøyreEn}>
-<Image
-src={Test}
-priority={true}
-alt="Test"
-className={styles.images}
-></Image> 
-</div> */

@@ -9,6 +9,12 @@ import { TfiBarChart } from "react-icons/tfi";
 import { hentCount } from '@/app/api/querys/bedrift/hentCountProfiler';
 
 /*-- Kode skrevet av Marte-Marie Rønningen -- */
+/**
+ * @author Marte-Marie (Mie)
+ * @Con Kjartan, CODEIUM
+ * Dashboard page, den siden man kommer til når man er logget inn, viser hvor mange profiler innlogget bedrift har
+ * @returns {JSX.Element} Dashboard
+ */
 export default function Dashboard() {
     const [bruker, setBruker] = useState(null);
     const [feil, setFeil] = useState(null);
