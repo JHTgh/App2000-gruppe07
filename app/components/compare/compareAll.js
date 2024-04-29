@@ -12,6 +12,14 @@ const getRandomColors = () => {
     return (`rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.8)`);
   };
 
+  /**
+   * @author Kjartan
+   * Denne funksjonen bygger og henter all data som trengs for å vise frem diagrammer
+   * Både data som altid vil være der og data for hver enkelt profil
+   * 
+   * @param {Array[object]} valgteProfiler 
+   * @return {JSX.Element} Alle diagrammer for alle profiler 
+   */
 function CompareAll(valgteProfiler) {
     const profiler = valgteProfiler.valgteProfiler;
     

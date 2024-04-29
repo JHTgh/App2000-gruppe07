@@ -6,7 +6,7 @@ import { LiaPlusSolid } from "react-icons/lia";
 
 /**
  * @author Kjartan
- * @contributor ChatGPT, gemini, CODEIUM (for JSDoc)
+ * @contributor Mie, ChatGPT, gemini, CODEIUM (for JSDoc)
  * Genererer ett liste element for en profil.
  * alle innparameterene er sendt som props fra listeTilCompare.js
  *

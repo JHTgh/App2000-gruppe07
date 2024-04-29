@@ -15,6 +15,7 @@ import ApiData from "@/app/components/profiler/dataFraApi";
 
 /**
  * @author Kjartan og Mie
+ * @con Markus, codeium
  * 
  * Profiler page bruker flere egne komponenter. har også flere funksjoner som brukes til de forskjene komponentene.
  * 

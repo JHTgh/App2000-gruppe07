@@ -3,7 +3,7 @@ import styles from './../page.module.css';
 
 /**
  * @author Kjartan
- * @contributor CODEIUM (for JSDoc)
+ * @contributor Mie, Markus og CODEIUM (for JSDoc)
  * En knapp som gjør valgtProfil tom - samt skjematet 
  * Brukes til å toggle fra fremvisning av profil til å legge inn en ny profil
  * 

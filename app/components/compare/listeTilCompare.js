@@ -5,7 +5,7 @@ import styles from './page.module.css';
 
 /**
  * @author Kjartan
- * @contributor ChatGPT codeium (for JSDoc)
+ * @contributor Mie, ChatGPT codeium (for JSDoc)
  * En liste komponent, lager liste og kjører en løkke med alle profiler i listen.
  * Sjekker om liste er tom, uten denne sjekken vil siden krasje, returnerer null hvis det ikke er en liste
  * Finner også ut om en gitt profil allerede er valg og dermer ender på variablen erValgt.

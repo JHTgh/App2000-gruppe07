@@ -9,6 +9,7 @@ import CompareAll from '@/app/components/compare/compareAll';
 
 /**
  * @author Kjartan 
+ * @con Mie og Markus
  * Henter data i sammenheng for sammenligning, bruker flere egen lagde komponenter.
  * 
  * @returns {JSX.Element} - siden for sammenligning
@@ -23,7 +24,7 @@ const Sammenlign = () => {
     useEffect(() => {
     const fetchData = async () => {
         const bedriftUId = await userUId;
-        console.log('bedriftUId: ' + bedriftUId);
+        //console.log('bedriftUId: ' + bedriftUId);
         const data = await hentAlleProfiler(bedriftUId);
 
         console.log('data (Sammenlign)',data);

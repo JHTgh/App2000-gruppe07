@@ -4,7 +4,7 @@ import styles from './../page.module.css';
 
 /**
  * @author Mie
- * @con codeium og Kjartan
+ * @con Kjartan, codeium
  * Komponent som viser frem et form selve formet har flere funksjoner
  * Funksjonene som formet kan gjøre bestemmes i fra innkommende funksjoner og en swith (typeEvent)
  * Så det er to forskjellige måter komponenten kan vises frem på endten LeggeTilProfil eller Redigere(slette/endre)

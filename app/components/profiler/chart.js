@@ -4,8 +4,8 @@ import Chart from "chart.js/auto";
 import styles from "./component.module.css";
 
 /**
- * @author Kjartan og Jørgen
- * @contributor  Codeium (for JSDoc)
+ * @author Jørgen og Kjartan  
+ * @contributor Mie, Codeium (for JSDoc)
  * 
  * Komponent for ett diagram, kan brukes til forskjellige temaer
  *

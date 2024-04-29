@@ -5,7 +5,7 @@ import { leggTilAnsatt } from "@/app/api/profil/ansatt/leggTilAnsatt";
 import { hentTestTilDatabase } from "@/app/api/big5/hentTestTilDatabase"; 
 
 /**
- * @author Mie
+ * @author Mie og Jørgen
  * @con Kjartan, codeium 
  * Denne komponenten bruker et Form fra profilForm.js. har også funksjonaliteten til å legge til en profil
  * 

@@ -2,7 +2,7 @@ import styles from './../page.module.css';
 
 /**
  * @author Kjartan
- * 
+ * @con Mie
  * En knapp som forteller at vi skal vise frem Big-5 test resulater i profiler/page.js
  * 
  * @param {function} setVisFrem - funksjon for å skjifte en boolean i Profiler/page.js

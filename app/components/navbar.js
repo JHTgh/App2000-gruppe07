@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 /*-- Laget Jørgen og Markus --*/
 /**
  * @author Jørgen, Markus
- * @contributor Kjartan
+ * @contributor Kjartan og Mie
  * Komponenten viser frem hovedmenyen til applikasjonen,  bruker kan navigerer på nettsiden med denne
  * Bruker en useState for å vise og skjule deler av hovedmenyen.
  * 

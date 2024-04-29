@@ -25,7 +25,8 @@ function validerData(formData) {
   return { isValid: errors.length === 0, errorMesg: errors };
 }
 /**
- * @author Jørgen, Kjartan og Markus
+ * @author Jørgen, Kjartan, Mie og Markus
+ * 
  * 
  * Siden tar imot inn data og kjører backend kode for å logge inn bedrift
  * 

@@ -5,8 +5,8 @@ import { Bar } from "react-chartjs-2";
 import styles from "./page.module.css";
 
 /**
- * @author Kjartan
- * @con Jørgen
+ * @author Jørgen og Kjartan
+ * @con Mie, Codeium (JSDoc)
  * Bygger opp ett diagram for valgte profiler 
  *
  * @param {Array} props.tittel - en tabell med titteler for søylene
