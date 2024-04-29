@@ -23,6 +23,8 @@ export async function updateProfil(id, nyData, cId) {
         TestId: nyData.testId,
         CompanyId: cId
         });
+        // gjør oss sikre på at testId (eventuell ny test) er i databasen.
+        await hentTestTilDatabase(nyData.testId);
 
         return true;
     }catch(error){

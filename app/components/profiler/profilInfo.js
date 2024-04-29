@@ -26,14 +26,15 @@ const ProfilInfo = ({ profil, formData, setFormData, oppdaterSlett, oppdaterUpda
         // sjekker om det er endring
         //console.log('Endringer i profilen, oppdaterer...');
         const result = await updateProfil(profil.id, formData, profil.companyId);
-        // hvis oppdatering vellykket, oppdaterer profil i liste
+        
+        // hvis oppdatering vellykket, oppdaterer profil i liste - venter på dette
         //console.log(result);
-        const oppdatertProfil = {
-            id: profil.id,
-            ...formData,
-            companyId: profil.companyId
-        }
         if(result) {
+            const oppdatertProfil = {
+                id: profil.id,
+                ...formData,
+                companyId: profil.companyId
+            }
             oppdaterUpdate(oppdatertProfil);
         }
     }
