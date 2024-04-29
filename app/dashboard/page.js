@@ -53,8 +53,9 @@ export default function Dashboard() {
     if (feil) {
         return (
             <div>
-                <h1>Feil</h1>
+                <h1>Error</h1>
                 <p>{feil.message}</p>
+                <p>Oppdater siden - midlertidig løsning</p>
             </div>
         );
     }
