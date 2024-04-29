@@ -63,7 +63,7 @@ export async function hentTestData(id) {
                 betenksomhet: data.results[4].facets[5].score
             }
         }
-        console.log('hentTestData fullført');
+        //console.log('hentTestData fullført');
         return innData;
     } catch(error) {
         console.log(error);

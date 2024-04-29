@@ -39,10 +39,10 @@ function ProfilerPage() {
     useEffect(() => {
         const fetchData = async () => {
             const bedriftUId = await userUId;
-            console.log('bedriftUId: ' + bedriftUId);
+            //console.log('bedriftUId: ' + bedriftUId);
             const data = await hentProfilListe(bedriftUId);
     
-            console.log('data (Sammenlign)',data);
+            //console.log('data (Sammenlign)',data);
             // data blir returnert som et objekt men vi vil ha det i en array
             setBedriftId(bedriftUId);
             if (data === null) {

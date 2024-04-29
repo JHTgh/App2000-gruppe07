@@ -14,10 +14,6 @@ import { hentTestTilDatabase } from "@/app/api/big5/hentTestTilDatabase";
  */
 export async function updateProfil(id, nyData, cId) {
 
-    console.log(nyData);
-    console.log(cId);
-    console.log(id);
-    
     try{
         await setDoc(doc(db, "ansatte", id), {
         Adresse: nyData.adresse,

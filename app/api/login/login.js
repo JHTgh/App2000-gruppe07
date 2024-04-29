@@ -2,8 +2,8 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
 /**
- * @author Kjartan
- * @contributor Jørgen, ChatGPT, CODEIUM (for JSDoc)
+ * @author Kjartan og Jørgen
+ * @contributor ChatGPT, CODEIUM (for JSDoc)
  * 
  * Validerer innloggingsskjemaet. 
  * Returnerer en boolean, der true betyr at vi klarte å behandle dataen riktig
@@ -18,17 +18,17 @@ export const handleLoginSubmit = async (formData) => {
 
   const email = formData.email;
   const password = formData.password;
-  console.log('prøver å logge inn ( handleLoginSubmit )');
-  console.log(email, password);
+  //console.log('prøver å logge inn ( handleLoginSubmit )');
+  //console.log(email, password);
 
   // Logg inn brukeren
   try {
-    console.log(email, password);
+    //console.log(email, password);
     const auth = getAuth();
-    console.log(auth);
+    //console.log(auth);
 
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log("Innlogging vellykket - bruker: ", userCredential.user);
+    //console.log("Innlogging vellykket - bruker: ", userCredential.user);
     return { suksess: true, error: "Innlogging vellykket" };
   
   } catch (error) {

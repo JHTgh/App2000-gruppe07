@@ -14,7 +14,7 @@ import styles from "./page.module.css";
  * @return {JSX.Element} BarChart komponenten - altså ett diagram
  */
 const BarChart = ({tittel, testData}) => {
-  console.log(testData);
+  //console.log(testData);
 
   const data = {
     labels: tittel,

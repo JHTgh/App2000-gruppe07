@@ -39,7 +39,7 @@ export async function hentProfilListe( bedriftID ) {
         })
         );
 
-        console.log('alleProfiler (hentAlleProfiler): ', alleProfiler);
+        //console.log('alleProfiler (hentAlleProfiler): ', alleProfiler);
 
         if (snapshot.empty) {
         console.log('Profil ikke funnet (hentAlleProfiler)');

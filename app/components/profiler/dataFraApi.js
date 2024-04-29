@@ -16,10 +16,10 @@ import styles from "./component.module.css";
 const ApiData = ({id, navn}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(id);
+  //console.log(id);
   const apiLenke = "https://bigfive-f9cymyeb1-rubynor.vercel.app/api/result/" + id + "/no";
-  console.log(apiLenke);
-  console.log (navn);
+  //console.log(apiLenke);
+  //console.log (navn);
 
   useEffect(() => {
     async function fetchData() {
@@ -49,7 +49,7 @@ const ApiData = ({id, navn}) => {
         <h4 className={styles.testSkrift}>{navn} sin Big Five test</h4>
         <br />
         
-        <SingelChart  className={styles.chart2}  testData={scoreData} />
+        <SingelChart  className={styles.chart2}  testData={scoreData} navn={navn} />
         {data.results.map((result, index) => (
           <div key={index}>
             <div className = {styles.oOverskrift}>{result.title}</div>
@@ -57,7 +57,7 @@ const ApiData = ({id, navn}) => {
             <div className={styles.litenSkrift}>{result.text}</div>
             {/* kan legge til flere ting her, men for nå har vi bare tekst rettet mot den som har tatt testen. 
             kan også bruke; result.description, result.shortDescription  */}      
-            <SingelChart testData={result.facets}  />
+            <SingelChart testData={result.facets} navn={navn} />
             {result.facets.map((facet, facetIndex) => (
               <div key={facetIndex}>
                 <div className={styles.overskriftUnderkategori}>{facet.title}</div>

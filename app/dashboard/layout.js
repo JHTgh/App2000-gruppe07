@@ -14,7 +14,7 @@ async function hentBrukerID() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
-        console.log("uid (layout): " + uid);
+        //console.log("uid (layout): " + uid);
         resolve(uid);
       } else {
         resolve(null);

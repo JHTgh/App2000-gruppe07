@@ -12,7 +12,7 @@ import styles from "./component.module.css";
  * @param {object} testData - ett objekt med scoreData og titteler
  * @return {JSX.Element} et diagram komponent
  */
-const SingelChart = ({testData}) => {  
+const SingelChart = ({testData, navn}) => {  
 
   const scoreData = testData.map((enTest) => {
     return {
@@ -25,7 +25,7 @@ const SingelChart = ({testData}) => {
   const data = {
     labels: scoreData.map(enKolonne => enKolonne.lable),
     datasets: [{
-      label: '# of Votes',
+      label: navn,
       data: scoreData.map(enKolonne => enKolonne.score),
       borderWidth: 1,
       barThickness: 20

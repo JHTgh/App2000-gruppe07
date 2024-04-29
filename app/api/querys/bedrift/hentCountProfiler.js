@@ -20,13 +20,13 @@ export async function hentCount(bedriftID) {
         const tellerQuery = query(samling, where("CompanyId", "==", bedriftID));
         const snapshot = await getCountFromServer(tellerQuery);
         const antall = snapshot.data().count;
-        console.log('snapshot', snapshot);
+        //console.log('snapshot', snapshot);
 
         if (!snapshot) {
             throw new Error('ingen ansatte funnet. countSnapshot is null');
         }
 
-        console.log('antall', antall);
+        //console.log('antall', antall);
         return antall;
     } catch (error) {
         console.error('Error getting count: ', error);

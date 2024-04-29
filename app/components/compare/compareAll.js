@@ -26,7 +26,7 @@ function CompareAll(valgteProfiler) {
     // legger inn en farge per profil inn i profil objektet
     profiler.forEach(profil => profil.farge = getRandomColors());
 
-    // lager en liste over alle de forskjellige teamer vi har score til 
+    // lager en liste over alle de forskjellige teamer vi har score til, samt en tittel for grafene
     const temaListe = fyllTemaListe();
     const tittelForGrafer = ['Big Five' ,'Nevrotisisme', 'Ekstroversjon', 'Åpenhet For Erfaringer', 'Medmenneskelighet', 'Planmessighet']
     //const scoreListe = fyllScoreListe(profiler);
