@@ -12,6 +12,10 @@ import { doc, setDoc } from "firebase/firestore";
  * @return {boolean} - hvis oppdateringen er vellykket eller ikke
  */
 export async function updateProfil(id, nyData, cId) {
+
+    console.log(nyData);
+    console.log(cId);
+    console.log(id);
     
     try{
         await setDoc(doc(db, "ansatte", id), {

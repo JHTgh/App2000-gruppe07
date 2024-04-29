@@ -28,6 +28,7 @@ function CompareAll(valgteProfiler) {
 
     // lager en liste over alle de forskjellige teamer vi har score til 
     const temaListe = fyllTemaListe();
+    const tittelForGrafer = ['Big Five' ,'Nevrotisisme', 'Ekstroversjon', 'Åpenhet For Erfaringer', 'Medmenneskelighet', 'Planmessighet']
     //const scoreListe = fyllScoreListe(profiler);
     const scoreListe = [
         fyllHovedScoreListe(profiler),
@@ -211,6 +212,9 @@ function CompareAll(valgteProfiler) {
         <div>
            {temaListe.map((tema, index) => (
                 <div key={index}>
+                    <div>
+                        {tittelForGrafer[index]}
+                    </div>
                     <BarChart 
                         tittel={tema} 
                         testData={scoreListe[index]}

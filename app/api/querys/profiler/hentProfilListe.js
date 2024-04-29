@@ -33,8 +33,9 @@ export async function hentProfilListe( bedriftID ) {
             const testId = data.TestId;
             const adresse = data.Adresse;
             const postNr = data.PostNr;
+            const companyId = data.CompanyId;
 
-            return { id, navn, epost, testId, stilling, adresse, postNr };
+            return { id, navn, epost, testId, stilling, adresse, postNr, companyId };
         })
         );
 
