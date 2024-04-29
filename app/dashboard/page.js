@@ -58,7 +58,7 @@ export default function Dashboard() {
                 <div className={styles.overskriftDashboard}>Velkommen, {bruker}</div>
                 <div className={styles.opprett}>Du har opprettet</div>
                 <div className={styles.flexContainer}>
-                    <div className={styles.antallAnsatte}><p>14 Profiler</p></div>
+                    <div className={styles.antallAnsatte}><p>{antProfiler} Profiler</p></div>
                  </div>  
                 <IoMdPersonAdd className={styles.ikon} />
                 <div className={styles.innholdDashboard}>

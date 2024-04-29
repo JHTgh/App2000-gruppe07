@@ -1,5 +1,5 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../../../database/firebase";
+import { collection, query, where, getCountFromServer } from "firebase/firestore";
+import { db } from "@/app/database/firebase";
 
 
 /**
@@ -16,20 +16,18 @@ export async function hentCount(bedriftID) {
             throw new Error('bedriftID is null');
         }
 
-        const countQuery = query(
-            collection(db, 'Ansatte'), 
-              where('CompanyID', '==', bedriftID)
-        );
-        const countSnapshot = await getDocs(countQuery);
-        console.log('countSnapshot', countSnapshot);
+        const samling = collection(db, "ansatte");
+        const tellerQuery = query(samling, where("CompanyId", "==", bedriftID));
+        const snapshot = await getCountFromServer(tellerQuery);
+        const antall = snapshot.data().count;
+        console.log('snapshot', snapshot);
 
-        if (!countSnapshot) {
+        if (!snapshot) {
             throw new Error('ingen ansatte funnet. countSnapshot is null');
         }
 
-        const count = countSnapshot.size;
-        console.log('count', count);
-        return count;
+        console.log('antall', antall);
+        return antall;
     } catch (error) {
         console.error('Error getting count: ', error);
         return 0;

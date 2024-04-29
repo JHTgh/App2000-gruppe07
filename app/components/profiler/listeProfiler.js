@@ -4,7 +4,18 @@
 
 import styles from './component.module.css'
 
-
+/**
+ * @author Mie og Kjartan
+ * @con ChatGPT og CODEIUM 
+ * Komponent som viser en liste ovar alle profilene som er i tabellen
+ * Funksjonaliteten i behandleTrykk gjør at informasjonen i formdata endres til den valgte profil
+ * 
+ * @param {array[object]} profiler - liste over alle profiler objekter
+ * @param {function} setValgtProfil - funksjon for å sette profil som er valgt
+ * @param {function} setFormData - funksjon for å sette all infor i FormData
+ * @param {function} setVisFrem - funksjon for å sette visFrem
+ * @returns 
+ */
 const ListeProfiler = ( {profiler, setValgtProfil, setFormData, setVisFrem} ) => {
 
     // hvis trykk skal profil bli valgt og det endrer på valgt profil

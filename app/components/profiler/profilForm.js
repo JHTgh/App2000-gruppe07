@@ -1,7 +1,23 @@
 // en komponent som viser frem ett Form, har to funksjoner 1. fungere som et form det submit er legge til en profil, 2. oppdatere en eksisterende profil
 import styles from './../page.module.css';
 
-const ProfilForm = ({profil, formData, behandleTrykk, behandleEkstraTrykk, setFormData, typeEvent}) => {
+
+/**
+ * @author Mie
+ * @con codeium og Kjartan
+ * Komponent som viser frem et form selve formet har flere funksjoner
+ * Funksjonene som formet kan gjøre bestemmes i fra innkommende funksjoner og en swith (typeEvent)
+ * Så det er to forskjellige måter komponenten kan vises frem på endten LeggeTilProfil eller Redigere(slette/endre)
+ * Håndterer endring av formData innad
+ * 
+ * @param {object} formData - inneholder all info som skal vises frem
+ * @param {function} behandleTrykk - funksjon for å legge til en profil eller endre en profil
+ * @param {function} behandleEkstraTrykk - funksjon for å slette (ellers tom)
+ * @param {function} setFormData - funksjon for å sette all infor i FormData
+ * @param {string} typeEvent - switch som bestemmer hva som skal vises frem
+ * @returns {JSX.Element} - komponenten profilForm
+ */
+const ProfilForm = ({formData, behandleTrykk, behandleEkstraTrykk, setFormData, typeEvent}) => {
 
     
    const handleChange = (event) => {

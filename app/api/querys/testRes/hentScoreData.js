@@ -18,10 +18,8 @@ export async function hentScoreData(testID) {
 
     if (docSnap.exists()) {
         return docSnap.data();
-      } else {
-        // docSnap.data() will be undefined in this case
+    } else {
         console.log("No such document! (hentScoreData)");
         return null;
-      }
-
+    }
 }
