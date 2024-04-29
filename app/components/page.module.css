@@ -179,10 +179,45 @@
   margin-left: 0.5vw;
   margin-right: 0.5vw;
   width: 10vw;
+  padding-bottom: 0.2vw;
   border: 1px solid #ccc;
 }
-
-
+.oppdaterKnapp {
+  background-color: #55788C;
+  color: white; 
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 1vw;
+  margin: 1vw;
+  margin-top: 1vw;
+  border-radius: 0.5vw;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.knappOppdater {
+  background-color: #55788C;
+  color: white; 
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 1vw;
+  margin-left: 15vw;
+  border-radius: 0.5vw;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.knappSlett {
+  background-color: #55788C;
+  color: white; 
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 1vw;
+  border-radius: 0.5vw;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
 @media (max-width: 480px) {
   .navbar {
     display: none;
@@ -291,7 +326,6 @@
   margin-bottom: 1vw;
 }
 
-
 .leggTilKnapp {
   background-color: #55788C;
   color: white; 
@@ -299,25 +333,44 @@
   padding-left: 0.5vw;
   padding-top: 1vw;
   padding-bottom: 1vw;
-  font-size: 4vw;
+  font-size: 3vw;
   margin: 1vw;
   margin-top: 1vw;
   margin-bottom: 3vw;
   border-radius: 0.5vw;
   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
-.oppdaterKnapp {
-  background-color: #55788C;
-  color: white;
-  padding: 0.4vw;
-  border-radius: 0.5vw;
-}
+
 .ansattInput {
   margin-left: 0.5vw;
   margin-right: 1vw;
   padding: 0.5vw;
   border-radius: 5px;
   border: 1px solid #ccc;
+  width: 40vw;
 }
 
+.knappSlett, .knappOppdater {
+background-color: #55788C;
+color: white; 
+padding-right: 0.5vw;
+padding-left: 0.5vw;
+padding-top: 0.5vw;
+padding-bottom: 0.5vw;
+font-size: 2vw;
+border-radius: 0.5vw;
+box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.oppdaterKnapp {  
+  background-color: #55788C;
+  color: white; 
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  font-size: 2vw;
+  border-radius: 0.5vw;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+}
 }
