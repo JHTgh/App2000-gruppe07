@@ -5,4 +5,3 @@ Project in subject APP2000 at USN, Bø. This application was originally designed
 ![Skjermbilde 2024-04-27 141025](https://github.com/user-attachments/assets/5101a147-a47e-4bfd-b0d1-774e3353d740)
 ![Skjermbilde 2024-04-27 141240](https://github.com/user-attachments/assets/466b4dc6-f60f-48c5-b807-7277cf6ec1e3)
 ![Skjermbilde 2024-04-27 141454](https://github.com/user-attachments/assets/50b747b4-3c20-4be0-ae88-c02ff2f5ac16)
-![Skjermbilde 2024-04-27 141504](https://github.com/user-attachments/assets/bf201fdb-7dd1-4b25-9b62-bc04eb859826)
